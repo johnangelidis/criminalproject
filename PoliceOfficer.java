@@ -19,6 +19,26 @@ public class PoliceOfficer {
     ArrayList<Case> cases){
         this.badgeNum = badgeNum;
         this.policeDept = policeDept;
+        this.cases = new ArrayList<Case>();
+    }
+
+    public int getbadgeNum() {
+        return this.badgeNum;
+    }
+    public String getpoliceDept() {
+        return this.policeDept;
+    }
+    public ArrayList<Case> getCases() {
+        return this.cases;
+    }
+
+    public void setbadgeNum(int badgeNum) {
+        this.badgeNum = badgeNum;
+    }
+    public void setpoliceDept(String policeDept){
+        this.policeDept = policeDept;
+    }
+    public void setCases(ArrayList<Case> cases){
         this.cases = cases;
     }
 }
