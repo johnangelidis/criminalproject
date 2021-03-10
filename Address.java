@@ -1,5 +1,6 @@
 /**
  * Class representing an Address
+ * @author Jayden Allen
  */
 public class Address {
     private int number;
@@ -7,7 +8,7 @@ public class Address {
     private String city; 
     private String state;
     private int zip;
-    private int number2;
+    
 
     /** 
      * Constructor that creates an address
