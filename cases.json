@@ -1,0 +1,26 @@
+[{
+    "id": 1,
+    "crime": "Aggravated Robbery",
+    "offender": 1,
+    "victim": 1,
+    "outcome": "5 years in prison",
+    "witnesses": [2],
+    "personsOfInterest": [3],
+    "dayOfCrime": "01/20/2021",
+    "dayOfSentence": "02/20/2021",
+    "location": "567 Gordon Blvd., Columbia, SC, 29201",
+    "officersInvolved": [1]   
+},
+{
+    "id": 1,
+    "crime": "First Degree Murder",
+    "offender": 2,
+    "victim": 2,
+    "outcome": "Life in prison without parole",
+    "witnesses": [4],
+    "personsOfInterest": [1],
+    "dayOfCrime": "Jan 20 2021",
+    "dayOfSentence": "Mar 20 2021",
+    "location": "321 Blossom St., Columbia, SC, 29201",
+    "officersInvolved": [2]      
+}]
