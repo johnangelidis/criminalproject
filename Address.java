@@ -32,6 +32,41 @@ public class Address {
     @return address
     */
     public Address getAddress(){
-        return this.getAddress();
+        return this.Address();
+    }
+
+    public int getNumber(){
+        return this.number;
+    }
+    public String getStreet(){
+        return this.street;
+    }
+    public String getCity(){
+        return this.city;
+    }
+    public String getState(){
+        return this.state;
+    }
+    public String getZip(){
+        return this.zip;
+    }
+
+    //public void setAddress(Address address){
+       // this.Address()=address;
+   // }
+    public void setNumber(int number){
+        this.number = number;
+    }
+    public void setStreet(String street){
+        this.street = street;
+    }
+    public void setCity(String city){
+        this.city = city;
+    }
+    public void setState(String state){
+        this.state = state;
+    }
+    public void setZip(int zip){
+        this.zip = zip;
     }
 }
