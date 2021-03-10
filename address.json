@@ -1,0 +1,43 @@
+[{
+    "number":1125,
+    "street":"George Rodgers BLVD",
+    "city":"Columbia",
+    "state":"SC",
+    "zip":29201
+},
+{
+    "number":300,
+    "street":"Main St.",
+    "city":"Columbia",
+    "state":"SC",
+    "zip":29208
+},
+{
+    "number":500,
+    "street":"Sumter St.",
+    "city":"Columbia",
+    "state":"SC",
+    "zip":29208
+},
+{
+    "number":272,
+    "street":"Meeting St.",
+    "city":"Charleston",
+    "state":"SC",
+    "zip":29205
+},
+{
+    "number":1125,
+    "street":"Georger Rodgers BLVD",
+    "city":"Columbia",
+    "state":"SC",
+    "zip":29201
+},
+{
+    "number":1111,
+    "street":"S Figueroa St.",
+    "city":"Los Angeles",
+    "state":"CA",
+    "zip":90015
+}
+]
