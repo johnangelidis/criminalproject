@@ -28,14 +28,24 @@ public class Tattoo {
     }
 
     /**
-     * Method that sets a new tattoo for a person
+     * Method that sets the location of a tattoo to the one given
      * @param loc
+     */
+    public void setLocation(String loc){
+        this.location=loc;
+    }
+    /**
+     * Method that sets the color of a tattoo to the one given
      * @param col
+     */
+    public void setColor(String col){
+        this.color=col;
+    }
+    /**
+     * Method that sets the design of a tattoo to the one given
      * @param des
      */
-    public void setTattoo(String loc, String col, String des){
-        this.location=loc;
-        this.color=col;
+    public void setDesign(String des){
         this.design=des;
     }
 
