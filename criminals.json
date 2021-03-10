@@ -1,0 +1,30 @@
+[{
+    "id":1,
+    "firstName":"Jeff",
+    "lastName":"Roberts",
+    "dateOfBirth":"May 4 1994",
+    "weight": 170.3,
+    "height": 5.11,
+    "hairColor": "Black",
+    "tattoos": "Snake on Forearm",
+    "hasScars": false,
+    "status":"incarcerated",
+    "gang": "N/A",
+    "isSerialCriminal":false,
+    "crimes":[3]
+},
+{
+    "id":2,
+    "firstName":"Shaun",
+    "lastName":"Green",
+    "dateOfBirth":"July 23 1989",
+    "weight": 160.3,
+    "height": 5.8,
+    "hairColor": "Brown",
+    "tattoos": "Lion on Chest",
+    "hasScars": true,
+    "status":"on parole",
+    "gang": "N/A",
+    "isSerialCriminal":false,
+    "crimes":[2]
+}]
