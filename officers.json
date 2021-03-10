@@ -1,0 +1,18 @@
+[{
+    "id": 1,
+    "firstName": "Henry",
+    "lastName": "Jacobs",
+    "dateOfBirth": "Aug 8 1981",
+    "badgeNum": 305,
+    "policeDept": "Richland County Police Department",
+    "cases": [1]
+},
+{
+    "id": 2,
+    "firstName": "Jacob",
+    "lastName": "Thompson",
+    "dateOfBirth": "Sep 18 1971",
+    "badgeNum": 287,
+    "policeDept": "Richland County Police Department",
+    "cases": [2]    
+}]
