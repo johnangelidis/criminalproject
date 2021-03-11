@@ -1,4 +1,8 @@
 [{
+    "id": 1,
+    "firstName": "Jack",
+    "lastName": "Jones",
+    "dateOfBirth": "Feb 5 1988",
     "address": "123 Jeff St., Jefftown, SC, 29505",
     "phone": 8431234567,
     "isVictim": true,
@@ -7,6 +11,10 @@
     "case": 12
 },
 {
+    "id": 2,
+    "firstName": "Ben",
+    "lastName": "Smith",
+    "dateOfBirth": "Jul 5 1985",
     "address": "909 Crime Ln., Cayce, SC, 28543",
     "phone":4321237658,
     "isVictim": false,
@@ -15,6 +23,10 @@
     "case": 14
 },
 {
+    "id": 3,
+    "firstName": "Kate",
+    "lastName": "Hughes",
+    "dateOfBirth": "Jun 18 1990",
     "address": "124 Conch St., Bikini Bottom, AL, 25534",
     "phone":"1342939605",
     "isVictim": false,
@@ -23,6 +35,10 @@
     "case": 27
 },
 {
+    "id": 4,
+    "firstName": "Sean",
+    "lastName": "Wilson",
+    "dateOfBirth": "Dec 25 1982",
     "address": "1520 Devine Street, Columbia, SC, 29208",
     "phone":3405582396,
     "isVictim": true,
