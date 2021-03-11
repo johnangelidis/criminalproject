@@ -1,11 +1,13 @@
 [{
     "username":"johnj123",
+    "password": "Hdjsa820!",
     "firstName":"John",
     "lastName":"Johnson",
     "isAdmin": false
 },
 {
-    "id":"cobya392",
+    "username":"cobya392",
+    "password": "k87Hb65@rT",
     "firstName":"Coby",
     "lastName":"Arambula",
     "isAdmin": true
