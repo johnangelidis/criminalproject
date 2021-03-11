@@ -1,10 +1,44 @@
 [{
-    "criminals":ArrayList<Criminal>,
-    "civillians":ArrayList<Civilian>,
-    "officers":ArrayList<PoliceOfficer>,
-    "detectives":ArrayList<Detectives>,
-    "cases":ArrayList<Case>,
-    "gangs":ArrayList<Gang>,
-    "users":ArrayList<User>,
-},
-]
+    "criminals": [
+        1,
+        2
+    ]
+    },
+    {
+    "civilians": [
+        1,
+        2,
+        3,
+        4
+    ]
+    },
+    {
+    "officers": [
+        1,
+        2
+    ]
+    },
+    {
+    "detectives": [
+        1,
+        2
+    ]
+    },
+    {
+    "cases": [
+        1,
+        2
+    ]
+    },
+    {
+    "gangs": [
+        1,
+        2
+    ]
+    },
+    {
+    "users": [
+        "johnj123",
+        "cobya392"
+    ]
+}]
