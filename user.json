@@ -1,0 +1,12 @@
+[{
+    "username":"johnj123",
+    "firstName":"John",
+    "lastName":"Johnson",
+    "isAdmin": false
+},
+{
+    "id":"cobya392",
+    "firstName":"Coby",
+    "lastName":"Arambula",
+    "isAdmin": true
+}]
