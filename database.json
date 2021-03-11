@@ -1,0 +1,10 @@
+[{
+    "criminals":ArrayList<Criminal>,
+    "civillians":ArrayList<Civilian>,
+    "officers":ArrayList<PoliceOfficer>,
+    "detectives":ArrayList<Detectives>,
+    "cases":ArrayList<Case>,
+    "gangs":ArrayList<Gang>,
+    "users":ArrayList<User>
+},
+]
