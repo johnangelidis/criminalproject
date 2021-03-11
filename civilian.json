@@ -1,0 +1,32 @@
+[{
+    "address": "123 Jeff St., Jefftown, SC, 29505",
+    "phone": 8431234567,
+    "isVictim": true,
+    "isWitness": false,
+    "isPersonOfInterest": false,
+    "case": 12
+},
+{
+    "address": "909 Crime Ln., Cayce, SC, 28543",
+    "phone":4321237658,
+    "isVictim": false,
+    "isWitness": true,
+    "isPersonOfInterest": true,
+    "case": 14
+},
+{
+    "address": "124 Conch St., Bikini Bottom, AL, 25534",
+    "phone":"1342939605",
+    "isVictim": false,
+    "isWitness": false,
+    "isPersonOfInterest": true,
+    "case": 27
+},
+{
+    "address": "1520 Devine Street, Columbia, SC, 29208",
+    "phone":3405582396,
+    "isVictim": true,
+    "isWitness": false,
+    "isPersonOfInterest": true,
+    "case": 56
+}]
