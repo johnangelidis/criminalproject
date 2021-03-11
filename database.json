@@ -5,6 +5,6 @@
     "detectives":ArrayList<Detectives>,
     "cases":ArrayList<Case>,
     "gangs":ArrayList<Gang>,
-    "users":ArrayList<User>
+    "users":ArrayList<User>,
 },
 ]
