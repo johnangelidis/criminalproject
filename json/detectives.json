@@ -1,0 +1,14 @@
+[{
+    "id": 1,
+    "firstName": "Sherlock",
+    "lastName": "Holmes",
+    "dateOfBirth": "Mar 10 1980",
+    "cases": [1]
+},
+{
+    "id":2,
+    "firstName": "Adam",
+    "lastName": "Owens",
+    "dateOfBirth": "Apr 12 1975",
+    "cases": [2]
+}]
