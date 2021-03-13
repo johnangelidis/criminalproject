@@ -18,21 +18,12 @@ public class Address {
      * @param state
      * @param zip
      */
-    public Address(int number, String street, 
-    String city, String state, int zip) {
+    public Address(int number, String street, String city, String state, int zip) {
         this.number = number;
         this.street = street;
         this.city = city;
         this.state = state;
         this.zip = zip;
-    }
-
-   /**
-    *  Method that returns the address of a give person
-    @return address
-    */
-    public Address getAddress(){
-        return this.Address();
     }
 
     public int getNumber(){
@@ -47,13 +38,10 @@ public class Address {
     public String getState(){
         return this.state;
     }
-    public String getZip(){
+    public int getZip(){
         return this.zip;
     }
 
-    //public void setAddress(Address address){
-       // this.Address()=address;
-   // }
     public void setNumber(int number){
         this.number = number;
     }
@@ -69,4 +57,7 @@ public class Address {
     public void setZip(int zip){
         this.zip = zip;
     }
+
+    public void getAddress(){
+        System.out.println(number + " " + street + ", " + city + " " + ", " + state + zip);
 }
