@@ -3,7 +3,7 @@ import java.util.ArrayList;
 /**
  * Class representation of a Criminal
  */
-public class Criminal {
+public class Criminal extends Person{
     private static double weight;
     private static double height;
     private String hairColor;
@@ -28,10 +28,11 @@ public class Criminal {
      * @param isSerialCriminal Boolean value that indicates if criminal is a serial criminal or not
      * @param crimes Array list of crimes that the criminal has committed
      */
-    public Criminal(double weight, double height, String hairColor,
+    public Criminal(int id, String firstName, String lastName, double weight, double height, String hairColor,
                     String eyeColor, Tattoo tattoos, boolean hasScars,
                     String status, Gang gang, boolean isSerialCriminal,
                     ArrayList<Case> crimes) {
+        super(id, firstName, lastName);
         setWeight(weight);
         setHeight(height);
         setHairColor(hairColor);
