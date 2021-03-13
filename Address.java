@@ -3,11 +3,11 @@
  * @author Jayden Allen
  */
 public class Address {
-    private int number;
+    private String number;
     private String street; 
     private String city; 
     private String state;
-    private int zip;
+    private String zip;
     
 
     /** 
@@ -18,7 +18,7 @@ public class Address {
      * @param state
      * @param zip
      */
-    public Address(int number, String street, String city, String state, int zip) {
+    public Address(String number, String street, String city, String state, String zip) {
         this.number = number;
         this.street = street;
         this.city = city;
@@ -26,7 +26,7 @@ public class Address {
         this.zip = zip;
     }
 
-    public int getNumber(){
+    public String getNumber(){
         return this.number;
     }
     public String getStreet(){
@@ -38,11 +38,11 @@ public class Address {
     public String getState(){
         return this.state;
     }
-    public int getZip(){
+    public String getZip(){
         return this.zip;
     }
 
-    public void setNumber(int number){
+    public void setNumber(String number){
         this.number = number;
     }
     public void setStreet(String street){
@@ -54,10 +54,10 @@ public class Address {
     public void setState(String state){
         this.state = state;
     }
-    public void setZip(int zip){
+    public void setZip(String zip){
         this.zip = zip;
     }
 
-    public void getAddress(){
-        System.out.println(number + " " + street + ", " + city + " " + ", " + state + zip);
-}
+    public String toString(){
+        return number + " " + street + ", " + city + ", " + state + zip;   
+    }
