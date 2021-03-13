@@ -32,13 +32,13 @@ public class Case {
     public Case(int id, String crime, Civilian victim, String outcome, ArrayList<Civilian> witnesses, ArrayList<Civilian> personsOfInterest, Calendar dayOfCrime, Calendar dayOfSentence, Address location, ArrayList<PoliceOfficer> officersInvolved){
         this.id = id;
         this.crime = crime;
-        this.victim = new Civilian();
+        this.victim = victim;
         this.outcome = outcome;
         this.witnesses = new ArrayList<Civilian>();
         this.personsOfInterest = new ArrayList<Civilian>();
-        //this.dayOfCrime = new Calendar();
-        //this.dayOfSentence = new Calendar();
-        this.location = new Address();
+        this.dayOfCrime = dayOfCrime;
+        this.dayOfSentence = dayOfCrime;
+        this.location = location;
         this.officersInvolved = new ArrayList<PoliceOfficer>();
     }
 
