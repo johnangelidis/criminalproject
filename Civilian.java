@@ -5,7 +5,7 @@
  */
 import java.util.ArrayList;
 
-public class Civilian {
+public class Civilian extends Person{
 	private Address address;
 	private int phone;
 	private boolean isVictim;
@@ -20,10 +20,8 @@ public class Civilian {
 	 * @param bisWitness Is the Civilian a Witness of a crime
 	 * @param bisPersonOfInterest Is the Civilian a POI?
 	 */
-	public Civilian(Address anAddress, int aPhone,
-					boolean bisVictim, boolean bisWitness,
-					boolean bisPersonOfInterest
-					ArrayList<Case> aCases) {
+	public Civilian(int id, String firstName, String lastName, Address anAddress, int aPhone, boolean bisVictim, boolean bisWitness, boolean bisPersonOfInterest, ArrayList<Case> aCases) {
+		super(id, firstName, lastName);
 		cases = new ArrayList<Case>();
 		this.address = anAddress;
 		this.phone = aPhone;
@@ -115,5 +113,9 @@ public class Civilian {
 	 */
 	public void setCases(ArrayList<Case> cases) {
 		this.cases = cases;
+	}
+	@Override
+	public String toString() {
+		return firstName + " " + lastName + " is a civilian.";
 	}
 }
