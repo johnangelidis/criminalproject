@@ -4,7 +4,7 @@ import java.util.ArrayList;
  * Class representing a police officer
  * @author Jayden Allen
  */
-public class PoliceOfficer {
+public class PoliceOfficer extends Person {
     private int badgeNum;
     private String policeDept;
     private ArrayList<Case> cases;
@@ -15,8 +15,9 @@ public class PoliceOfficer {
  * @param police department
  * @param cases
  */
-    public PoliceOfficer(int badgeNum, String policeDept,
+    public PoliceOfficer(int id, String firstName, String lastName, int badgeNum, String policeDept,
     ArrayList<Case> cases){
+        super(id, firstName, lastName);
         this.badgeNum = badgeNum;
         this.policeDept = policeDept;
         this.cases = new ArrayList<Case>();
@@ -40,5 +41,11 @@ public class PoliceOfficer {
     }
     public void setCases(ArrayList<Case> cases){
         this.cases = cases;
+    }
+
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+        return null;
     }
 }
