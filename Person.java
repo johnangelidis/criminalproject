@@ -54,8 +54,8 @@ public abstract class Person{
      * Method that returns a string representation of the date of birth
      * @return string representation of date of birth
      */
-    public Date getDOB(){
-        return dateOfBirth.getTime();
+    public Calendar getDOB(){
+        return dateOfBirth;
     }
     /**
      * Method that sets the date of birth given the year, month, and day
