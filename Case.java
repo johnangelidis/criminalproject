@@ -8,6 +8,8 @@ public class Case {
     private int id;
     private String crime;
     private Civilian victim;
+    private Criminal offender;
+
     private String outcome;
     private ArrayList<Civilian> witnesses;
     private ArrayList<Civilian> personsOfInterest;
@@ -29,10 +31,11 @@ public class Case {
      * @param location
      * @param officersInvolved
      */
-    public Case(int id, String crime, Civilian victim, String outcome, ArrayList<Civilian> witnesses, ArrayList<Civilian> personsOfInterest, Calendar dayOfCrime, Calendar dayOfSentence, Address location, ArrayList<PoliceOfficer> officersInvolved){
+    public Case(int id, String crime, Civilian victim, Criminal offender, String outcome, ArrayList<Civilian> witnesses, ArrayList<Civilian> personsOfInterest, Calendar dayOfCrime, Calendar dayOfSentence, Address location, ArrayList<PoliceOfficer> officersInvolved){
         this.id = id;
         this.crime = crime;
         this.victim = victim;
+        this.offender = offender;
         this.outcome = outcome;
         this.witnesses = new ArrayList<Civilian>();
         this.personsOfInterest = new ArrayList<Civilian>();
@@ -66,6 +69,14 @@ public class Case {
         this.victim = victim;
     }
 
+    public Criminal getOffender() {
+        return this.offender;
+    }
+
+    public void setOffender(Criminal offender) {
+        this.offender = offender;
+    }
+    
     public String getOutcome() {
         return this.outcome;
     }
