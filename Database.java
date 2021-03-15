@@ -1,18 +1,58 @@
 import java.util.ArrayList;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
-import java.io.IOException;
 /**
  * Class representation of Database that allows user to search and export entries
  */
 public class Database {
-    private ArrayList<Criminal> criminals;
-    private ArrayList<Civilian> civilians;
-    private ArrayList<PoliceOfficer> officers;
-    private ArrayList<Detective> detectives;
-    private ArrayList<Case> cases;
-    private ArrayList<Gang> gangs;
-    private ArrayList<User> users;
+    private static Database db = null;
+    private static ArrayList<Criminal> criminals;
+    private static ArrayList<Civilian> civilians;
+    private static ArrayList<PoliceOfficer> officers;
+    private static ArrayList<Detective> detectives;
+    private static ArrayList<Case> cases;
+    private static ArrayList<Gang> gangs;
+    private static ArrayList<User> users;
+
+    private Database(){
+        //criminals = CriminalLoader.loadCriminals();
+        civilians = CivilianLoader.loadCivilians();
+        //officers = OfficerLoader.loadOfficers();
+        //detectives = DetectiveLoader.loadDetectives();
+        //cases = CaseLoader.loadCases();
+        //gangs = GangLoader.loadGangs();
+        //users = UserLoader.loadUsers();
+    }
+
+    public static Database getInstance(){
+        if(db == null){
+            db = new Database();
+        }
+        return db;
+    }
+
+    public ArrayList<Criminal> getCriminals(){
+        return criminals;
+    }
+    public ArrayList<Civilian> getCivilians(){
+        return civilians;
+    }
+    public ArrayList<PoliceOfficer> getOfficers(){
+        return officers;
+    }
+    public ArrayList<Detective> getDetectives(){
+        return detectives;
+    }
+    public ArrayList<Case> getCases(){
+        return cases;
+    }
+    public ArrayList<Gang> getGangs(){
+        return gangs;
+    }
+    public ArrayList<User> getUsers(){
+        return users;
+    }
+
 
     /**
      * Allows user to search entries based on people associated with those entries
@@ -133,4 +173,6 @@ public class Database {
             e.printStackTrace();
         }
     }
+
+
 }
