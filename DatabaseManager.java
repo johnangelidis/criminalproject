@@ -23,7 +23,7 @@ public class DatabaseManager {
         users.add(newUser);
     }
 
-    public void removeUser(String username, String password){
+    public void removeUser(String username, String password) {
         users.remove(username);
     }
 
