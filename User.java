@@ -6,6 +6,8 @@ public class User {
     private String password;
     private String firstName;
     private String lastName;
+    private boolean isAdmin;
+    private boolean isLoggedIn;
 
     public User(String username, String password){
         this.username = username;
@@ -44,19 +46,24 @@ public class User {
         this.lastName = lastName;
     }
 
-    private boolean isAdmin;
-    // May need to add isLoggedIn boolean
-
-
+    public void setAdminStatus(boolean admin) {
+        this.isAdmin = admin;
+    }
 
     /**
      * Logs the user into the database
      */
-    public void login(){}
+    public void login(){
+        if(!isLoggedIn)
+            isLoggedIn = true;
+    }
 
     /**
      * Logs the user out of the database
      */
-    public void logout(){}
+    public void logout(){
+        if(isLoggedIn)
+            isLoggedIn = false;
+    }
     
 }
