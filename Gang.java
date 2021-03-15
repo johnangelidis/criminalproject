@@ -5,6 +5,7 @@
  */
 import java.util.ArrayList;
 public class Gang {
+	private int id;
 	private String name;
 	private ArrayList<Criminal> members;
 	private ArrayList<Case> crimes;
@@ -14,10 +15,19 @@ public class Gang {
 	 * @param members Who is affiliated with the gang
 	 * @param crimes What crimes the gang has commited
 	 */
-	public Gang(String name, ArrayList<Criminal> members, ArrayList<Case> crimes) {
+	public Gang(int id, String name, ArrayList<Criminal> members, ArrayList<Case> crimes) {
+		this.id = id;
 		this.name = name;
 		this.members = members;
 		this.crimes = crimes;
+	}
+	
+	public int getId() {
+		return this.id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	/**
 	 * Get name of the gang
