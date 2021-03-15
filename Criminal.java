@@ -126,4 +126,11 @@ public class Criminal extends Person{
     public void setCrimes(ArrayList<Case> crimes) {
         this.crimes = crimes;
     }
+    
+    /**
+     * @return String representation of criminal's first and last name
+     */
+    public String toString() {
+        return firstName + " " + lastName + " is a criminal.";
+    }
 }
