@@ -9,7 +9,6 @@ public class Case {
     private String crime;
     private Civilian victim;
     private Criminal offender;
-
     private String outcome;
     private ArrayList<Civilian> witnesses;
     private ArrayList<Civilian> personsOfInterest;
@@ -17,12 +16,14 @@ public class Case {
     private Calendar dayOfSentence;
     private Address location;
     private ArrayList<PoliceOfficer> officersInvolved;
+    private Detective detective;
 
     /**
      * Constructor that creates a new case
      * @param id
      * @param crime
      * @param victim
+     * @param offender
      * @param outcome
      * @param witnesses
      * @param personsOfInterest
@@ -30,8 +31,9 @@ public class Case {
      * @param dayOfSentence
      * @param location
      * @param officersInvolved
+     * @param detective
      */
-    public Case(int id, String crime, Civilian victim, Criminal offender, String outcome, ArrayList<Civilian> witnesses, ArrayList<Civilian> personsOfInterest, Calendar dayOfCrime, Calendar dayOfSentence, Address location, ArrayList<PoliceOfficer> officersInvolved){
+    public Case(int id, String crime, Civilian victim, Criminal offender, String outcome, ArrayList<Civilian> witnesses, ArrayList<Civilian> personsOfInterest, Calendar dayOfCrime, Calendar dayOfSentence, Address location, ArrayList<PoliceOfficer> officersInvolved, Detective detective){
         this.id = id;
         this.crime = crime;
         this.victim = victim;
@@ -43,6 +45,7 @@ public class Case {
         this.dayOfSentence = dayOfCrime;
         this.location = location;
         this.officersInvolved = new ArrayList<PoliceOfficer>();
+        this.detective = detective;
     }
 
     public int getId() {
@@ -133,4 +136,11 @@ public class Case {
         this.officersInvolved = officersInvolved;
     }
 
+    public Detective getDetective() {
+        return this.detective;
+    }
+
+    public void setDetective(Detective detective) {
+        this.detective = detective;
+    }
 }
