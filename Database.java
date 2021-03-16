@@ -61,6 +61,11 @@ public class Database {
     public ArrayList<Gang> getGangs(){
         return gangs;
     }
+
+    public void addGang(int id, String name, ArrayList<Criminal> members, ArrayList<Case> crimes){
+        gangs.add(new Gang(id, name, members, crimes);
+        GangWriter.saveGangs();
+    }
     public ArrayList<User> getUsers(){
         return users;
     }
