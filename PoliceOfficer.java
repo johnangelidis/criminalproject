@@ -10,7 +10,7 @@ public class PoliceOfficer extends Person {
     private ArrayList<Case> cases;
 
 /**
- * Constructor that creates a police officer
+ * Paramaterized Constructor that creates a police officer
  * @param badge number
  * @param police department
  * @param cases
@@ -29,6 +29,10 @@ public class PoliceOfficer extends Person {
     public String getpoliceDept() {
         return this.policeDept;
     }
+    /**
+     * Method that returns an array of case ID's for each police officer. 
+     * @return
+     */
     public ArrayList<Case> getCases() {
         return this.cases;
     }
@@ -45,7 +49,8 @@ public class PoliceOfficer extends Person {
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
-        return null;
+        return "Officer: "+firstName+" "+lastName
+        "\n Department: "+policeDept
+        "\n Badge Number: "+badgeNum;
     }
 }

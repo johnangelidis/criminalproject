@@ -76,6 +76,9 @@ public class Database {
             if (p.getFirstName().equals(firstName) && p.getLastName().equals(lastName)) {
                 return p;
             }
+            if(p.getbadgeNum==p.badgeNum){
+                return p;
+            }
         }
         for (Detective d : detectives) {
             if (d.getFirstName().equals(firstName) && d.getLastName().equals(lastName)) {
