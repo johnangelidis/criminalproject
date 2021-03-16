@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
+import java.util.Calendar;
 /**
  * Class representation of Database that allows user to search and export entries
  */
@@ -19,7 +20,7 @@ public class Database {
         civilians = CivilianLoader.loadCivilians();
         //officers = OfficerLoader.loadOfficers();
         //detectives = DetectiveLoader.loadDetectives();
-        //cases = CaseLoader.loadCases();
+        cases = CaseLoader.loadCases();
         //gangs = GangLoader.loadGangs();
         //users = UserLoader.loadUsers();
     }
@@ -37,6 +38,12 @@ public class Database {
     public ArrayList<Civilian> getCivilians(){
         return civilians;
     }
+
+    public void addCivilian(int id, String firstName, String lastName, Calendar dateOfBirth, Address address, int number, boolean isVictim, boolean isWitness, boolean isPersonOfInterest, ArrayList<Case> cases){
+        civilians.add(new Civilian(id, firstName, lastName, address, number, isVictim, isWitness, isPersonOfInterest, cases));
+        CivilianWriter.saveCivilians();
+    }
+    
     public ArrayList<PoliceOfficer> getOfficers(){
         return officers;
     }
@@ -46,8 +53,18 @@ public class Database {
     public ArrayList<Case> getCases(){
         return cases;
     }
+
+    public void addCase(int id, String crime, Civilian victim, Criminal offender, String outcome, ArrayList<Civilian> witnesses, ArrayList<Civilian> personsOfInterest, Calendar dayOfCrime, Calendar dayOfSentence, Address location, ArrayList<PoliceOfficer> officersInvolved, Detective detective){
+        cases.add(new Case(id, crime, victim, offender, outcome, witnesses, personsOfInterest, dayOfCrime, dayOfSentence, location, officersInvolved, detective);
+        CaseWriter.saveCases();
+    }
     public ArrayList<Gang> getGangs(){
         return gangs;
+    }
+
+    public void addGang(int id, String name, ArrayList<Criminal> members, ArrayList<Case> crimes){
+        gangs.add(new Gang(id, name, members, crimes);
+        GangWriter.saveGangs();
     }
     public ArrayList<User> getUsers(){
         return users;

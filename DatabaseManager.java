@@ -4,7 +4,8 @@ import java.util.ArrayList;
  * Class that represents a Database Manager
  * @author Jayden Allen
  */
-public class DatabaseManager implements User {
+public class DatabaseManager {
+    
     private ArrayList<User> users;
 
     public ArrayList<User> getUsers(){
@@ -15,15 +16,16 @@ public class DatabaseManager implements User {
     }
 
     public void addUser(String username, String password, String firstName, String lastName, boolean isAdmin){
-
+        User newUser = new User(username, password);
+        newUser.setFirstName(firstName);
+        newUser.setLastName(lastName);
+        newUser.setAdminStatus(isAdmin);
+        users.add(newUser);
     }
-    public void removeUser(String username, String password){
 
+    public void removeUser(String username, String password) {
+        users.remove(username);
     }
-    public void setAdminStatus(){
 
-    }
-    public void removeAdminStatus(){
-
-    }
+    // removed set AdminStatus and removeAdminStatus methods, as these are implemented in the user class
 }
