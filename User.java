@@ -2,6 +2,7 @@
  * Class representation of a user
  */
 public class User {
+    private int id;
     private String username;
     private String password;
     private String firstName;
@@ -14,6 +15,13 @@ public class User {
         this.password = password;
     }
     
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     public String getUsername() {
         return this.username;
     }
