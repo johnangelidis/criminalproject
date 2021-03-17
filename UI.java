@@ -1,6 +1,9 @@
+import java.util.ArrayList;
+
 public class UI {
+    private static ArrayList<PoliceOfficer> loadOfficers;
+
     public static void main(String[] args) {
-        PoliceOfficer p = new PoliceOfficer(123, "Jay", "Den", 52, "Cane Bay" ["Cases"]);
-        System.out.println(p);
+        loadOfficers = PoliceLoader.loadOfficers();
     }
 }

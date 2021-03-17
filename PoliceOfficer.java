@@ -11,11 +11,12 @@ public class PoliceOfficer extends Person {
 
 /**
  * Paramaterized Constructor that creates a police officer
+ * @param dateOfBirth
  * @param badge number
  * @param police department
  * @param cases
  */
-    public PoliceOfficer(int id, String firstName, String lastName, int badgeNum, String policeDept,
+    public PoliceOfficer(int id, String firstName, String lastName, String dateOfBirth, int badgeNum, String policeDept,
     ArrayList<Case> cases){
         super(id, firstName, lastName);
         this.badgeNum = badgeNum;

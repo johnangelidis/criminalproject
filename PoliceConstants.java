@@ -6,6 +6,7 @@ public abstract class PoliceConstants {
     protected static final String OFFICERS_LAST_NAME = "lastName";
     protected static final String OFFICERS_DOB  = "dateOfBirth";
     protected static final String OFFICERS_DEPT = "policeDept";
-    protected static final String OFFICERS_CASES = "cases"
+    protected static final String OFFICERS_CASES = "cases";
+    protected static final String OFFICERS_BADGENUM = "badgeNum";
     
 }
