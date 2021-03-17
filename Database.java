@@ -21,8 +21,8 @@ public class Database {
         //officers = OfficerLoader.loadOfficers();
         //detectives = DetectiveLoader.loadDetectives();
         cases = CaseLoader.loadCases();
-        //gangs = GangLoader.loadGangs();
-        //users = UserLoader.loadUsers();
+        gangs = GangLoader.loadGangs();
+        users = UserLoader.loadUsers();
     }
 
     public static Database getInstance(){
@@ -69,7 +69,10 @@ public class Database {
     public ArrayList<User> getUsers(){
         return users;
     }
-
+    public void addUser(String username, String password){
+        users.add(new User(username, password));
+        UserWriter.saveUsers();
+    }
 
     /**
      * Allows user to search entries based on people associated with those entries
