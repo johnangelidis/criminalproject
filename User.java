@@ -5,8 +5,6 @@ public class User {
     private int id;
     private String username;
     private String password;
-    private String firstName;
-    private String lastName;
     private boolean isAdmin;
     private boolean isLoggedIn;
 
@@ -14,7 +12,7 @@ public class User {
         this.username = username;
         this.password = password;
     }
-    
+
     public int getId() {
         return this.id;
     }
@@ -36,22 +34,6 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getFirstName() {
-        return this.firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return this.lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public void setAdminStatus(boolean admin) {
