@@ -17,7 +17,16 @@ public class UI extends UIConstants{
       System.out.println(WELCOME_MESSAGE);
       //Loop until user quits
       while(true) {
-
+        //displayMainMenu();
+        //int userCommand = getUserCommand(mainMenuOptions.length());
+        if(userCommand == -1) {
+          System.out.println("Invalid command");
+          continue;
+        }
+        //if(userCommand == mainMenuOptions.length -1) break;
+        /*switch(userCommand){
+          case(0):
+        }*/
       }
     }
     public static void main(String[] args) {
