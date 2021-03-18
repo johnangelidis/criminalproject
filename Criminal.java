@@ -11,7 +11,6 @@ public class Criminal extends Person{
     private Tattoo tattoos;
     private boolean hasScars;
     private String status;
-    private Gang gang;
     private boolean isSerialCriminal;
 
     /**
@@ -28,7 +27,7 @@ public class Criminal extends Person{
      */
     public Criminal(int id, String firstName, String lastName, double weight, double height, String hairColor,
                     String eyeColor, Tattoo tattoos, boolean hasScars,
-                    String status, Gang gang, boolean isSerialCriminal) {
+                    String status, boolean isSerialCriminal) {
         super(id, firstName, lastName);
         setWeight(weight);
         setHeight(height);
@@ -37,7 +36,6 @@ public class Criminal extends Person{
         setTattoos(tattoos);
         setHasScars(hasScars);
         setStatus(status);
-        setGang(gang);
         setSerialCriminal(isSerialCriminal);
     }
 
@@ -97,14 +95,6 @@ public class Criminal extends Person{
      */
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    /**
-     * Mutator for gang instance variable
-     * @param gang Instance of the Gang class that represents the criminals associated gang(s)
-     */
-    public void setGang(Gang gang) {
-        this.gang = gang;
     }
 
     /**
