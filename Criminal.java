@@ -4,16 +4,14 @@ import java.util.ArrayList;
  * Class representation of a Criminal
  */
 public class Criminal extends Person{
-    private static double weight;
-    private static double height;
+    private double weight;
+    private double height;
     private String hairColor;
     private String eyeColor;
     private Tattoo tattoos;
     private boolean hasScars;
     private String status;
-    private Gang gang;
     private boolean isSerialCriminal;
-    private ArrayList<Case> crimes;
 
     /**
      * Parameterized constructor for Criminal class
@@ -26,12 +24,10 @@ public class Criminal extends Person{
      * @param status String representation of criminal's incarceration status
      * @param gang Instance of Gang class that represents the criminal's gang association
      * @param isSerialCriminal Boolean value that indicates if criminal is a serial criminal or not
-     * @param crimes Array list of crimes that the criminal has committed
      */
     public Criminal(int id, String firstName, String lastName, double weight, double height, String hairColor,
                     String eyeColor, Tattoo tattoos, boolean hasScars,
-                    String status, Gang gang, boolean isSerialCriminal,
-                    ArrayList<Case> crimes) {
+                    String status, boolean isSerialCriminal) {
         super(id, firstName, lastName);
         setWeight(weight);
         setHeight(height);
@@ -40,93 +36,73 @@ public class Criminal extends Person{
         setTattoos(tattoos);
         setHasScars(hasScars);
         setStatus(status);
-        setGang(gang);
-        setSerialCriminal(isSerialCriminal);
-        setCrimes(crimes);
+        setIsSerialCriminal(isSerialCriminal);
     }
 
-    /**
-     * Mutator for weight instance variable
-     * @param weight double representation of criminal's weight
-     */
-    public void setWeight(double weight)
-    {
+    public double getWeight() {
+        return this.weight;
+    }
+
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 
-    /**
-     * Mutator for height instance variable 
-     * @param height double representation of criminal's height
-     */
-    public void setHeight(double height)
-    {
-        this.height = height; 
+    public double getHeight() {
+        return this.height;
     }
 
-    /**
-     * Mutator for hairColor instance variable 
-     * @param hairColor String representation of criminal's hair color
-     */
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    public String getHairColor() {
+        return this.hairColor;
+    }
+
     public void setHairColor(String hairColor) {
         this.hairColor = hairColor;
     }
 
-    /**
-     * Mutator for eyeColor instance variable 
-     * @param eyeColor String representation of criminal's eye color
-     */
+    public String getEyeColor() {
+        return this.eyeColor;
+    }
+
     public void setEyeColor(String eyeColor) {
         this.eyeColor = eyeColor;
     }
 
-    /**
-     * Mutator for tattoos instance variable
-     * @param tattoos Instance of the Tattoos class that represents the criminal's tattoos
-     */
+    public Tattoo getTattoos() {
+        return this.tattoos;
+    }
+
     public void setTattoos(Tattoo tattoos) {
         this.tattoos = tattoos;
     }
 
-    /**
-     * Mutator for hasScars instance variable
-     * @param hasScars boolean value that indicates if criminal has scars
-     */
+    public boolean isHasScars() {
+        return this.hasScars;
+    }
+
     public void setHasScars(boolean hasScars) {
         this.hasScars = hasScars;
     }
 
-    /**
-     * Mutator for status instance variable
-     * @param status String representation of the criminal's incarceration status
-     */
+    public String getStatus() {
+        return this.status;
+    }
+
     public void setStatus(String status) {
         this.status = status;
     }
 
-    /**
-     * Mutator for gang instance variable
-     * @param gang Instance of the Gang class that represents the criminals associated gang(s)
-     */
-    public void setGang(Gang gang) {
-        this.gang = gang;
+    public boolean isIsSerialCriminal() {
+        return this.isSerialCriminal;
     }
 
-    /**
-     * Mutator for the isSerialCriminal instance variable 
-     * @param isSerialCriminal boolean value that represents if the criminal is a serial criminal
-     */
-    public void setSerialCriminal(boolean isSerialCriminal) {
+    public void setIsSerialCriminal(boolean isSerialCriminal) {
         this.isSerialCriminal = isSerialCriminal;
     }
 
-    /**
-     * Mutator for the crimes instance variable
-     * @param crimes Arraylist of all crimes the criminal has committed
-     */
-    public void setCrimes(ArrayList<Case> crimes) {
-        this.crimes = crimes;
-    }
-    
     /**
      * @return String representation of criminal's first and last name
      */

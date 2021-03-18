@@ -16,7 +16,7 @@ public class Database {
     private static ArrayList<User> users;
 
     private Database(){
-        //criminals = CriminalLoader.loadCriminals();
+        criminals = CriminalLoader.loadCriminals();
         civilians = CivilianLoader.loadCivilians();
         //officers = OfficerLoader.loadOfficers();
         //detectives = DetectiveLoader.loadDetectives();
@@ -35,6 +35,17 @@ public class Database {
     public ArrayList<Criminal> getCriminals(){
         return criminals;
     }
+
+    public void addCriminal(int id, String firstName, String lastName, double weight, double height, String hairColor, String eyeColor, Tattoo tattoos, boolean hasScars, String status, boolean isSerialCriminal){
+        criminals.add(new Criminal(id, firstName, lastName, weight, height, hairColor, eyeColor, tattoos, hasScars, status, isSerialCriminal));
+        CriminalWriter.saveCriminals();
+    }
+
+    public void deleteCriminal(Criminal c){
+        criminals.remove(c);
+        CriminalWriter.saveCriminals();
+    }
+
     public ArrayList<Civilian> getCivilians(){
         return civilians;
     }
@@ -44,6 +55,11 @@ public class Database {
         CivilianWriter.saveCivilians();
     }
     
+    public void deleteCivilian(Civilian c){
+        civilians.remove(c);
+        CivilianWriter.saveCivilians();
+    }
+
     public ArrayList<PoliceOfficer> getOfficers(){
         return officers;
     }
@@ -58,6 +74,12 @@ public class Database {
         cases.add(new Case(id, crime, victim, offender, outcome, witnesses, personsOfInterest, dayOfCrime, dayOfSentence, location, officersInvolved, detective);
         CaseWriter.saveCases();
     }
+
+    public void deleteCase(Case c){
+        cases.remove(c);
+        CaseWriter.saveCases();
+    }
+
     public ArrayList<Gang> getGangs(){
         return gangs;
     }
@@ -66,11 +88,23 @@ public class Database {
         gangs.add(new Gang(id, name, members, crimes);
         GangWriter.saveGangs();
     }
+
+    public void deleteGang(Gang g){
+        gangs.remove(g);
+        GangWriter.saveGangs();
+    }
+
     public ArrayList<User> getUsers(){
         return users;
     }
+
     public void addUser(String username, String password){
         users.add(new User(username, password));
+        UserWriter.saveUsers();
+    }
+
+    public void deleteUser(User u){
+        users.remove(u);
         UserWriter.saveUsers();
     }
 

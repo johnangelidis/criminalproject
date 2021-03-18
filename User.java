@@ -8,6 +8,11 @@ public class User {
     private boolean isAdmin;
     private boolean isLoggedIn;
 
+    public User() {
+        this.username = "none";
+        this.password = "none";
+    }
+    
     public User(String username, String password){
         this.username = username;
         this.password = password;
