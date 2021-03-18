@@ -16,7 +16,7 @@ public class Database {
     private static ArrayList<User> users;
 
     private Database(){
-        //criminals = CriminalLoader.loadCriminals();
+        criminals = CriminalLoader.loadCriminals();
         civilians = CivilianLoader.loadCivilians();
         //officers = OfficerLoader.loadOfficers();
         //detectives = DetectiveLoader.loadDetectives();
@@ -34,6 +34,11 @@ public class Database {
 
     public ArrayList<Criminal> getCriminals(){
         return criminals;
+    }
+
+    public void addCriminal(int id, String firstName, String lastName, double weight, double height, String hairColor, String eyeColor, Tattoo tattoos, boolean hasScars, String status, boolean isSerialCriminal){
+        criminals.add(new Criminal(id, firstName, lastName, weight, height, hairColor, eyeColor, tattoos, hasScars, status, isSerialCriminal));
+        CriminalWriter.saveCriminals();
     }
     public ArrayList<Civilian> getCivilians(){
         return civilians;
