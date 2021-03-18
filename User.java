@@ -36,8 +36,12 @@ public class User {
         this.password = password;
     }
 
-    public void setAdminStatus(boolean admin) {
-        this.isAdmin = admin;
+    public boolean isIsAdmin() {
+        return this.isAdmin;
+    }
+
+    public void setIsAdmin(boolean isAdmin) {
+        this.isAdmin = isAdmin;
     }
 
     /**
