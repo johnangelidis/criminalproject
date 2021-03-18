@@ -13,7 +13,6 @@ public class Criminal extends Person{
     private String status;
     private Gang gang;
     private boolean isSerialCriminal;
-    private ArrayList<Case> crimes;
 
     /**
      * Parameterized constructor for Criminal class
@@ -26,12 +25,10 @@ public class Criminal extends Person{
      * @param status String representation of criminal's incarceration status
      * @param gang Instance of Gang class that represents the criminal's gang association
      * @param isSerialCriminal Boolean value that indicates if criminal is a serial criminal or not
-     * @param crimes Array list of crimes that the criminal has committed
      */
     public Criminal(int id, String firstName, String lastName, double weight, double height, String hairColor,
                     String eyeColor, Tattoo tattoos, boolean hasScars,
-                    String status, Gang gang, boolean isSerialCriminal,
-                    ArrayList<Case> crimes) {
+                    String status, Gang gang, boolean isSerialCriminal) {
         super(id, firstName, lastName);
         setWeight(weight);
         setHeight(height);
@@ -42,7 +39,6 @@ public class Criminal extends Person{
         setStatus(status);
         setGang(gang);
         setSerialCriminal(isSerialCriminal);
-        setCrimes(crimes);
     }
 
     /**
@@ -117,14 +113,6 @@ public class Criminal extends Person{
      */
     public void setSerialCriminal(boolean isSerialCriminal) {
         this.isSerialCriminal = isSerialCriminal;
-    }
-
-    /**
-     * Mutator for the crimes instance variable
-     * @param crimes Arraylist of all crimes the criminal has committed
-     */
-    public void setCrimes(ArrayList<Case> crimes) {
-        this.crimes = crimes;
     }
     
     /**
