@@ -38,12 +38,40 @@ public class UI extends UIConstants{
         //if(userCommand == mainMenuOptions.length -1) break;
         switch(userCommand){
           case(0):
-
+                  //create account
+                  break;
+          case(1):
+                  login();
+                  break;
+                  //add case
+                  //search for criminal/suspect
+                  //search cases
         }
       }
     }
-    private void getUserCommand(int numCommands){
+    private void createUser(){
+      
+    }
+    private void login(){
+      String username = getField("Username");
 
+      if(database.searchUser(username)){
+        User currentUser = database.searchUser(username);
+        currentUser.login();
+        System.out.println("Welcome " +currentUser.getUsername()+".");
+      } else {
+        System.out.println("Sorry, invalid username.");
+      }
+    }
+    private void getUserCommand(int numCommands){
+      System.out.print("Please select an action: ");
+
+      String input = scanner.nextLine();
+      int command = Integer.parseInt(input) - 1;
+
+      if(command >= 0 && command <= numCommands -1) return command;
+
+      return -1;
     }
     private void displayMainMenu(){
         System.out.println("\n********** Main Menu **********");
