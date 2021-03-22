@@ -58,7 +58,6 @@ public class UI extends UIConstants{
                     System.out.println("You either are not logged in or are not an admin");
                     break;
                   }
-                  //add case
           case(3):
 
                   break;
@@ -70,13 +69,32 @@ public class UI extends UIConstants{
         }
       }
     }
-    private void addCase(){
+    private void searchCriminals(){
 
+    }
+    private void searchCases(){
+
+    }
+    private void addCase(){
+      int id = Integer.parseInt(getInput("id"));
+      String crime = getInput("Crime");
+      /*private int id;
+      private String crime;
+      private Civilian victim;
+      private Criminal offender;
+      private String outcome;
+      private ArrayList<Civilian> witnesses;
+      private ArrayList<Civilian> personsOfInterest;
+      private Calendar dayOfCrime;
+      private Calendar dayOfSentence;
+      private Address location;
+      private ArrayList<PoliceOfficer> officersInvolved;
+      private Detective detective;*/
     }
     private void createUser(){
       String username = getInput("Username");
       String password = getInput("Password");
-      int id = Integer.paseInt(getInput("id"));
+      int id = Integer.parseInt(getInput("id"));
       boolean isAdmin = false;
       boolean isLoggenIn = false;
       if(database.addUser(username,password)){
