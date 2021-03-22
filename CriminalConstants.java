@@ -10,6 +10,7 @@ public class CriminalConstants {
 	protected static final String CRIMINAL_EYE_COLOR = "eyeColor";
 	protected static final String CRIMINAL_TATTOOS = "tattoos";
 	protected static final String CRIMINAL_HAS_SCARS = "hasScars";
-	protected static final String CRIMINAL_STATUS = "status";   
+	protected static final String CRIMINAL_STATUS = "status";
+    protected static final String CRIMINAL_IS_SERIAL_CRIMINAL = "isSerialCriminal";    
 
 }
