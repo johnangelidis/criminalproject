@@ -10,7 +10,4 @@ public abstract class CivilianConstants {
 	protected static final String CIVILIAN_IS_VICTIM = "isVictim";
 	protected static final String CIVILIAN_IS_WITNESS = "isWitness";
 	protected static final String CIVILIAN_IS_PERSON_OF_INTEREST = "isPersonOfInterest";
-	protected static final String CIVILIAN_CASES = "cases";
-
-
 }

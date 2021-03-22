@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 /**
  * Class representation of a Criminal
  */
@@ -25,10 +23,10 @@ public class Criminal extends Person{
      * @param gang Instance of Gang class that represents the criminal's gang association
      * @param isSerialCriminal Boolean value that indicates if criminal is a serial criminal or not
      */
-    public Criminal(int id, String firstName, String lastName, double weight, double height, String hairColor,
+    public Criminal(String firstName, String lastName, double weight, double height, String hairColor,
                     String eyeColor, Tattoo tattoos, boolean hasScars,
                     String status, boolean isSerialCriminal) {
-        super(id, firstName, lastName);
+        super(firstName, lastName);
         setWeight(weight);
         setHeight(height);
         setHairColor(hairColor);

@@ -16,9 +16,8 @@ public class PoliceOfficer extends Person {
  * @param police department
  * @param cases
  */
-    public PoliceOfficer(int id, String firstName, String lastName, String dateOfBirth, int badgeNum, String policeDept,
-    ArrayList<Case> cases){
-        super(id, firstName, lastName);
+    public PoliceOfficer(String firstName, String lastName, String dateOfBirth, int badgeNum, String policeDept){
+        super(firstName, lastName);
         this.badgeNum = badgeNum;
         this.policeDept = policeDept;
         this.cases = new ArrayList<Case>();
@@ -30,10 +29,7 @@ public class PoliceOfficer extends Person {
     public String getpoliceDept() {
         return this.policeDept;
     }
-    /**
-     * Method that returns an array of case ID's for each police officer. 
-     * @return
-     */
+
     public ArrayList<Case> getCases() {
         return this.cases;
     }
@@ -47,11 +43,14 @@ public class PoliceOfficer extends Person {
     public void setCases(ArrayList<Case> cases){
         this.cases = cases;
     }
+    public void addCase(Case c){
+        cases.add(c);
+    }
 
     @Override
     public String toString() {
-        return "Officer: "+firstName+" "+lastName
-        "\n Department: "+policeDept
+        return "Officer: "+firstName+" "+lastName+
+        "\n Department: "+policeDept+
         "\n Badge Number: "+badgeNum;
     }
 }

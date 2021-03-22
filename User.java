@@ -1,8 +1,9 @@
+import java.util.UUID;
 /**
  * Class representation of a user
  */
 public class User {
-    private int id;
+    private UUID id;
     private String username;
     private String password;
     private boolean isAdmin;
@@ -16,15 +17,13 @@ public class User {
     public User(String username, String password){
         this.username = username;
         this.password = password;
+        this.isAdmin = false;
     }
 
-    public int getId() {
+    public UUID getId() {
         return this.id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
     public String getUsername() {
         return this.username;
     }
@@ -41,8 +40,12 @@ public class User {
         this.password = password;
     }
 
-    public void setAdminStatus(boolean admin) {
-        this.isAdmin = admin;
+    public boolean isIsAdmin() {
+        return this.isAdmin;
+    }
+
+    public void setIsAdmin(boolean isAdmin) {
+        this.isAdmin = isAdmin;
     }
 
     /**

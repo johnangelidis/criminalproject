@@ -3,15 +3,12 @@
  * @author challison404
  *
  */
-import java.util.ArrayList;
-
 public class Civilian extends Person{
 	private Address address;
 	private int phone;
 	private boolean isVictim;
 	private boolean isWitness;
 	private boolean isPersonOfInterest;
-	private ArrayList<Case> cases;
 	/**
 	 * A constructor which will create a Civilian
 	 * @param anAddress Civilians Address
@@ -20,15 +17,13 @@ public class Civilian extends Person{
 	 * @param bisWitness Is the Civilian a Witness of a crime
 	 * @param bisPersonOfInterest Is the Civilian a POI?
 	 */
-	public Civilian(int id, String firstName, String lastName, Address anAddress, int aPhone, boolean bisVictim, boolean bisWitness, boolean bisPersonOfInterest, ArrayList<Case> aCases) {
-		super(id, firstName, lastName);
-		cases = new ArrayList<Case>();
+	public Civilian(String firstName, String lastName, Address anAddress, int aPhone, boolean bisVictim, boolean bisWitness, boolean bisPersonOfInterest) {
+		super(firstName, lastName);
 		this.address = anAddress;
 		this.phone = aPhone;
 		this.isVictim = bisVictim;
 		this.isWitness = bisWitness;
 		this.isPersonOfInterest = bisPersonOfInterest;
-		this.cases = aCases;
 	}
 	/**
 	 * Method to return Address of Civilian
@@ -66,13 +61,6 @@ public class Civilian extends Person{
 		return this.isPersonOfInterest;
 	}
 	/**
-	 * Method to return cases involving the Civilian
-	 * @return The present cases the Civilian is involved in
-	 */
-	public ArrayList<Case> getCases() {
-		return this.cases;
-	}
-	/**
 	 * Method to set Address of Civilian
 	 * @param anAddress What the address will change to
 	 */
@@ -106,13 +94,6 @@ public class Civilian extends Person{
 	 */
 	public void setisPersonOfInterest(boolean isPersonOfInterest) {
 		this.isPersonOfInterest = isPersonOfInterest;
-	}
-	/**
-	 * Method to set current cases to new Arraylist
-	 * @param cases the arraylist of new cases to be applied
-	 */
-	public void setCases(ArrayList<Case> cases) {
-		this.cases = cases;
 	}
 	@Override
 	public String toString() {

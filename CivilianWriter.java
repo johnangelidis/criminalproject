@@ -39,8 +39,7 @@ public class CivilianWriter extends CivilianConstants {
         civilianDetails.put(CIVILIAN_IS_VICTIM, c.getisVictim());
         civilianDetails.put(CIVILIAN_IS_WITNESS, c.getisWitNess());
         civilianDetails.put(CIVILIAN_IS_PERSON_OF_INTEREST, c.getisPersonOfInterest());
-        civilianDetails.put(CIVILIAN_CASES, c.getCases());
-        
+		
         return civilianDetails;
 	}
 }

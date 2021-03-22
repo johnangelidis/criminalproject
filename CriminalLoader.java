@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import java.util.UUID;
 public class CriminalLoader extends CriminalConstants{
 	
 	public static ArrayList<Criminal> loadCriminals() {
@@ -15,7 +16,7 @@ public class CriminalLoader extends CriminalConstants{
 			
 			for(int i=0; i < criminalsJSON.size(); i++) {
 				JSONObject criminalJSON = (JSONObject)criminalsJSON.get(i);
-                int id = (int)criminalJSON.get(CRIMINAL_ID);
+                UUID id = (UUID)criminalJSON.get(CRIMINAL_ID);
 				String firstName = (String)criminalJSON.get(CRIMINAL_FIRST_NAME);
                 String lastName = (String)criminalJSON.get(CRIMINAL_LAST_NAME);
                 double weight = (double)criminalJSON.get(CRIMINAL_WEIGHT);
@@ -27,7 +28,7 @@ public class CriminalLoader extends CriminalConstants{
                 String status = (String)criminalJSON.get(CRIMINAL_STATUS);
                 boolean isSerialCriminal = (boolean)criminalJSON.get(CRIMINAL_IS_SERIAL_CRIMINAL);
                 
-				criminals.add(new Criminal(id, firstName, lastName, weight, height, hairColor, eyeColor, tattoos, hasScars, status, isSerialCriminal));
+				criminals.add(new Criminal(firstName, lastName, weight, height, hairColor, eyeColor, tattoos, hasScars, status, isSerialCriminal));
 			}
 			
 			return criminals;

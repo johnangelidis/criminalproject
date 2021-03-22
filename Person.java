@@ -3,23 +3,25 @@ import java.util.*;
  * Class that represents a person
  */
 public abstract class Person{
-    protected int id;
+    protected UUID id;
     protected String firstName;
     protected String lastName;
     protected Calendar dateOfBirth;
 
     /**
      * Constructor that creates a person
-     * @param id
      * @param firstName
      * @param lastName
      */
-    public Person(int id, String firstName, String lastName){
-        this.id=id;
+    public Person(String firstName, String lastName){
+        this.id=UUID.randomUUID();
         this.firstName=firstName;
         this.lastName=lastName;
     }
 
+    public UUID getId(){
+        return this.id;
+    }
     /**
      * Method that returns the first name
      * @return first name

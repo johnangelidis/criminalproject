@@ -4,31 +4,28 @@
  *
  */
 import java.util.ArrayList;
+import java.util.UUID;
+
 public class Gang {
-	private int id;
+	private UUID id;
 	private String name;
 	private ArrayList<Criminal> members;
-	private ArrayList<Case> crimes;
 	/**
 	 * A constructor to create new gangs
 	 * @param name The name of the gang
 	 * @param members Who is affiliated with the gang
 	 * @param crimes What crimes the gang has commited
 	 */
-	public Gang(int id, String name, ArrayList<Criminal> members, ArrayList<Case> crimes) {
-		this.id = id;
+	public Gang(String name) {
+		this.id = UUID.randomUUID();
 		this.name = name;
-		this.members = members;
-		this.crimes = crimes;
+		this.members = new ArrayList<Criminal>();
 	}
 	
-	public int getId() {
+	public UUID getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
 	/**
 	 * Get name of the gang
 	 * @return The name of the gang
@@ -43,14 +40,7 @@ public class Gang {
 	public ArrayList<Criminal> getMembers() {
 		return this.members;
 	}
-	/**
-	 * Get crimes gang is responsible for
-	 * @return the arraylist of cases involving the gang
-	 */
-	public ArrayList<Case> getCrimes() {
-		return this.crimes;
-	}
-	/**
+	/*
 	 * Set name of the gang
 	 * @param aName the name the gang will be set to
 	 */
@@ -64,11 +54,9 @@ public class Gang {
 	public void setMembers(ArrayList<Criminal> aMembers) {
 		this.members = aMembers;
 	}
-	/**
-	 * Set cases the gang is responsible for
-	 * @param aCrimes ArrayList of Cases to be updated containing current cases the gang is responsible for
-	 */
-	public void setCrimes(ArrayList<Case> aCrimes) {
-		this.crimes = aCrimes;
+
+	public void addMember(Criminal c){
+		members.add(c);
 	}
+
 }

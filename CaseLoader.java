@@ -4,6 +4,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import java.util.Calendar;
+import java.util.UUID;
 public class CaseLoader extends CaseConstants{
 	
 	public static ArrayList<Case> loadCases() {
@@ -16,20 +17,20 @@ public class CaseLoader extends CaseConstants{
 			
 			for(int i=0; i < casesJSON.size(); i++) {
 				JSONObject caseJSON = (JSONObject)casesJSON.get(i);
-                int id = (int)caseJSON.get(CASE_ID);
+                UUID id = (UUID)caseJSON.get(CASE_ID);
 				String crime = (String)caseJSON.get(CASE_CRIME);
 				Civilian victim = (Civilian)caseJSON.get(CASE_VICTIM);
                 Criminal offender = (Criminal)caseJSON.get(CASE_OFFENDER);
                 String outcome = (String)caseJSON.get(CASE_OUTCOME);
-                ArrayList<Civilian> witnesses = (ArrayList<Civilian>)caseJSON.get(CASE_WITNESSES);
-                ArrayList<Civilian> personsOfInterest = (ArrayList<Civilian>)caseJSON.get(CASE_PERSONS_OF_INTEREST);
+                JSONArray witnesses = (JSONArray)caseJSON.get(CASE_WITNESSES);
+                JSONArray personsOfInterest = (JSONArray)caseJSON.get(CASE_PERSONS_OF_INTEREST);
                 Calendar dayOfCrime = (Calendar)caseJSON.get(CASE_DAY_OF_CRIME);
                 Calendar dayOfSentence = (Calendar)caseJSON.get(CASE_DAY_OF_SENTENCE);
                 Address location = (Address)caseJSON.get(CASE_LOCATION);
-                ArrayList<PoliceOfficer> officers = (ArrayList<PoliceOfficer>)caseJSON.get(CASE_OFFICERS);
+                JSONArray officers = (JSONArray)caseJSON.get(CASE_OFFICERS);
                 Detective detective = (Detective)caseJSON.get(CASE_DETECTIVE);
                 
-				cases.add(new Case(id, crime, victim, offender, outcome, witnesses, personsOfInterest, dayOfCrime, dayOfSentence, location, officers, detective));
+				cases.add(new Case(crime, victim, offender, outcome, returnWitnesses(witnesses), returnPersonsOfInterest(personsOfInterest), dayOfCrime, dayOfSentence, location, returnOfficers(officers), detective));
 			}
 			
 			return cases;
@@ -39,5 +40,31 @@ public class CaseLoader extends CaseConstants{
 		}
 		
 		return null;
+	}
+
+	public static ArrayList<Civilian> returnWitnesses(JSONArray witnesses){
+		ArrayList<Civilian> caseWitnesses = new ArrayList<Civilian>();
+		for(int i=0; i<witnesses.size(); i++){
+			UUID id = UUID.fromString((String)witnesses.get(i));
+			Civilian witness = Database.getInstance().getCivilian(id);
+			caseWitnesses.add(witness);
+		}
+	}
+
+	public static ArrayList<Civilian> returnPersonsOfInterest(JSONArray personsOfInterest){
+		ArrayList<Civilian> casePOI = new ArrayList<Civilian>();
+		for(int i=0; i<personsOfInterest.size(); i++){
+			UUID id = UUID.fromString((String)personsOfInterest.get(i));
+			Civilian personOfInterest = Database.getInstance().getCivilian(id);
+			casePOI.add(personOfInterest);
+		}
+	}
+
+	public static ArrayList<PoliceOfficer> returnOfficers(JSONArray officers){
+		ArrayList<PoliceOfficer> caseOfficers = new ArrayList<PoliceOfficer>();
+		for(int i=0; i<officers.size(); i++){
+			UUID id = UUID.fromString((String)officers.get(i));
+			PoliceOfficer officer = Database.getInstance().getOfficer(id);
+			caseOfficers.add(officer);
 	}
 }

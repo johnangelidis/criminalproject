@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.util.Calendar;
+import java.util.UUID;
 /**
  * Class representation of Database that allows user to search and export entries
  */
@@ -18,10 +19,9 @@ public class Database {
     private Database(){
         criminals = CriminalLoader.loadCriminals();
         civilians = CivilianLoader.loadCivilians();
-        //officers = OfficerLoader.loadOfficers();
-        //detectives = DetectiveLoader.loadDetectives();
+        officers = PoliceLoader.loadOfficers();
+        detectives = DetectiveLoader.loadDetectives();
         cases = CaseLoader.loadCases();
-        gangs = GangLoader.loadGangs();
         users = UserLoader.loadUsers();
     }
 
@@ -36,8 +36,8 @@ public class Database {
         return criminals;
     }
 
-    public void addCriminal(int id, String firstName, String lastName, double weight, double height, String hairColor, String eyeColor, Tattoo tattoos, boolean hasScars, String status, boolean isSerialCriminal){
-        criminals.add(new Criminal(id, firstName, lastName, weight, height, hairColor, eyeColor, tattoos, hasScars, status, isSerialCriminal));
+    public void addCriminal(String firstName, String lastName, double weight, double height, String hairColor, String eyeColor, Tattoo tattoos, boolean hasScars, String status, boolean isSerialCriminal){
+        criminals.add(new Criminal(firstName, lastName, weight, height, hairColor, eyeColor, tattoos, hasScars, status, isSerialCriminal));
         CriminalWriter.saveCriminals();
     }
 
@@ -50,8 +50,17 @@ public class Database {
         return civilians;
     }
 
-    public void addCivilian(int id, String firstName, String lastName, Calendar dateOfBirth, Address address, int number, boolean isVictim, boolean isWitness, boolean isPersonOfInterest, ArrayList<Case> cases){
-        civilians.add(new Civilian(id, firstName, lastName, address, number, isVictim, isWitness, isPersonOfInterest, cases));
+    public Civilian getCivilian(UUID id){
+        for(Civilian c:civilians){
+            if(c.getId() == id){
+                return c;
+            }
+        }
+        return null;
+    }
+
+    public void addCivilian(String firstName, String lastName, Calendar dateOfBirth, Address address, int number, boolean isVictim, boolean isWitness, boolean isPersonOfInterest){
+        civilians.add(new Civilian(firstName, lastName, address, number, isVictim, isWitness, isPersonOfInterest));
         CivilianWriter.saveCivilians();
     }
     
@@ -63,15 +72,47 @@ public class Database {
     public ArrayList<PoliceOfficer> getOfficers(){
         return officers;
     }
+
+    public PoliceOfficer getOfficer(UUID id){
+        for(PoliceOfficer p:officers){
+            if(p.getId() == id){
+                return p;
+            }
+        }
+        return null;
+    }
+
+    public void addOfficer(String firstName, String lastName, String dateOfBirth, int badgeNum, String policeDept){
+        officers.add(new PoliceOfficer(firstName, lastName, dateOfBirth, badgeNum, policeDept));
+        PoliceWriter.saveOfficers();
+    }
+
+    public void deleteOfficer(PoliceOfficer p){
+        officers.remove(p);
+        PoliceWriter.saveOfficers();
+
+    }
+
     public ArrayList<Detective> getDetectives(){
         return detectives;
     }
+
+    public void addDetective(String firstName, String lastName){
+        detectives.add(new Detective(firstName, lastName));
+        DetectiveWriter.saveDetectives();
+    }
+
+    public void deleteDetective(Detective d){
+        detectives.remove(d);
+        DetectiveWriter.saveDetectives();
+    }
+
     public ArrayList<Case> getCases(){
         return cases;
     }
 
-    public void addCase(int id, String crime, Civilian victim, Criminal offender, String outcome, ArrayList<Civilian> witnesses, ArrayList<Civilian> personsOfInterest, Calendar dayOfCrime, Calendar dayOfSentence, Address location, ArrayList<PoliceOfficer> officersInvolved, Detective detective){
-        cases.add(new Case(id, crime, victim, offender, outcome, witnesses, personsOfInterest, dayOfCrime, dayOfSentence, location, officersInvolved, detective);
+    public void addCase(String crime, Civilian victim, Criminal offender, String outcome, ArrayList<Civilian> witnesses, ArrayList<Civilian> personsOfInterest, Calendar dayOfCrime, Calendar dayOfSentence, Address location, ArrayList<PoliceOfficer> officersInvolved, Detective detective){
+        cases.add(new Case(crime, victim, offender, outcome, witnesses, personsOfInterest, dayOfCrime, dayOfSentence, location, officersInvolved, detective));
         CaseWriter.saveCases();
     }
 
@@ -84,8 +125,12 @@ public class Database {
         return gangs;
     }
 
-    public void addGang(int id, String name, ArrayList<Criminal> members, ArrayList<Case> crimes){
-        gangs.add(new Gang(id, name, members, crimes);
+    public void loadGangs(){
+        gangs = GangLoader.loadGangs();
+    }
+
+    public void addGang(String name){
+        gangs.add(new Gang(name));
         GangWriter.saveGangs();
     }
 
@@ -130,9 +175,6 @@ public class Database {
             if (p.getFirstName().equals(firstName) && p.getLastName().equals(lastName)) {
                 return p;
             }
-            if(p.getbadgeNum==p.badgeNum){
-                return p;
-            }
         }
         for (Detective d : detectives) {
             if (d.getFirstName().equals(firstName) && d.getLastName().equals(lastName)) {
@@ -159,13 +201,14 @@ public class Database {
 
     /**
      * Allows users to search entries based on associated cases via case ID
-     * @param id ID number associated with case
+     * @param crime A string description of the crime
+     * @param offender The offender who committed the crime
      * @return instance of the Case class
      */
-    public Case searchCase(int id)
+    public Case searchCase(String crime, Criminal offender)
     {
         for(Case c:cases){
-            if(c.getId()==id){
+            if(c.getCrime().equals(crime) && c.getOffender().equals(offender)){
                 return c;
             }
         }
