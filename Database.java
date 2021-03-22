@@ -18,10 +18,9 @@ public class Database {
     private Database(){
         criminals = CriminalLoader.loadCriminals();
         civilians = CivilianLoader.loadCivilians();
-        //officers = OfficerLoader.loadOfficers();
-        //detectives = DetectiveLoader.loadDetectives();
+        officers = PoliceLoader.loadOfficers();
+        detectives = DetectiveLoader.loadDetectives();
         cases = CaseLoader.loadCases();
-        
         users = UserLoader.loadUsers();
     }
 
@@ -88,7 +87,7 @@ public class Database {
         detectives.remove(d);
         DetectiveWriter.saveDetectives();
     }
-    
+
     public ArrayList<Case> getCases(){
         return cases;
     }
