@@ -35,22 +35,59 @@ public class UI extends UIConstants{
           System.out.println("Invalid command");
           continue;
         }
-        //if(userCommand == mainMenuOptions.length -1) break;
+        if(userCommand == mainMenuOptions.length -1){
+          if(currentUser.getLoggedInStatus == true){
+            System.out.println("Logging out.");
+            currentUser.logout();
+            break;
+          } else
+           break;
+        }
         switch(userCommand){
           case(0):
-                  //create account
+                  createUser();
                   break;
           case(1):
                   login();
                   break;
+          case(2):
+                  if(currentUser.getLoggedInStatus == true && currentUser.getAdminStatus == true){
+                    addCase();
+                    break;
+                  } else {
+                    System.out.println("You either are not logged in or are not an admin");
+                    break;
+                  }
                   //add case
+          case(3):
+
+                  break;
                   //search for criminal/suspect
+          case(4):
+
+                  break;
                   //search cases
         }
       }
     }
+    private void addCase(){
+
+    }
     private void createUser(){
-      
+      String username = getInput("Username");
+      String password = getInput("Password");
+      int id = Integer.paseInt(getInput("id"));
+      boolean isAdmin = false;
+      boolean isLoggenIn = false;
+      if(database.addUser(username,password)){
+        System.out.println("Account created successfully.");
+      } else {
+        System.out.println("Sorry, try a different username.");
+      }
+    }
+    private String getInput(String input) {
+		System.out.print(input + ": ");
+		return scanner.nextLine();
     }
     private void login(){
       String username = getField("Username");
