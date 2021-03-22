@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-
+import java.util.UUID;
 public class DetectiveLoader extends DetectiveConstants{
     
     public static ArrayList<Detective> loadDetectives() {
@@ -16,12 +16,11 @@ public class DetectiveLoader extends DetectiveConstants{
 
             for(int i=0; i < detectivesJSON.size();i++) {
                 JSONObject detectiveJSON = (JSONObject)detectivesJSON.get(i);
-                int id = (Integer)detectiveJSON.get(DETECTIVE_ID);
+                UUID id = (UUID)detectiveJSON.get(DETECTIVE_ID);
                 String firstName = (String)detectiveJSON.get(DETECTIVE_FIRST_NAME);
                 String lastName = (String)detectiveJSON.get(DETECTIVE_LAST_NAME);
-                ArrayList<Case> cases = (ArrayList<Case>)detectiveJSON.get(DETECTIVE_CASES);
 
-                detectives.add(new Detective(id, firstName, lastName, cases));
+                detectives.add(new Detective(firstName, lastName));
             }
         }catch (Exception e) {
             e.printStackTrace();
