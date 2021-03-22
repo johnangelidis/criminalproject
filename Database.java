@@ -63,9 +63,32 @@ public class Database {
     public ArrayList<PoliceOfficer> getOfficers(){
         return officers;
     }
+
+    public void addOfficer(String firstName, String lastName, String dateOfBirth, int badgeNum, String policeDept){
+        officers.add(new PoliceOfficer(firstName, lastName, dateOfBirth, badgeNum, policeDept));
+        PoliceWriter.saveOfficers();
+    }
+
+    public void deleteOfficer(PoliceOfficer p){
+        officers.remove(p);
+        PoliceWriter.saveOfficers();
+
+    }
+
     public ArrayList<Detective> getDetectives(){
         return detectives;
     }
+
+    public void addDetective(String firstName, String lastName){
+        detectives.add(new Detective(firstName, lastName));
+        DetectiveWriter.saveDetectives();
+    }
+
+    public void deleteDetective(Detective d){
+        detectives.remove(d);
+        DetectiveWriter.saveDetectives();
+    }
+    
     public ArrayList<Case> getCases(){
         return cases;
     }
@@ -88,8 +111,8 @@ public class Database {
         gangs = GangLoader.loadGangs();
     }
 
-    public void addGang(int id, String name, ArrayList<Criminal> members, ArrayList<Case> crimes){
-        gangs.add(new Gang(id, name, members));
+    public void addGang(String name){
+        gangs.add(new Gang(name));
         GangWriter.saveGangs();
     }
 
