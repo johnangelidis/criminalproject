@@ -33,8 +33,6 @@ public class GangWriter extends GangConstants {
         gangDetails.put((GANG_ID), g.getId());
         gangDetails.put((GANG_NAME), g.getName());
         gangDetails.put((GANG_MEMBERS)), g.getMembers());
-        gangDetails.put((GANG_CRIMES)), g.getCrimes());
-        
         
         return gangDetails;
 	}
