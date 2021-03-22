@@ -3,8 +3,6 @@
  * @author challison404
  *
  */
-import java.util.ArrayList;
-
 public class Civilian extends Person{
 	private Address address;
 	private int phone;
