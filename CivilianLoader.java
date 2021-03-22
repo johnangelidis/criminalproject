@@ -4,6 +4,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 //import java.util.Calendar;
+import java.util.UUID;
 public class CivilianLoader extends CivilianConstants{
 	
 	public static ArrayList<Civilian> loadCivilians() {
@@ -16,7 +17,7 @@ public class CivilianLoader extends CivilianConstants{
 			
 			for(int i=0; i < civiliansJSON.size(); i++) {
 				JSONObject civilianJSON = (JSONObject)civiliansJSON.get(i);
-                int id = (int)civilianJSON.get(CIVILIAN_ID);
+                UUID id = (UUID)civilianJSON.get(CIVILIAN_ID);
 				String firstName = (String)civilianJSON.get(CIVILIAN_FIRST_NAME);
 				String lastName = (String)civilianJSON.get(CIVILIAN_LAST_NAME);
                 //Calendar dateOfBirth = (Calendar)civilianJSON.get(CIVILIAN_DOB);
@@ -25,9 +26,8 @@ public class CivilianLoader extends CivilianConstants{
                 boolean isVictim = (boolean)civilianJSON.get(CIVILIAN_IS_VICTIM);
 				boolean isWitness = (boolean)civilianJSON.get(CIVILIAN_IS_WITNESS);
                 boolean isPersonOfInterest = (boolean)civilianJSON.get(CIVILIAN_IS_PERSON_OF_INTEREST);
-                ArrayList<Case> cases = (ArrayList<Case>)civilianJSON.get(CIVILIAN_CASES);
 				
-				civilians.add(new Civilian(id, firstName, lastName, address, number, isVictim, isWitness, isPersonOfInterest, cases));
+				civilians.add(new Civilian(firstName, lastName, address, number, isVictim, isWitness, isPersonOfInterest));
 			}
 			
 			return civilians;
