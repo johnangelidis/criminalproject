@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.util.Calendar;
+import java.util.UUID;
 /**
  * Class representation of Database that allows user to search and export entries
  */
@@ -49,6 +50,15 @@ public class Database {
         return civilians;
     }
 
+    public Civilian getCivilian(UUID id){
+        for(Civilian c:civilians){
+            if(c.getId() == id){
+                return c;
+            }
+        }
+        return null;
+    }
+
     public void addCivilian(String firstName, String lastName, Calendar dateOfBirth, Address address, int number, boolean isVictim, boolean isWitness, boolean isPersonOfInterest){
         civilians.add(new Civilian(firstName, lastName, address, number, isVictim, isWitness, isPersonOfInterest));
         CivilianWriter.saveCivilians();
@@ -61,6 +71,15 @@ public class Database {
 
     public ArrayList<PoliceOfficer> getOfficers(){
         return officers;
+    }
+
+    public PoliceOfficer getOfficer(UUID id){
+        for(PoliceOfficer p:officers){
+            if(p.getId() == id){
+                return p;
+            }
+        }
+        return null;
     }
 
     public void addOfficer(String firstName, String lastName, String dateOfBirth, int badgeNum, String policeDept){
