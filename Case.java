@@ -1,11 +1,12 @@
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.UUID;
 /**
  * Class that represents a criminal case
  * Written by John Angelidis
  */
 public class Case {
-    private int id;
+    private UUID id;
     private String crime;
     private Civilian victim;
     private Criminal offender;
@@ -33,8 +34,8 @@ public class Case {
      * @param officersInvolved
      * @param detective
      */
-    public Case(int id, String crime, Civilian victim, Criminal offender, String outcome, ArrayList<Civilian> witnesses, ArrayList<Civilian> personsOfInterest, Calendar dayOfCrime, Calendar dayOfSentence, Address location, ArrayList<PoliceOfficer> officersInvolved, Detective detective){
-        this.id = id;
+    public Case(String crime, Civilian victim, Criminal offender, String outcome, ArrayList<Civilian> witnesses, ArrayList<Civilian> personsOfInterest, Calendar dayOfCrime, Calendar dayOfSentence, Address location, ArrayList<PoliceOfficer> officersInvolved, Detective detective){
+        this.id = UUID.randomUUID();
         this.crime = crime;
         this.victim = victim;
         this.offender = offender;
@@ -48,12 +49,8 @@ public class Case {
         this.detective = detective;
     }
 
-    public int getId() {
+    public UUID getId() {
         return this.id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getCrime() {
