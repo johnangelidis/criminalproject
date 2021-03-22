@@ -13,7 +13,7 @@
   3 results are given, print out their details and their contact information
 3. Search for a case by its number and display all of its information,
   [Details, evidence, witnesses, suspect information, victim information etc]
-  Print to text file and display on screen
+  Print to text file and display on screend
 */
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -23,23 +23,64 @@ public class UI extends UIConstants{
     //private static ArrayList<PoliceOfficer> loadOfficers;
     UI(){
       scanner = new Scanner(System.in);
-      database = new Database();
+      database = Database.getInstance();
     }
     public void run() {
       System.out.println(WELCOME_MESSAGE);
       //Loop until user quits
       while(true) {
-        //displayMainMenu();
-        //int userCommand = getUserCommand(mainMenuOptions.length());
+        displayMainMenu();
+        int userCommand = getUserCommand(mainMenuOptions.length());
         if(userCommand == -1) {
           System.out.println("Invalid command");
           continue;
         }
         //if(userCommand == mainMenuOptions.length -1) break;
-        /*switch(userCommand){
+        switch(userCommand){
           case(0):
-        }*/
+                  //create account
+                  break;
+          case(1):
+                  login();
+                  break;
+                  //add case
+                  //search for criminal/suspect
+                  //search cases
+        }
       }
+    }
+    private void createUser(){
+      
+    }
+    private void login(){
+      String username = getField("Username");
+
+      if(database.searchUser(username)){
+        User currentUser = database.searchUser(username);
+        currentUser.login();
+        System.out.println("Welcome " +currentUser.getUsername()+".");
+      } else {
+        System.out.println("Sorry, invalid username.");
+      }
+    }
+    private void getUserCommand(int numCommands){
+      System.out.print("Please select an action: ");
+
+      String input = scanner.nextLine();
+      int command = Integer.parseInt(input) - 1;
+
+      if(command >= 0 && command <= numCommands -1) return command;
+
+      return -1;
+    }
+    private void displayMainMenu(){
+        System.out.println("\n********** Main Menu **********");
+        for(int i=0; i<mainMenuOptions.length; i++){
+          System.out.println(i+1) + ", " + mainMenuOptions[i]);
+        }
+        System.out.println("\n");
+
+
     }
     public static void main(String[] args) {
         UI UIInterface = new UI();
