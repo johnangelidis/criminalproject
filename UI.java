@@ -7,8 +7,6 @@
 * Three scenarios need to happen:
 1. A detective signs in and enters details of a new crime,
 2. Search the system off a suspects description,
-  [30 something male.  Thick black hair and a ball cap.  Tall, approximately 6'2''
-  Has a dove tattoo on his left shoulder, and a goatee],
   , find dove tattoos. Only two results come up so search for using their age, hair color and height.
   3 results are given, print out their details and their contact information
 3. Search for a case by its number and display all of its information,
@@ -76,7 +74,7 @@ public class UI extends UIConstants{
 
     }
     private void addCase(){
-      int id = Integer.parseInt(getInput("id"));
+      //get basics then prompt(new or existing)
       String crime = getInput("Crime");
       /*private int id;
       private String crime;
@@ -94,9 +92,6 @@ public class UI extends UIConstants{
     private void createUser(){
       String username = getInput("Username");
       String password = getInput("Password");
-      int id = Integer.parseInt(getInput("id"));
-      boolean isAdmin = false;
-      boolean isLoggenIn = false;
       if(database.addUser(username,password)){
         System.out.println("Account created successfully.");
       } else {
@@ -109,10 +104,14 @@ public class UI extends UIConstants{
     }
     private void login(){
       String username = getField("Username");
-
+      String password = getField("Password");
       if(database.searchUser(username)){
         User currentUser = database.searchUser(username);
+        if(currentUser.getPassword.equals(password)){
         currentUser.login();
+      } else {
+        System.out.println("Invalid password.");
+      }
         System.out.println("Welcome " +currentUser.getUsername()+".");
       } else {
         System.out.println("Sorry, invalid username.");
