@@ -19,6 +19,7 @@ public class CriminalLoader extends CriminalConstants{
                 UUID id = (UUID)criminalJSON.get(CRIMINAL_ID);
 				String firstName = (String)criminalJSON.get(CRIMINAL_FIRST_NAME);
                 String lastName = (String)criminalJSON.get(CRIMINAL_LAST_NAME);
+				Date dateOfBirth = (Date)criminalJSON.get(CRIMINAL_DOB);
                 double weight = (double)criminalJSON.get(CRIMINAL_WEIGHT);
                 double height = (double)criminalJSON.get(CRIMINAL_HEIGHT);
                 String hairColor = (String)criminalJSON.get(CRIMINAL_HAIR_COLOR);

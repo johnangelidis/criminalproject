@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import java.util.Calendar;
 import java.util.UUID;
 public class CaseLoader extends CaseConstants{
 	
@@ -24,8 +23,8 @@ public class CaseLoader extends CaseConstants{
                 String outcome = (String)caseJSON.get(CASE_OUTCOME);
                 JSONArray witnesses = (JSONArray)caseJSON.get(CASE_WITNESSES);
                 JSONArray personsOfInterest = (JSONArray)caseJSON.get(CASE_PERSONS_OF_INTEREST);
-                Calendar dayOfCrime = (Calendar)caseJSON.get(CASE_DAY_OF_CRIME);
-                Calendar dayOfSentence = (Calendar)caseJSON.get(CASE_DAY_OF_SENTENCE);
+                Date dayOfCrime = (Date)caseJSON.get(CASE_DAY_OF_CRIME);
+                Date dayOfSentence = (Date)caseJSON.get(CASE_DAY_OF_SENTENCE);
                 Address location = (Address)caseJSON.get(CASE_LOCATION);
                 JSONArray officers = (JSONArray)caseJSON.get(CASE_OFFICERS);
                 Detective detective = (Detective)caseJSON.get(CASE_DETECTIVE);

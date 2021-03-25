@@ -1,5 +1,5 @@
 public abstract class CaseConstants {
-	protected static final String CASE_FILE_NAME = "json/cases.json";
+	protected static final String CASE_FILE_NAME = "cases.json";
 	protected static final String CASES = "cases";
 	protected static final String CASE_ID = "id";
 	protected static final String CASE_CRIME = "crime";
