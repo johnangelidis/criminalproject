@@ -2,11 +2,11 @@
     "id": "33393027-d30f-41ae-974b-dbfc34ee91c6",
     "firstName": "Sherlock",
     "lastName": "Holmes",
-    "dateOfBirth": "03/10/1980"
+    "dateOfBirth": "March/10/1980"
 },
 {
     "id":"1ff2d48b-f528-4ab4-ad54-ae9a901b483f",
     "firstName": "Adam",
     "lastName": "Owens",
-    "dateOfBirth": "04/12/1972"
+    "dateOfBirth": "April/12/1972"
 }]
