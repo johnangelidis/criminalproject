@@ -13,7 +13,7 @@ public class User {
         this.username = "none";
         this.password = "none";
     }
-    
+
     public User(String username, String password){
         this.username = username;
         this.password = password;
@@ -63,5 +63,16 @@ public class User {
         if(isLoggedIn)
             isLoggedIn = false;
     }
-    
+    /**
+    * Returns status of user, if they are logged in or not
+    */
+    public boolean getLoggedInStatus(){
+      return this.isLoggedIn;
+    }
+    /**
+    * Returns admin status of user, true if they are admin false if not
+    */
+    public boolean getAdminStatus(){
+      return this.isAdmin;
+    }
 }

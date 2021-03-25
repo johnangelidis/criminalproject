@@ -1,4 +1,5 @@
 public abstract class UIConstants {
   protected final static String WELCOME_MESSAGE = "Welcome to the A-Team's crime database application.";
-  protected final static String[] mainMenuOptions = {"Create Account","Login","Quit"};
+  protected final static String[] mainMenuOptions = {"Create Account","Login","Add a case","Search for criminal",
+  "Search cases","Quit"};
 }

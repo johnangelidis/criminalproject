@@ -7,8 +7,6 @@
 * Three scenarios need to happen:
 1. A detective signs in and enters details of a new crime,
 2. Search the system off a suspects description,
-  [30 something male.  Thick black hair and a ball cap.  Tall, approximately 6'2''
-  Has a dove tattoo on his left shoulder, and a goatee],
   , find dove tattoos. Only two results come up so search for using their age, hair color and height.
   3 results are given, print out their details and their contact information
 3. Search for a case by its number and display all of its information,
@@ -35,29 +33,85 @@ public class UI extends UIConstants{
           System.out.println("Invalid command");
           continue;
         }
-        //if(userCommand == mainMenuOptions.length -1) break;
+        if(userCommand == mainMenuOptions.length -1){
+          if(currentUser.getLoggedInStatus == true){
+            System.out.println("Logging out.");
+            currentUser.logout();
+            break;
+          } else
+           break;
+        }
         switch(userCommand){
           case(0):
-                  //create account
+                  createUser();
                   break;
           case(1):
                   login();
                   break;
-                  //add case
+          case(2):
+                  if(currentUser.getLoggedInStatus == true && currentUser.getAdminStatus == true){
+                    addCase();
+                    break;
+                  } else {
+                    System.out.println("You either are not logged in or are not an admin");
+                    break;
+                  }
+          case(3):
+
+                  break;
                   //search for criminal/suspect
+          case(4):
+
+                  break;
                   //search cases
         }
       }
     }
+    private void searchCriminals(){
+
+    }
+    private void searchCases(){
+
+    }
+    private void addCase(){
+      //get basics then prompt(new or existing)
+      String crime = getInput("Crime");
+      /*private int id;
+      private String crime;
+      private Civilian victim;
+      private Criminal offender;
+      private String outcome;
+      private ArrayList<Civilian> witnesses;
+      private ArrayList<Civilian> personsOfInterest;
+      private Calendar dayOfCrime;
+      private Calendar dayOfSentence;
+      private Address location;
+      private ArrayList<PoliceOfficer> officersInvolved;
+      private Detective detective;*/
+    }
     private void createUser(){
-      
+      String username = getInput("Username");
+      String password = getInput("Password");
+      if(database.addUser(username,password)){
+        System.out.println("Account created successfully.");
+      } else {
+        System.out.println("Sorry, try a different username.");
+      }
+    }
+    private String getInput(String input) {
+		System.out.print(input + ": ");
+		return scanner.nextLine();
     }
     private void login(){
       String username = getField("Username");
-
+      String password = getField("Password");
       if(database.searchUser(username)){
         User currentUser = database.searchUser(username);
+        if(currentUser.getPassword.equals(password)){
         currentUser.login();
+      } else {
+        System.out.println("Invalid password.");
+      }
         System.out.println("Welcome " +currentUser.getUsername()+".");
       } else {
         System.out.println("Sorry, invalid username.");
