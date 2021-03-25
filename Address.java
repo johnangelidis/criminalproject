@@ -26,7 +26,7 @@ public class Address {
         this.zip = zip;
     }
 
-    public String getNumber(){
+    public int getNumber(){
         return this.number;
     }
     public String getStreet(){
@@ -38,7 +38,7 @@ public class Address {
     public String getState(){
         return this.state;
     }
-    public String getZip(){
+    public int getZip(){
         return this.zip;
     }
 
@@ -60,5 +60,18 @@ public class Address {
 
     public String toString(){
         return number + " " + street + ", " + city + ", " + state + zip;   
+    }
+
+    public Address splitAddress(String address){
+        String[] splitAddress = address.split("/");
+
+        int number = Integer.parseInt(splitAddress[0]);
+        String street = splitAddress[1];
+        String city = splitAddress[2];
+        String state = splitAddress[3];
+        int zip = Integer.parseInt(splitAddress[4]);
+
+        Address newAddress = new Address(number, street, city, state, zip);
+        return newAddress;
     }
 }
