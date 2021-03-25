@@ -54,6 +54,17 @@ public class Tattoo {
      * @return string description
      */
     public String toString(){
-        return color + " " + design + " " + " located on " + location + ".";
+        return color + " " + design + " located on " + location;
+    }
+
+    public Tattoo splitTattoo(String tattoo){
+        String[] splitTattoo = tattoo.split("/");
+
+        String color = splitTattoo[0];
+        String design = splitTattoo[1].toLowerCase();
+        String location = splitTattoo[2].toLowerCase();
+        
+        Tattoo newTattoo = new Tattoo(color, design, location);
+        return newTattoo;
     }
 }
