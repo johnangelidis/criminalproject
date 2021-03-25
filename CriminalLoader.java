@@ -29,7 +29,7 @@ public class CriminalLoader extends CriminalConstants{
                 String status = (String)criminalJSON.get(CRIMINAL_STATUS);
                 boolean isSerialCriminal = (boolean)criminalJSON.get(CRIMINAL_IS_SERIAL_CRIMINAL);
                 
-				criminals.add(new Criminal(firstName, lastName, weight, height, hairColor, eyeColor, tattoos, hasScars, status, isSerialCriminal));
+				criminals.add(new Criminal(firstName, lastName, dateOfBirth, weight, height, hairColor, eyeColor, tattoos, hasScars, status, isSerialCriminal));
 			}
 			
 			return criminals;

@@ -23,10 +23,10 @@ public class Criminal extends Person{
      * @param gang Instance of Gang class that represents the criminal's gang association
      * @param isSerialCriminal Boolean value that indicates if criminal is a serial criminal or not
      */
-    public Criminal(String firstName, String lastName, double weight, double height, String hairColor,
+    public Criminal(String firstName, String lastName, Date dateOfBirth, double weight, double height, String hairColor,
                     String eyeColor, Tattoo tattoos, boolean hasScars,
                     String status, boolean isSerialCriminal) {
-        super(firstName, lastName);
+        super(firstName, lastName, dateOfBirth);
         setWeight(weight);
         setHeight(height);
         setHairColor(hairColor);

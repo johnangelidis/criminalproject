@@ -17,8 +17,8 @@ public class Civilian extends Person{
 	 * @param bisWitness Is the Civilian a Witness of a crime
 	 * @param bisPersonOfInterest Is the Civilian a POI?
 	 */
-	public Civilian(String firstName, String lastName, Address anAddress, int aPhone, boolean bisVictim, boolean bisWitness, boolean bisPersonOfInterest) {
-		super(firstName, lastName);
+	public Civilian(String firstName, String lastName, Date dateOfBirth, Address anAddress, int aPhone, boolean bisVictim, boolean bisWitness, boolean bisPersonOfInterest) {
+		super(firstName, lastName, dateOfBirth);
 		this.address = anAddress;
 		this.phone = aPhone;
 		this.isVictim = bisVictim;

@@ -20,14 +20,14 @@ public class CivilianLoader extends CivilianConstants{
                 UUID id = (UUID)civilianJSON.get(CIVILIAN_ID);
 				String firstName = (String)civilianJSON.get(CIVILIAN_FIRST_NAME);
 				String lastName = (String)civilianJSON.get(CIVILIAN_LAST_NAME);
-                //Calendar dateOfBirth = (Calendar)civilianJSON.get(CIVILIAN_DOB);
+                Date dateOfBirth = (Date)civilianJSON.get(CIVILIAN_DOB);
                 Address address = (Address)civilianJSON.get(CIVILIAN_ADDRESS);
                 int number = (int)civilianJSON.get(CIVILIAN_PHONE_NUMBER);
                 boolean isVictim = (boolean)civilianJSON.get(CIVILIAN_IS_VICTIM);
 				boolean isWitness = (boolean)civilianJSON.get(CIVILIAN_IS_WITNESS);
                 boolean isPersonOfInterest = (boolean)civilianJSON.get(CIVILIAN_IS_PERSON_OF_INTEREST);
 				
-				civilians.add(new Civilian(firstName, lastName, address, number, isVictim, isWitness, isPersonOfInterest));
+				civilians.add(new Civilian(firstName, lastName, dateOfBirth, address, number, isVictim, isWitness, isPersonOfInterest));
 			}
 			
 			return civilians;
