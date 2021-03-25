@@ -19,10 +19,10 @@ public class PoliceLoader extends PoliceConstants {
                 UUID id = (UUID)officerJSON.get(OFFICERS_ID);
                 String firstName = (String)officerJSON.get(OFFICERS_FIRST_NAME);
                 String lastName = (String)officerJSON.get(OFFICERS_LAST_NAME);
-                Date dateOfBirth = (Date)officerJSON.get(OFFICERS_DOB);
+                String stringDate = (String)officerJSON.get(OFFICERS_DOB);
+                Date dateOfBirth = Date.splitDate(stringDate);
                 int badgeNum = (Integer)officerJSON.get(OFFICERS_BADGENUM);
                 String poliiceDept = (String)officerJSON.get(OFFICERS_DEPT);
-                //ArrayList<Case> cases = (ArrayList<Case>)officerJSON.get(OFFICERS_CASES);
                 
                 officers.add(new PoliceOfficer(firstName, lastName, dateOfBirth, badgeNum, poliiceDept));
 

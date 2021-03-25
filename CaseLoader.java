@@ -23,9 +23,12 @@ public class CaseLoader extends CaseConstants{
                 String outcome = (String)caseJSON.get(CASE_OUTCOME);
                 JSONArray witnesses = (JSONArray)caseJSON.get(CASE_WITNESSES);
                 JSONArray personsOfInterest = (JSONArray)caseJSON.get(CASE_PERSONS_OF_INTEREST);
-                Date dayOfCrime = (Date)caseJSON.get(CASE_DAY_OF_CRIME);
-                Date dayOfSentence = (Date)caseJSON.get(CASE_DAY_OF_SENTENCE);
-                Address location = (Address)caseJSON.get(CASE_LOCATION);
+				String stringDay = (String)caseJSON.get(CASE_DAY_OF_CRIME);
+                Date dayOfCrime = Date.splitDate(stringDay);
+				String stringDaySentence = (String)caseJSON.get(CASE_DAY_OF_SENTENCE);
+                Date dayOfSentence = Date.splitDate(stringDaySentence);
+				String stringAddress = (String)caseJSON.get(CASE_LOCATION);
+                Address location = Address.splitAddress(stringAddress);
                 JSONArray officers = (JSONArray)caseJSON.get(CASE_OFFICERS);
                 Detective detective = (Detective)caseJSON.get(CASE_DETECTIVE);
                 

@@ -57,7 +57,7 @@ public class Tattoo {
         return color + " " + design + " located on " + location;
     }
 
-    public Tattoo splitTattoo(String tattoo){
+    public static Tattoo splitTattoo(String tattoo){
         String[] splitTattoo = tattoo.split("/");
 
         String color = splitTattoo[0];

@@ -41,7 +41,7 @@ public class Date {
         
     }
 
-    public Date splitDate(String date){
+    public static Date splitDate(String date){
         String[] splitDate = date.split("/");
 
         String month = splitDate[0];

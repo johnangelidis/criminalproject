@@ -62,7 +62,7 @@ public class Address {
         return number + " " + street + ", " + city + ", " + state + zip;   
     }
 
-    public Address splitAddress(String address){
+    public static Address splitAddress(String address){
         String[] splitAddress = address.split("/");
 
         int number = Integer.parseInt(splitAddress[0]);

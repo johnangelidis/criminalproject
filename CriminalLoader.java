@@ -19,12 +19,14 @@ public class CriminalLoader extends CriminalConstants{
                 UUID id = (UUID)criminalJSON.get(CRIMINAL_ID);
 				String firstName = (String)criminalJSON.get(CRIMINAL_FIRST_NAME);
                 String lastName = (String)criminalJSON.get(CRIMINAL_LAST_NAME);
-				Date dateOfBirth = (Date)criminalJSON.get(CRIMINAL_DOB);
+				String stringDate = (String)criminalJSON.get(CRIMINAL_DOB);
+				Date dateOfBirth = Date.splitDate(stringDate);
                 double weight = (double)criminalJSON.get(CRIMINAL_WEIGHT);
                 double height = (double)criminalJSON.get(CRIMINAL_HEIGHT);
                 String hairColor = (String)criminalJSON.get(CRIMINAL_HAIR_COLOR);
                 String eyeColor = (String)criminalJSON.get(CRIMINAL_EYE_COLOR);
-                Tattoo tattoos = (Tattoo)criminalJSON.get(CRIMINAL_TATTOOS);
+				String stringTattoo = (String)criminalJSON.get(CRIMINAL_TATTOOS);
+                Tattoo tattoos = Tattoo.splitTattoo(stringTattoo);
                 boolean hasScars = (boolean)criminalJSON.get(CRIMINAL_HAS_SCARS);
                 String status = (String)criminalJSON.get(CRIMINAL_STATUS);
                 boolean isSerialCriminal = (boolean)criminalJSON.get(CRIMINAL_IS_SERIAL_CRIMINAL);
