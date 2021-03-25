@@ -40,4 +40,15 @@ public class Date {
         return month + " " + newDay + ", " + newYear;
         
     }
+
+    public Date splitDate(String date){
+        String[] splitDate = date.split("/");
+
+        String month = splitDate[0];
+        int day = Integer.parseInt(splitDate[1]);
+        int year = Integer.parseInt(splitDate[2]);
+
+        Date newDate = new Date(month,day,year);
+        return newDate;
+    }
 }
