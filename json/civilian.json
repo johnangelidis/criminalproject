@@ -28,7 +28,7 @@
     "lastName": "Hughes",
     "dateOfBirth": "Jun 18 1990",
     "address": "124 Conch St., Bikini Bottom, AL, 25534",
-    "phone":"1342939605",
+    "phone":1342939605,
     "isVictim": false,
     "isWitness": false,
     "isPersonOfInterest": true,

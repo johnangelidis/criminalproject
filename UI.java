@@ -73,9 +73,26 @@ public class UI extends UIConstants{
     private void searchCases(){
 
     }
+    private Calendar makeDate(){
+
+    }
+    private Civilian makeCivilian(){
+
+    }
+    private Address makeAddress(){
+
+    }
+    private Detective makeDetective(){
+
+    }
+
     private void addCase(){
       //get basics then prompt(new or existing)
       String crime = getInput("Crime");
+      String outcome = getInput("Outcome");
+      Calendar dayOfCrime = makeDate("Day of Crime");
+      Calendar dayOfSentence = makeDate("Day of Sentence");
+      //Calendar dayOfSentence = getInput("Day of sentence");
       /*private int id;
       private String crime;
       private Civilian victim;
