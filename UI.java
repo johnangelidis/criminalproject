@@ -73,9 +73,15 @@ public class UI extends UIConstants{
     private void searchCases(){
 
     }
+    private Calendar getDate(){
+      
+    }
     private void addCase(){
       //get basics then prompt(new or existing)
       String crime = getInput("Crime");
+      String outcome = getInput("Outcome");
+      //Calender dayOfCrime = getInput("Day of crime");
+      //Calendar dayOfSentence = getInput("Day of sentence");
       /*private int id;
       private String crime;
       private Civilian victim;
