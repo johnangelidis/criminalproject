@@ -28,7 +28,6 @@ public class DetectiveWriter extends DetectiveConstants {
         detectiveDetails.put(DETECTIVE_FIRST_NAME, detective.getFirstName());
         detectiveDetails.put(DETECTIVE_LAST_NAME, detective.getLastName());
         detectiveDetails.put(DETECTIVE_DOB, detective.getDOB());
-        detectiveDetails.put(DETECTIVE_CASES, detective.getCases();
         
         return detectiveDetails;
     }

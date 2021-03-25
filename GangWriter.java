@@ -30,9 +30,9 @@ public class GangWriter extends GangConstants {
 	
 	public static JSONObject getGangJSON(Gang g) {
 		JSONObject gangDetails = new JSONObject();
-        gangDetails.put((GANG_ID), g.getId());
-        gangDetails.put((GANG_NAME), g.getName());
-        gangDetails.put((GANG_MEMBERS)), g.getMembers());
+        gangDetails.put(GANG_ID, g.getId());
+        gangDetails.put(GANG_NAME, g.getName());
+        gangDetails.put(GANG_MEMBERS, g.getMembers());
         
         return gangDetails;
 	}

@@ -49,6 +49,7 @@ public class CaseLoader extends CaseConstants{
 			Civilian witness = Database.getInstance().getCivilian(id);
 			caseWitnesses.add(witness);
 		}
+		return caseWitnesses;
 	}
 
 	public static ArrayList<Civilian> returnPersonsOfInterest(JSONArray personsOfInterest){
@@ -58,6 +59,7 @@ public class CaseLoader extends CaseConstants{
 			Civilian personOfInterest = Database.getInstance().getCivilian(id);
 			casePOI.add(personOfInterest);
 		}
+		return casePOI;
 	}
 
 	public static ArrayList<PoliceOfficer> returnOfficers(JSONArray officers){
@@ -66,5 +68,7 @@ public class CaseLoader extends CaseConstants{
 			UUID id = UUID.fromString((String)officers.get(i));
 			PoliceOfficer officer = Database.getInstance().getOfficer(id);
 			caseOfficers.add(officer);
+		}
+		return caseOfficers;
 	}
 }
