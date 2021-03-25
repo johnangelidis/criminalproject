@@ -1,5 +1,5 @@
 [{
-    "id": 1,
+    "id": "3572ed35-5b6a-49df-9b20-c0db7212722b",
     "firstName": "Jack",
     "lastName": "Jones",
     "dateOfBirth": "Feb 5 1988",
@@ -7,11 +7,10 @@
     "phone": 8431234567,
     "isVictim": true,
     "isWitness": false,
-    "isPersonOfInterest": false,
-    "case": 12
+    "isPersonOfInterest": false
 },
 {
-    "id": 2,
+    "id": "793cccaf-3b28-4b58-86da-8f18b1e5aeee",
     "firstName": "Ben",
     "lastName": "Smith",
     "dateOfBirth": "Jul 5 1985",
@@ -19,11 +18,10 @@
     "phone":4321237658,
     "isVictim": false,
     "isWitness": true,
-    "isPersonOfInterest": true,
-    "case": 14
+    "isPersonOfInterest": true
 },
 {
-    "id": 3,
+    "id": "14b6e278-0e8c-404c-8aa4-c854fae38897",
     "firstName": "Kate",
     "lastName": "Hughes",
     "dateOfBirth": "Jun 18 1990",
@@ -31,11 +29,10 @@
     "phone":"1342939605",
     "isVictim": false,
     "isWitness": false,
-    "isPersonOfInterest": true,
-    "case": 27
+    "isPersonOfInterest": true
 },
 {
-    "id": 4,
+    "id": "1ceaf163-4365-4df4-9848-c81043a7885f",
     "firstName": "Sean",
     "lastName": "Wilson",
     "dateOfBirth": "Dec 25 1982",
@@ -43,6 +40,5 @@
     "phone":3405582396,
     "isVictim": true,
     "isWitness": false,
-    "isPersonOfInterest": true,
-    "case": 56
+    "isPersonOfInterest": true
 }]

@@ -1,10 +1,10 @@
 [{
-    "id": 1,
+    "id": "f92181a7-1a2e-4965-80c1-f3fb83225791",
     "name": "Bloods",
-    "members": [1]
+    "members": ["af6f96ec-b4ed-4e3b-9787-218ba8f3b583"]
 },
 {
-    "id": 2,
+    "id": "e923b639-66f1-4cf6-8308-46da3557e9ca",
     "name": "MS-13",
-    "members": [2]
+    "members": ["344e0a7b-1370-4dad-bf28-e473faaf7181"]
 }]

@@ -1,44 +1,44 @@
 [{
     "criminals": [
-        1,
-        2
+        "af6f96ec-b4ed-4e3b-9787-218ba8f3b583",
+        "344e0a7b-1370-4dad-bf28-e473faaf7181"
     ]
     },
     {
     "civilians": [
-        1,
-        2,
-        3,
-        4
+        "3572ed35-5b6a-49df-9b20-c0db7212722b",
+        "793cccaf-3b28-4b58-86da-8f18b1e5aeee",
+        "14b6e278-0e8c-404c-8aa4-c854fae38897",
+        "1ceaf163-4365-4df4-9848-c81043a7885f"
     ]
     },
     {
     "officers": [
-        1,
-        2
+        "b37be6de-8efd-4d9d-bd00-d5beca7d0711",
+        "85a2be83-14f0-426d-afee-32ac6a5e6c17"
     ]
     },
     {
     "detectives": [
-        1,
-        2
+        "33393027-d30f-41ae-974b-dbfc34ee91c6",
+        "1ff2d48b-f528-4ab4-ad54-ae9a901b483f"
     ]
     },
     {
     "cases": [
-        1,
-        2
+        "02908426-64f3-4dec-bf6f-882fac3d266f",
+        "0d46c856-36d5-463a-995f-458742d98e43"
     ]
     },
     {
     "gangs": [
-        1,
-        2
+        "f92181a7-1a2e-4965-80c1-f3fb83225791",
+        "e923b639-66f1-4cf6-8308-46da3557e9ca"
     ]
     },
     {
     "users": [
-        "johnj123",
-        "cobya392"
+        "21820c7a-12ff-4b07-94d2-a3b220959872",
+        "c8242f51-3a55-48f2-aacb-15554e0b1ee4"
     ]
 }]

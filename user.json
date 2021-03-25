@@ -1,14 +1,12 @@
 [{
+    "id":"21820c7a-12ff-4b07-94d2-a3b220959872",
     "username":"johnj123",
     "password": "Hdjsa820!",
-    "firstName":"John",
-    "lastName":"Johnson",
     "isAdmin": false
 },
 {
+    "id":"c8242f51-3a55-48f2-aacb-15554e0b1ee4",
     "username":"cobya392",
     "password": "k87Hb65@rT",
-    "firstName":"Coby",
-    "lastName":"Arambula",
     "isAdmin": true
 }]

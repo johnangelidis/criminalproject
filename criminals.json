@@ -1,5 +1,5 @@
 [{
-    "id":1,
+    "id":"af6f96ec-b4ed-4e3b-9787-218ba8f3b583",
     "firstName":"Jeff",
     "lastName":"Roberts",
     "dateOfBirth":"May 4 1994",
@@ -9,12 +9,11 @@
     "tattoos": "Snake on Forearm",
     "hasScars": false,
     "status":"incarcerated",
-    "gang": "N/A",
-    "isSerialCriminal":false,
-    "crimes":[3]
+    "gang": "f92181a7-1a2e-4965-80c1-f3fb83225791",
+    "isSerialCriminal":false
 },
 {
-    "id":2,
+    "id":"344e0a7b-1370-4dad-bf28-e473faaf7181",
     "firstName":"Shaun",
     "lastName":"Green",
     "dateOfBirth":"July 23 1989",
@@ -24,7 +23,6 @@
     "tattoos": "Lion on Chest",
     "hasScars": true,
     "status":"on parole",
-    "gang": "N/A",
-    "isSerialCriminal":false,
-    "crimes":[2]
+    "gang": "e923b639-66f1-4cf6-8308-46da3557e9ca",
+    "isSerialCriminal":false
 }]
