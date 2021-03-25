@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.UUID;
 /**
  * Class that represents a criminal case
@@ -13,8 +12,8 @@ public class Case {
     private String outcome;
     private ArrayList<Civilian> witnesses;
     private ArrayList<Civilian> personsOfInterest;
-    private Calendar dayOfCrime;
-    private Calendar dayOfSentence;
+    private Date dayOfCrime;
+    private Date dayOfSentence;
     private Address location;
     private ArrayList<PoliceOfficer> officersInvolved;
     private Detective detective;
@@ -34,7 +33,7 @@ public class Case {
      * @param officersInvolved
      * @param detective
      */
-    public Case(String crime, Civilian victim, Criminal offender, String outcome, ArrayList<Civilian> witnesses, ArrayList<Civilian> personsOfInterest, Calendar dayOfCrime, Calendar dayOfSentence, Address location, ArrayList<PoliceOfficer> officersInvolved, Detective detective){
+    public Case(String crime, Civilian victim, Criminal offender, String outcome, ArrayList<Civilian> witnesses, ArrayList<Civilian> personsOfInterest, Date dayOfCrime, Date dayOfSentence, Address location, ArrayList<PoliceOfficer> officersInvolved, Detective detective){
         this.id = UUID.randomUUID();
         this.crime = crime;
         this.victim = victim;
@@ -105,16 +104,16 @@ public class Case {
         return dayOfCrime.toString();
     }
 
-    public void setDayOfCrime(int year, int month, int day) {
-        dayOfCrime.set(year,month,day);
+    public void setDayOfCrime(String month, int day, int year) {
+        dayOfCrime = new Date(month,day,year);
     }
 
     public String getDayOfSentence() {
         return dayOfSentence.toString();
     }
 
-    public void setDayOfSentence(int year, int month, int day) {
-        dayOfSentence.set(year,month,day);
+    public void setDayOfSentence(String month, int day, int year) {
+        dayOfSentence = new Date(month,day,year);
     }
 
     public Address getLocation() {
