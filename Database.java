@@ -21,7 +21,7 @@ public class Database {
         civilians = CivilianLoader.loadCivilians();
         officers = PoliceLoader.loadOfficers();
         detectives = DetectiveLoader.loadDetectives();
-        cases = CaseLoader.loadCases();
+
         users = UserLoader.loadUsers();
     }
 
@@ -111,6 +111,9 @@ public class Database {
         return cases;
     }
 
+    public void loadCases(){
+        cases = CaseLoader.loadCases();
+    }
     public void addCase(String crime, Civilian victim, Criminal offender, String outcome, ArrayList<Civilian> witnesses, ArrayList<Civilian> personsOfInterest, Calendar dayOfCrime, Calendar dayOfSentence, Address location, ArrayList<PoliceOfficer> officersInvolved, Detective detective){
         cases.add(new Case(crime, victim, offender, outcome, witnesses, personsOfInterest, dayOfCrime, dayOfSentence, location, officersInvolved, detective));
         CaseWriter.saveCases();
