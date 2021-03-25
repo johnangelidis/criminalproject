@@ -8,7 +8,7 @@
     "personsOfInterest": ["14b6e278-0e8c-404c-8aa4-c854fae38897"],
     "dayOfCrime": "01/20/2021",
     "dayOfSentence": "02/20/2021",
-    "location": "567 Gordon Blvd., Columbia, SC, 29201",
+    "location": "567/Gordon Blvd/Columbia/SC/29201",
     "officersInvolved": ["b37be6de-8efd-4d9d-bd00-d5beca7d0711"]   
 },
 {
@@ -19,8 +19,8 @@
     "outcome": "Life in prison without parole",
     "witnesses": ["1ceaf163-4365-4df4-9848-c81043a7885f"],
     "personsOfInterest": ["3572ed35-5b6a-49df-9b20-c0db7212722b"],
-    "dayOfCrime": "Jan 20 2021",
-    "dayOfSentence": "Mar 20 2021",
-    "location": "321 Blossom St., Columbia, SC, 29201",
+    "dayOfCrime": "03/10/2021",
+    "dayOfSentence": "08/19/2021",
+    "location": "321/Blossom St/Columbia/SC/29201",
     "officersInvolved": ["85a2be83-14f0-426d-afee-32ac6a5e6c17"]      
 }]
