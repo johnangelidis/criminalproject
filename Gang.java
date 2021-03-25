@@ -59,4 +59,8 @@ public class Gang {
 		members.add(c);
 	}
 
+	public String toString(){
+		return this.name;
+	}
+
 }

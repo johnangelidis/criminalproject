@@ -10,19 +10,20 @@ public class DetectiveWriter extends DetectiveConstants {
         Database db = Database.getInstance();
         ArrayList<Detective> detectives = db.getDetectives();
         JSONArray jsonDetectives = new JSONArray();
-
+        
         for(int i=0; i<detectives.size();i++)
         {
             jsonDetectives.add(getDetectiveJSON(detectives.get(i)));
         }
+        
+        try (FileWriter file = new FileWriter(DETECTIVE_FILE_NAME)){
+        file.write(jsonDetectives.toJSONString());
+        file.flush();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
-    try (FileWriter file = new FileWriter(DETECTIVE_FILE_NAME)){
-    file.write(jsonDetectives.toJSONString());
-    file.flush();
-    } catch (IOException e){
-        e.printStackTrace();
-    }
     public static JSONObject getDetectiveJSON(Detective detective){
         JSONObject detectiveDetails = new JSONObject();
         detectiveDetails.put(DETECTIVE_FIRST_NAME, detective.getFirstName());
