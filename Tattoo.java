@@ -13,7 +13,7 @@ public class Tattoo {
      * @param color
      * @param design
      */
-    public Tattoo(String location, String color, String design){
+    public Tattoo(String color, String design, String location){
         this.location=location;
         this.color=color;
         this.design=design;
