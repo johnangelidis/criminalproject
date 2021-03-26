@@ -1,5 +1,7 @@
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.UUID;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -16,7 +18,7 @@ public class UserLoader extends UserConstants{
 			
 			for(int i=0; i < usersJSON.size(); i++) {
 				JSONObject userJSON = (JSONObject)usersJSON.get(i);
-                int id = (int)userJSON.get(USER_ID);
+                UUID id = UUID.fromString((String)userJSON.get(USER_ID));
 				String username = (String)userJSON.get(USER_USERNAME);
                 String password = (String)userJSON.get(USER_PASSWORD);
                 boolean isAdmin = (boolean)userJSON.get(USER_IS_ADMIN);
