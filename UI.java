@@ -77,7 +77,10 @@ public class UI extends UIConstants{
       database.searchPerson(firstName, lastName);
     }
     private void searchCases(){
-
+      System.out.println("Enter Crime");
+      String crime = getInput("Crime");
+      System.out.println("Enter Offender");
+      String offender = getInput("Offender");
     }
     private Address makeAddress(){
       int number = getInput("Number");
