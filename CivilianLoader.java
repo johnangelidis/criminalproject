@@ -17,7 +17,7 @@ public class CivilianLoader extends CivilianConstants{
 			
 			for(int i=0; i < civiliansJSON.size(); i++) {
 				JSONObject civilianJSON = (JSONObject)civiliansJSON.get(i);
-                UUID id = (UUID)civilianJSON.get(CIVILIAN_ID);
+                UUID id = UUID.fromString((String)civilianJSON.get(CIVILIAN_ID));
 				String firstName = (String)civilianJSON.get(CIVILIAN_FIRST_NAME);
 				String lastName = (String)civilianJSON.get(CIVILIAN_LAST_NAME);
 				String stringDate = (String)civilianJSON.get(CIVILIAN_DOB);

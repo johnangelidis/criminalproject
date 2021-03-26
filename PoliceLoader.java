@@ -16,7 +16,7 @@ public class PoliceLoader extends PoliceConstants {
 
             for(int i=0; i < officersJSON.size(); i++) {
                 JSONObject officerJSON = (JSONObject)officersJSON.get(i);
-                UUID id = (UUID)officerJSON.get(OFFICERS_ID);
+                UUID id = UUID.fromString((String)officerJSON.get(OFFICERS_ID));
                 String firstName = (String)officerJSON.get(OFFICERS_FIRST_NAME);
                 String lastName = (String)officerJSON.get(OFFICERS_LAST_NAME);
                 String stringDate = (String)officerJSON.get(OFFICERS_DOB);
