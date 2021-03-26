@@ -83,26 +83,20 @@ public class UI extends UIConstants{
       String offender = getInput("Offender");
     }
     private Address makeAddress(){
-      int number = getInput("Number");
-      String street = getInput("Street");
-      String city = getInput("City");
+      int number = getInt("Number");
+      String street = getString("Street");
+      String city = getString("City");
+      String state = getString("State");
+      int zip = getInt("Zip");
 
-      /*
-      private int number;
-      private String street;
-      private String city;
-      private String state;
-      private int zip;
-      */
+      Address address = new Address(number,street,city,state,zip);
+      return address;
     }
     private Detective makeDetective(){
-      String firstName = getInput("First name");
-      String lastName = getInput("Last name");
-      if(database.addDetective(firstName,lastName)){
-        System.out.println("Detective created successfully.");
-      } else {
-        System.out.println("Sorry, something went wrong.");
-      }
+      String firstName = getString("First name");
+      String lastName = getString("Last name");
+      Date dateOfBirth = makeDate();
+      database.addDetective(firstName,lastName,dateOfBirth);
     }
     private Detective promptForDetective(){
       System.out.println("Would you like to add a new or existing"+
