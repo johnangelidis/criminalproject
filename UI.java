@@ -77,27 +77,57 @@ public class UI extends UIConstants{
 
     }
     private Civilian makeCivilian(){
-
+      /*
+      private Address address;
+    	private int phone;
+    	private boolean isVictim;
+    	private boolean isWitness;
+    	private boolean isPersonOfInterest;
+      */
     }
     private Address makeAddress(){
-
+      /*
+      private int number;
+      private String street;
+      private String city;
+      private String state;
+      private int zip;
+      */
     }
     private Detective makeDetective(){
-
+      String firstName = getInput("FirstName");
+      String lastName = getInput("LastName");
+      if(database.addDetective(firstName,lastName)){
+        System.out.println("Detective created successfully.");
+      } else {
+        System.out.println("Sorry, something went wrong.");
+      }
     }
-
+    private Detective promptForDetective(){
+      System.out.println("Would you like to add a new or existing"+
+      "Detective?\n Enter 1 for new or 2 for existing");
+      String input = scanner.nextLine();
+      int choice = Integer.parseInt(input);
+      if(choice == 1) {
+        Detective newDetective = makeDetective();
+        return newDetective;
+      } else if (choice == 2) {
+        Detective oldDetective = database.searchPerson(getInput("FirstName"),getInput("LastName"));
+        return oldDetective;
+      } else {
+        System.out.println("Invalid input");
+      }
+    }
     private void addCase(){
       //get basics then prompt(new or existing)
       String crime = getInput("Crime");
       String outcome = getInput("Outcome");
       Calendar dayOfCrime = makeDate("Day of Crime");
       Calendar dayOfSentence = makeDate("Day of Sentence");
-      //Calendar dayOfSentence = getInput("Day of sentence");
-      /*private int id;
-      private String crime;
+
+      /*Calendar dayOfSentence = getInput("Day of sentence");
       private Civilian victim;
       private Criminal offender;
-      private String outcome;
       private ArrayList<Civilian> witnesses;
       private ArrayList<Civilian> personsOfInterest;
       private Calendar dayOfCrime;
