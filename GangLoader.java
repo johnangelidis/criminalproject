@@ -17,7 +17,7 @@ public class GangLoader extends GangConstants{
 			
 			for(int i=0; i < gangsJSON.size(); i++) {
 				JSONObject gangJSON = (JSONObject)gangsJSON.get(i);
-                UUID id = (UUID)gangJSON.get(GANG_ID);
+                UUID id = UUID.fromString((String)gangJSON.get(GANG_ID));
 				String name = (String)gangJSON.get(GANG_NAME);
                 JSONArray members = (JSONArray)gangJSON.get(GANG_MEMBERS);
                 
@@ -44,4 +44,11 @@ public class GangLoader extends GangConstants{
 		}
 	}
 	*/
+
+	public static void main(String[] args){
+		ArrayList<Gang> gangs = GangLoader.loadGangs();
+		for(Gang g:gangs){
+			System.out.println(g);
+		}
+	}
 }

@@ -2,17 +2,15 @@
     "id": "b37be6de-8efd-4d9d-bd00-d5beca7d0711",
     "firstName": "Henry",
     "lastName": "Jacobs",
-    "dateOfBirth": "08/08/1981",
+    "dateOfBirth": "November/08/1981",
     "badgeNum": 305,
-    "policeDept": "Richland County Police Department",
-    "cases": ["02908426-64f3-4dec-bf6f-882fac3d266f"]
+    "policeDept": "Richland County Police Department"
 },
 {
     "id": "85a2be83-14f0-426d-afee-32ac6a5e6c17",
     "firstName": "Jacob",
     "lastName": "Thompson",
-    "dateOfBirth": "09/25/1990",
+    "dateOfBirth": "September/25/1990",
     "badgeNum": 287,
-    "policeDept": "Richland County Police Department",
-    "cases": ["0d46c856-36d5-463a-995f-458742d98e43"]    
+    "policeDept": "Richland County Police Department" 
 }]

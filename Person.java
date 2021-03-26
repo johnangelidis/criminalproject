@@ -6,17 +6,18 @@ public abstract class Person{
     protected UUID id;
     protected String firstName;
     protected String lastName;
-    protected Calendar dateOfBirth;
+    protected Date dateOfBirth;
 
     /**
      * Constructor that creates a person
      * @param firstName
      * @param lastName
      */
-    public Person(String firstName, String lastName){
+    public Person(String firstName, String lastName, Date dateOfBirth){
         this.id=UUID.randomUUID();
         this.firstName=firstName;
         this.lastName=lastName;
+        this.dateOfBirth = dateOfBirth;
     }
 
     public UUID getId(){
@@ -56,7 +57,7 @@ public abstract class Person{
      * Method that returns a string representation of the date of birth
      * @return string representation of date of birth
      */
-    public Calendar getDOB(){
+    public Date getDOB(){
         return dateOfBirth;
     }
     /**
@@ -65,8 +66,8 @@ public abstract class Person{
      * @param month
      * @param day
      */
-    public void setDOB(int year, int month, int day){
-        dateOfBirth.set(year,month,day);
+    public void setDOB(String month, int day, int year){
+        dateOfBirth = new Date(month,day,year);
     }
 
     /**

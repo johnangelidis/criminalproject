@@ -59,7 +59,7 @@ public class Database {
         return null;
     }
 
-    public void addCivilian(String firstName, String lastName, Calendar dateOfBirth, Address address, int number, boolean isVictim, boolean isWitness, boolean isPersonOfInterest){
+    public void addCivilian(String firstName, String lastName, Date dateOfBirth, Address address, int number, boolean isVictim, boolean isWitness, boolean isPersonOfInterest){
         civilians.add(new Civilian(firstName, lastName, address, number, isVictim, isWitness, isPersonOfInterest));
         CivilianWriter.saveCivilians();
     }
@@ -82,7 +82,7 @@ public class Database {
         return null;
     }
 
-    public void addOfficer(String firstName, String lastName, String dateOfBirth, int badgeNum, String policeDept){
+    public void addOfficer(String firstName, String lastName, Date dateOfBirth, int badgeNum, String policeDept){
         officers.add(new PoliceOfficer(firstName, lastName, dateOfBirth, badgeNum, policeDept));
         PoliceWriter.saveOfficers();
     }
@@ -196,6 +196,15 @@ public class Database {
     {
         for(Gang g:gangs){
             if(g.getName().equals(name)){
+                return g;
+            }
+        }
+        return null;
+    }
+
+    public static Gang getGangById(UUID id){
+        for(Gang g:gangs){
+            if(id.equals(g.getId())){
                 return g;
             }
         }

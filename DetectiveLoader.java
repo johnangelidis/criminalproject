@@ -19,8 +19,9 @@ public class DetectiveLoader extends DetectiveConstants{
                 UUID id = (UUID)detectiveJSON.get(DETECTIVE_ID);
                 String firstName = (String)detectiveJSON.get(DETECTIVE_FIRST_NAME);
                 String lastName = (String)detectiveJSON.get(DETECTIVE_LAST_NAME);
-
-                detectives.add(new Detective(firstName, lastName));
+                String stringDate = (String)detectiveJSON.get(DETECTIVE_DOB);
+                Date dateOfBirth = Date.splitDate(stringDate);
+                detectives.add(new Detective(firstName, lastName, dateOfBirth));
             }
         }catch (Exception e) {
             e.printStackTrace();

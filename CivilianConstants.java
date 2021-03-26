@@ -1,5 +1,5 @@
 public abstract class CivilianConstants {
-	protected static final String CIVILIANS_FILE_NAME = "json/civilians.json";
+	protected static final String CIVILIANS_FILE_NAME = "civilians.json";
 	protected static final String CIVILIANS = "civilians";
 	protected static final String CIVILIAN_ID = "id";
 	protected static final String CIVILIAN_FIRST_NAME = "firstName";

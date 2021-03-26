@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.UUID;
 /**
  * Class that represents a criminal case
@@ -10,43 +9,36 @@ public class Case {
     private String crime;
     private Civilian victim;
     private Criminal offender;
-    private String outcome;
+    private String suspectDescription;
+    private String caseDescription;
     private ArrayList<Civilian> witnesses;
     private ArrayList<Civilian> personsOfInterest;
-    private Calendar dayOfCrime;
-    private Calendar dayOfSentence;
+    private Date dayOfCrime;
+    private String time;
     private Address location;
     private ArrayList<PoliceOfficer> officersInvolved;
     private Detective detective;
+    private String victimStatement;
+    private String witnessStatement;
 
-    /**
-     * Constructor that creates a new case
-     * @param id
-     * @param crime
-     * @param victim
-     * @param offender
-     * @param outcome
-     * @param witnesses
-     * @param personsOfInterest
-     * @param dayOfCrime
-     * @param dayOfSentence
-     * @param location
-     * @param officersInvolved
-     * @param detective
-     */
-    public Case(String crime, Civilian victim, Criminal offender, String outcome, ArrayList<Civilian> witnesses, ArrayList<Civilian> personsOfInterest, Calendar dayOfCrime, Calendar dayOfSentence, Address location, ArrayList<PoliceOfficer> officersInvolved, Detective detective){
+   
+
+    public Case(String crime, Civilian victim, Criminal offender, String suspectDescription, String caseDescription, ArrayList<Civilian> witnesses, ArrayList<Civilian> personsOfInterest, Date dayOfCrime, String time, Address location, ArrayList<PoliceOfficer> officersInvolved, Detective detective, String victimStatement, String witnessStatement){
         this.id = UUID.randomUUID();
         this.crime = crime;
         this.victim = victim;
         this.offender = offender;
-        this.outcome = outcome;
+        this.suspectDescription = suspectDescription;
+        this.caseDescription = caseDescription;
         this.witnesses = new ArrayList<Civilian>();
         this.personsOfInterest = new ArrayList<Civilian>();
         this.dayOfCrime = dayOfCrime;
-        this.dayOfSentence = dayOfCrime;
+        this.time = time;
         this.location = location;
         this.officersInvolved = new ArrayList<PoliceOfficer>();
         this.detective = detective;
+        this.victimStatement = victimStatement;
+        this.witnessStatement = witnessStatement;
     }
 
     public UUID getId() {
@@ -69,20 +61,28 @@ public class Case {
         this.victim = victim;
     }
 
+    public String getSuspectDescription() {
+        return this.suspectDescription;
+    }
+
+    public void setSuspectDescription(String suspectDescription) {
+        this.suspectDescription = suspectDescription;
+    }
+
+    public String getCaseDescription() {
+        return this.caseDescription;
+    }
+
+    public void setCaseDescription(String caseDescription) {
+        this.caseDescription = caseDescription;
+    }
+
     public Criminal getOffender() {
         return this.offender;
     }
 
     public void setOffender(Criminal offender) {
         this.offender = offender;
-    }
-    
-    public String getOutcome() {
-        return this.outcome;
-    }
-
-    public void setOutcome(String outcome) {
-        this.outcome = outcome;
     }
 
     public ArrayList<Civilian> getWitnesses() {
@@ -105,16 +105,16 @@ public class Case {
         return dayOfCrime.toString();
     }
 
-    public void setDayOfCrime(int year, int month, int day) {
-        dayOfCrime.set(year,month,day);
+    public void setDayOfCrime(String month, int day, int year) {
+        dayOfCrime = new Date(month,day,year);
     }
 
-    public String getDayOfSentence() {
-        return dayOfSentence.toString();
+    public String getTime() {
+        return this.time;
     }
 
-    public void setDayOfSentence(int year, int month, int day) {
-        dayOfSentence.set(year,month,day);
+    public void setTime(String time) {
+        this.time = time;
     }
 
     public Address getLocation() {
@@ -139,5 +139,20 @@ public class Case {
 
     public void setDetective(Detective detective) {
         this.detective = detective;
+    }
+    public String getVictimStatement() {
+        return this.victimStatement;
+    }
+
+    public void setVictimStatement(String victimStatement) {
+        this.victimStatement = victimStatement;
+    }
+
+    public String getWitnessStatement() {
+        return this.witnessStatement;
+    }
+
+    public void setWitnessStatement(String witnessStatement) {
+        this.witnessStatement = witnessStatement;
     }
 }

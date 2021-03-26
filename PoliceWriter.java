@@ -36,7 +36,6 @@ public class PoliceWriter extends PoliceConstants {
         officerDetails.put(OFFICERS_DOB, officer.getDOB());
         officerDetails.put(OFFICERS_DEPT, officer.getpoliceDept());
         officerDetails.put(OFFICERS_BADGENUM, officer.getbadgeNum());
-        officerDetails.put(OFFICERS_CASES, officer.getCases());
 
         return officerDetails;
     }
