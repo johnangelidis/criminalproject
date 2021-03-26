@@ -235,6 +235,15 @@ public class Database {
         return null;
     }
 
+    public boolean findUser(String username, String password){
+        for(User u:users){
+            if(username.equals(u.getUsername()) && password.equals(u.getPassword())){
+                return true;
+            }
+        }
+        return false;
+    }
+
     /**
      * Allows user to export a Person entry
      * @param p Person that we want to write to file
