@@ -74,17 +74,13 @@ public class UI extends UIConstants{
 
     }
     private Address makeAddress(){
-      int number = getInput("Number");
-      String street = getInput("Street");
-      String city = getInput("City");
-
-      /*
-      private int number;
-      private String street;
-      private String city;
-      private String state;
-      private int zip;
-      */
+      int number = getInt("Number");
+      String street = getString("Street");
+      String city = getString("City");
+      String state = getString("State");
+      int zip = getInt("Zipcode");
+      Address ret = new Address(number, street, city, state, zip);
+      return ret;
     }
     private Detective makeDetective(){
       String firstName = getString("First name");
@@ -115,6 +111,7 @@ public class UI extends UIConstants{
       String firstName = getString("FirstName");
       String lastName = getString("LastName");
       int phone = getInt("Phone Number");
+      Date dob = makeDate("Birthday");
 
       /*
       private Address address;
@@ -160,7 +157,7 @@ public class UI extends UIConstants{
     private void createUser(){
       String username = getString("Username");
       String password = getString("Password");
-      if(database.addUser(username,password)){
+      if(database.addUser(username,password))
         System.out.println("Account created successfully.");
       } else {
         System.out.println("Sorry, try a different username.");
