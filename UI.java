@@ -18,7 +18,6 @@ import java.util.Scanner;
 public class UI extends UIConstants{
     private Scanner scanner;
     private Database database;
-    private Person searchPerson;
     //private static ArrayList<PoliceOfficer> loadOfficers;
     UI(){
       scanner = new Scanner(System.in);
@@ -68,35 +67,33 @@ public class UI extends UIConstants{
         }
       }
     }
-    private void searchPeople(){
-      System.out.println("Enter First Name");
-      String firstName = getInput("First Name");
-      System.out.println("Enter Last Name");
-      String lastName = getInput("Last Name");
-      System.out.println("Searching Library");
-      database.searchPerson(firstName, lastName);
+    private void searchCriminals(){
+
     }
     private void searchCases(){
-      System.out.println("Enter Crime");
-      String crime = getInput("Crime");
-      System.out.println("Enter Offender");
-      String offender = getInput("Offender");
+
     }
     private Address makeAddress(){
-      int number = getInt("Number");
-      String street = getString("Street");
-      String city = getString("City");
-      String state = getString("State");
-      int zip = getInt("Zip");
+      int number = getInput("Number");
+      String street = getInput("Street");
+      String city = getInput("City");
 
-      Address address = new Address(number,street,city,state,zip);
-      return address;
+      /*
+      private int number;
+      private String street;
+      private String city;
+      private String state;
+      private int zip;
+      */
     }
     private Detective makeDetective(){
-      String firstName = getString("First name");
-      String lastName = getString("Last name");
-      Date dateOfBirth = makeDate();
-      database.addDetective(firstName,lastName,dateOfBirth);
+      String firstName = getInput("First name");
+      String lastName = getInput("Last name");
+      if(database.addDetective(firstName,lastName)){
+        System.out.println("Detective created successfully.");
+      } else {
+        System.out.println("Sorry, something went wrong.");
+      }
     }
     private Detective promptForDetective(){
       System.out.println("Would you like to add a new or existing"+
@@ -107,7 +104,9 @@ public class UI extends UIConstants{
         Detective newDetective = makeDetective();
         return newDetective;
       } else if (choice == 2) {
-        Detective oldDetective = database.searchPerson(getInput("FirstName"),getInput("LastName"));
+        String firstName = getString("FirstName");
+        String lastName = getString("LastName");
+        Detective oldDetective = database.searchPerson(firstName,lastName);
         return oldDetective;
       } else {
         System.out.println("Invalid input");
@@ -115,14 +114,20 @@ public class UI extends UIConstants{
       return null;
     }
     private Civilian makeCivilian(){
-      int phone = getInput("Phone Number");
+      String firstName = getString("FirstName");
+      String lastName = getString("LastName");
+      int phone = getInt("Phone Number");
+
       /*
       private Address address;
-    	private int phone;
-    	private boolean isVictim;
-    	private boolean isWitness;
-    	private boolean isPersonOfInterest;
       */
+    }
+    private Date makeDate(String instance){
+      String monthOfCrime = getString("Month of "+instance);
+      int dayOfCrime = getInt("Day of "+instance);
+      int yearOfCrime = getInt("Year of "+instance);
+      Date ret = new Date(monthOfCrime,dayOfCrime,yearOfCrime);
+      return ret;
     }
     private Civilian promptForVictim(){
       System.out.println("Would you like to add a new or existing"+
@@ -131,7 +136,7 @@ public class UI extends UIConstants{
       int choice = Integer.parseInt(input);
       if(choice == 1) {
         Civilian newCivilian = makeCivilian();
-        return newCivlian;
+        return newCivilian;
       } else if (choice == 2) {
         String firstName = getString("FirstName");
         String lastName = getString("LastName");
@@ -146,29 +151,26 @@ public class UI extends UIConstants{
       //get basics then prompt(new or existing)
       String crime = getString("Crime");
       String outcome = getString("Outcome");
-      String monthOfCrime = getString("Month of Crime");
-      int dayOfCrime = getInt("Day of Crime");
-      int yearOfCrime = getInt("Year of Crime");
-      Date dateOfCrime = new Date(monthOfCrime,dayOfCrime,yearOfCrime);
+      Date dateOfCrime = makeDate("Crime");
+      Date dateOfSentence = makeDate("Sentence");
       Detective caseDetective = promptForDetective();
       //Civilian caseVictim = promptForVictim();
       //Criminal offender = promptForOffender();
       //Address location = promptForAddress();
 
-      /*
-      private ArrayList<Civilian> witnesses;
-      private ArrayList<Civilian> personsOfInterest;
-      private ArrayList<PoliceOfficer> officersInvolved;
-      */
     }
     private void createUser(){
       String username = getString("Username");
       String password = getString("Password");
-      database.addUser(username,password);
+      if(database.addUser(username,password)){
+        System.out.println("Account created successfully.");
+      } else {
+        System.out.println("Sorry, try a different username.");
+      }
     }
     private int getInt(String input) {
 		System.out.print(input + ": ");
-		return scanner.nextInt();
+		return scanner.nextLine();
     }
     private String getString(String input) {
       System.out.print(input + ": ");
