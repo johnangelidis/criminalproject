@@ -13,8 +13,7 @@
     "tattoos": "Red/Snake/Forearm",
     "hasScars": false,
     "status":"incarcerated",
-    "gang": "f92181a7-1a2e-4965-80c1-f3fb83225791",
-    "isSerialCriminal":false
+    "gang": "f92181a7-1a2e-4965-80c1-f3fb83225791"
 },
 {
     "id":"344e0a7b-1370-4dad-bf28-e473faaf7181",
@@ -31,6 +30,5 @@
     "tattoos": "Black/Lion/Chest",
     "hasScars": true,
     "status":"on parole",
-    "gang": "e923b639-66f1-4cf6-8308-46da3557e9ca",
-    "isSerialCriminal":false
+    "gang": "e923b639-66f1-4cf6-8308-46da3557e9ca"
 }]
