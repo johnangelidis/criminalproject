@@ -70,9 +70,9 @@ public class UI extends UIConstants{
     }
     private void searchPeople(){
       System.out.println("Enter First Name");
-      String firstName = scanner.nextLine();
+      String firstName = getInput("First Name");
       System.out.println("Enter Last Name");
-      String lastName = scanner.nextLine();
+      String lastName = getInput("Last Name");
       System.out.println("Searching Library");
       database.searchPerson(firstName, lastName);
     }
