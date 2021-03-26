@@ -162,23 +162,32 @@ public class Database {
      * @param lastName Last name of person
      * @return instance of the Person class
      */
-    public Person searchPerson(String firstName, String lastName)
+    public Criminal searchCriminals(String firstName, String lastName)
     {
         for (Criminal c : criminals) {
             if (c.getFirstName().equals(firstName) && c.getLastName().equals(lastName)) {
                 return c;
             }
         }
+        return null;
+    }
+    public Civilian searchCivilians(String firstName, String lastName){
         for (Civilian c : civilians) {
             if (c.getFirstName().equals(firstName) && c.getLastName().equals(lastName)) {
                 return c;
             }
         }
+        return null;
+    }
+    public PoliceOfficer searchOfficers(String firstName, String lastName){
         for (PoliceOfficer p : officers) {
             if (p.getFirstName().equals(firstName) && p.getLastName().equals(lastName)) {
                 return p;
             }
         }
+        return null;
+    }
+    public PoliceOfficer searchDetectives(String firstName, String lastName){
         for (Detective d : detectives) {
             if (d.getFirstName().equals(firstName) && d.getLastName().equals(lastName)) {
                 return d;
@@ -186,7 +195,6 @@ public class Database {
         }
         return null;
     }
-
     /**
      * Allows user to search entries based on associated gangs
      * @param name name of the gang
