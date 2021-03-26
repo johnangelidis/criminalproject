@@ -74,11 +74,11 @@ public class UI extends UIConstants{
 
     }
     private Address makeAddress(){
-      int number = getInt("Number");
-      String street = getString("Street");
-      String city = getString("City");
-      String state = getString("State");
-      int zip = getInt("Zipcode");
+      int number = getInt("Address number");
+      String street = getString("Address street");
+      String city = getString("Address city");
+      String state = getString("Address state");
+      int zip = getInt("Address zipcode");
       Address ret = new Address(number, street, city, state, zip);
       return ret;
     }
@@ -114,10 +114,9 @@ public class UI extends UIConstants{
       String lastName = getString("LastName");
       int phone = getInt("Phone Number");
       Date dob = makeDate("Birthday");
-
-      /*
-      private Address address;
-      */
+      Address addy = makeAddress();
+      Civilian ret = new Civilian(firstName, lastName, dob, addy, phone);
+      return ret;
     }
     private Date makeDate(String instance){
       String monthOfCrime = getString("Month of "+instance);
