@@ -141,7 +141,7 @@ public class UI extends UIConstants{
       } else if (choice == 2) {
         String firstName = getString("FirstName");
         String lastName = getString("LastName");
-        Civilian oldCivilian = database.searchPerson(firstName,lastName);
+        Civilian oldCivilian = database.searchCivilians(firstName,lastName);
         return oldCivilian;
       } else {
         System.out.println("Invalid input");
@@ -155,11 +155,7 @@ public class UI extends UIConstants{
       String monthOfCrime = getString("Month of Crime");
       int dayOfCrime = getInt("Day of Crime");
       int yearOfCrime = getInt("Year of Crime");
-      Date dateOfCrime = new Date(monthOfCrime,dayOfCrime,yearOfCrime));
-      String monthOfSentence = getString("Month of Sentence");
-      int dayOfSentence = getInt("Day of Sentence");
-      int yearOfSentence = getInt("Year of Sentence");
-      Date dateOfSentence = new Date(getInput(monthOfSentence,dayOfSentence,yearOfSentence);
+      Date dateOfCrime = new Date(monthOfCrime,dayOfCrime,yearOfCrime);
       Detective caseDetective = promptForDetective();
       //Civilian caseVictim = promptForVictim();
       //Criminal offender = promptForOffender();
@@ -174,23 +170,19 @@ public class UI extends UIConstants{
     private void createUser(){
       String username = getString("Username");
       String password = getString("Password");
-      if(database.addUser(username,password)){
-        System.out.println("Account created successfully.");
-      } else {
-        System.out.println("Sorry, try a different username.");
-      }
+      database.addUser(username,password);
     }
     private int getInt(String input) {
 		System.out.print(input + ": ");
-		return scanner.nextLine();
+		return scanner.nextInt();
     }
     private String getString(String input) {
       System.out.print(input + ": ");
       return scanner.nextLine();
     }
     private void login(){
-      String username = getInput("Username");
-      String password = getInput("Password");
+      String username = getString("Username");
+      String password = getString("Password");
       if(database.searchUser(username) != null){
         User currentUser = database.searchUser(username);
         if(currentUser.getPassword().equals(password)){
