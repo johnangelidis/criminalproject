@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
-import java.util.Calendar;
 import java.util.UUID;
 /**
  * Class representation of Database that allows user to search and export entries
@@ -36,8 +35,8 @@ public class Database {
         return criminals;
     }
 
-    public void addCriminal(String firstName, String lastName, double weight, double height, String hairColor, String eyeColor, Tattoo tattoos, boolean hasScars, String status, boolean isSerialCriminal){
-        criminals.add(new Criminal(firstName, lastName, weight, height, hairColor, eyeColor, tattoos, hasScars, status, isSerialCriminal));
+    public void addCriminal(String firstName, String lastName, Date dateOfBirth, String race, double weight, double height, String eyeColor, String hairColor, String hairLength, String facialHair, Tattoo tattoo, String status, Gang gang){
+        criminals.add(new Criminal(firstName, lastName, dateOfBirth, race, weight, height, eyeColor, hairColor, hairLength, facialHair, tattoo, status, gang));
         CriminalWriter.saveCriminals();
     }
 
@@ -59,8 +58,8 @@ public class Database {
         return null;
     }
 
-    public void addCivilian(String firstName, String lastName, Date dateOfBirth, Address address, int number, boolean isVictim, boolean isWitness, boolean isPersonOfInterest){
-        civilians.add(new Civilian(firstName, lastName, address, number, isVictim, isWitness, isPersonOfInterest));
+    public void addCivilian(String firstName, String lastName, Date dateOfBirth, Address anAddress, int aPhone, boolean bisVictim, boolean bisWitness, boolean bisPersonOfInterest){
+        civilians.add(new Civilian(firstName, lastName, dateOfBirth, anAddress, aPhone, bisVictim, bisWitness, bisPersonOfInterest));
         CivilianWriter.saveCivilians();
     }
     
@@ -97,8 +96,8 @@ public class Database {
         return detectives;
     }
 
-    public void addDetective(String firstName, String lastName){
-        detectives.add(new Detective(firstName, lastName));
+    public void addDetective(String firstName, String lastName, Date dateOfBirth){
+        detectives.add(new Detective(firstName, lastName, dateOfBirth));
         DetectiveWriter.saveDetectives();
     }
 
@@ -114,8 +113,8 @@ public class Database {
     public void loadCases(){
         cases = CaseLoader.loadCases();
     }
-    public void addCase(String crime, Civilian victim, Criminal offender, String outcome, ArrayList<Civilian> witnesses, ArrayList<Civilian> personsOfInterest, Calendar dayOfCrime, Calendar dayOfSentence, Address location, ArrayList<PoliceOfficer> officersInvolved, Detective detective){
-        cases.add(new Case(crime, victim, offender, outcome, witnesses, personsOfInterest, dayOfCrime, dayOfSentence, location, officersInvolved, detective));
+    public void addCase(String crime, Civilian victim, Criminal offender, String suspectDescription, String caseDescription, ArrayList<Civilian> witnesses, ArrayList<Civilian> personsOfInterest, Date dayOfCrime, String time, Address location, ArrayList<PoliceOfficer> officersInvolved, Detective detective, String victimStatement, String witnessStatement, ArrayList<String> evidence){
+        cases.add(new Case(crime, victim, offender, suspectDescription, caseDescription, witnesses, personsOfInterest, dayOfCrime, time, location, officersInvolved, detective, victimStatement, witnessStatement, evidence));
         CaseWriter.saveCases();
     }
 
@@ -242,6 +241,15 @@ public class Database {
             }
         }
         return null;
+    }
+
+    public boolean findUser(String username, String password){
+        for(User u:users){
+            if(username.equals(u.getUsername()) && password.equals(u.getPassword())){
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
