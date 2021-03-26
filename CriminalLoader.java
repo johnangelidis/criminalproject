@@ -21,17 +21,19 @@ public class CriminalLoader extends CriminalConstants{
                 String lastName = (String)criminalJSON.get(CRIMINAL_LAST_NAME);
 				String stringDate = (String)criminalJSON.get(CRIMINAL_DOB);
 				Date dateOfBirth = Date.splitDate(stringDate);
+				String race = (String)criminalJSON.get(CRIMINAL_RACE);
                 double weight = (double)criminalJSON.get(CRIMINAL_WEIGHT);
                 double height = (double)criminalJSON.get(CRIMINAL_HEIGHT);
+				String eyeColor = (String)criminalJSON.get(CRIMINAL_EYE_COLOR);
                 String hairColor = (String)criminalJSON.get(CRIMINAL_HAIR_COLOR);
-                String eyeColor = (String)criminalJSON.get(CRIMINAL_EYE_COLOR);
-				String stringTattoo = (String)criminalJSON.get(CRIMINAL_TATTOOS);
-                Tattoo tattoos = Tattoo.splitTattoo(stringTattoo);
-                boolean hasScars = (boolean)criminalJSON.get(CRIMINAL_HAS_SCARS);
+                String hairLength = (String)criminalJSON.get(CRIMINAL_HAIR_LENGTH);
+				String facialHair = (String)criminalJSON.get(CRIMINAL_FACIAL_HAIR);
+				String stringTattoo = (String)criminalJSON.get(CRIMINAL_TATTOO);
+                Tattoo tattoo = Tattoo.splitTattoo(stringTattoo);
                 String status = (String)criminalJSON.get(CRIMINAL_STATUS);
-                boolean isSerialCriminal = (boolean)criminalJSON.get(CRIMINAL_IS_SERIAL_CRIMINAL);
-                
-				criminals.add(new Criminal(firstName, lastName, dateOfBirth, weight, height, hairColor, eyeColor, tattoos, hasScars, status, isSerialCriminal));
+                String stringGang = (String)criminalJSON.get(CRIMINAL_GANG);
+				Gang gang = Gang.getGangById(stringGang);
+				criminals.add(new Criminal(firstName, lastName, dateOfBirth, race, weight, height, eyeColor, hairColor, hairLength, facialHair, tattoo,  status, gang));
 			}
 			
 			return criminals;

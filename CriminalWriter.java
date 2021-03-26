@@ -33,13 +33,17 @@ public class CriminalWriter extends CriminalConstants {
         //criminalDetails.put(CRIMINAL_ID), c.getId());
 		criminalDetails.put(CRIMINAL_FIRST_NAME, c.getFirstName());
 		criminalDetails.put(CRIMINAL_LAST_NAME, c.getLastName());
+		criminalDetails.put(CRIMINAL_DOB, c.getDOB());
+		criminalDetails.put(CRIMINAL_RACE, c.getRace());
         criminalDetails.put(CRIMINAL_WEIGHT, c.getWeight());
         criminalDetails.put(CRIMINAL_HEIGHT, c.getHeight());
+		criminalDetails.put(CRIMINAL_EYE_COLOR, c.getEyeColor());
 		criminalDetails.put(CRIMINAL_HAIR_COLOR, c.getHairColor());
-        criminalDetails.put(CRIMINAL_EYE_COLOR, c.getEyeColor());
-        criminalDetails.put(CRIMINAL_TATTOOS, c.getTattoos());
-        criminalDetails.put(CRIMINAL_HAS_SCARS, c.isHasScars());
-        criminalDetails.put(CRIMINAL_IS_SERIAL_CRIMINAL, c.isIsSerialCriminal());
+        criminalDetails.put(CRIMINAL_HAIR_LENGTH, c.getHairLength());
+		criminalDetails.put(CRIMINAL_FACIAL_HAIR, c.getFacialHair());
+        criminalDetails.put(CRIMINAL_TATTOO, c.getTattoo());
+		criminalDetails.put(CRIMINAL_STATUS, c.getStatus());
+		criminalDetails.put(CRIMINAL_GANG, c.getGang());
         
         return criminalDetails;
 	}
