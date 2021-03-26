@@ -28,7 +28,7 @@ public class UI extends UIConstants{
       //Loop until user quits
       while(true) {
         displayMainMenu();
-        int userCommand = getUserCommand(mainMenuOptions.length());
+        int userCommand = getUserCommand(mainMenuOptions.length);
         if(userCommand == -1) {
           System.out.println("Invalid command");
           continue;
@@ -50,7 +50,7 @@ public class UI extends UIConstants{
                   break;
           case(2):
                   if(currentUser.getLoggedInStatus == true && currentUser.getAdminStatus == true){
-                    addCase();
+                    addACase();
                     break;
                   } else {
                     System.out.println("You either are not logged in or are not an admin");
@@ -130,19 +130,27 @@ public class UI extends UIConstants{
         Civilian newCivilian = makeCivilian();
         return newCivlian;
       } else if (choice == 2) {
-        Detective oldCivilian = database.searchPerson(getInput("FirstName"),getInput("LastName"));
+        String firstName = getString("FirstName");
+        String lastName = getString("LastName");
+        Civilian oldCivilian = database.searchPerson(firstName,lastName);
         return oldCivilian;
       } else {
         System.out.println("Invalid input");
       }
       return null;
     }
-    private void addCase(){
+    private void addACase(){
       //get basics then prompt(new or existing)
-      String crime = getInput("Crime");
-      String outcome = getInput("Outcome");
-      Date dayOfCrime = new Date(getInput("Month"),getInput("Day"),getInput("Year"));
-      Date dayOfSentence = new Date(getInput("Month"),getInput("Day"),getInput("Year"));
+      String crime = getString("Crime");
+      String outcome = getString("Outcome");
+      String monthOfCrime = getString("Month of Crime");
+      int dayOfCrime = getInt("Day of Crime");
+      int yearOfCrime = getInt("Year of Crime");
+      Date dateOfCrime = new Date(monthOfCrime,dayOfCrime,yearOfCrime));
+      String monthOfSentence = getString("Month of Sentence");
+      int dayOfSentence = getInt("Day of Sentence");
+      int yearOfSentence = getInt("Year of Sentence");
+      Date dateOfSentence = new Date(getInput(monthOfSentence,dayOfSentence,yearOfSentence);
       Detective caseDetective = promptForDetective();
       //Civilian caseVictim = promptForVictim();
       //Criminal offender = promptForOffender();
@@ -155,24 +163,28 @@ public class UI extends UIConstants{
       */
     }
     private void createUser(){
-      String username = getInput("Username");
-      String password = getInput("Password");
+      String username = getString("Username");
+      String password = getString("Password");
       if(database.addUser(username,password)){
         System.out.println("Account created successfully.");
       } else {
         System.out.println("Sorry, try a different username.");
       }
     }
-    private String getInput(String input) {
+    private int getInt(String input) {
 		System.out.print(input + ": ");
 		return scanner.nextLine();
     }
+    private String getString(String input) {
+      System.out.print(input + ": ");
+      return scanner.nextLine();
+    }
     private void login(){
-      String username = getField("Username");
-      String password = getField("Password");
-      if(database.searchUser(username)){
+      String username = getInput("Username");
+      String password = getInput("Password");
+      if(database.searchUser(username) != null){
         User currentUser = database.searchUser(username);
-        if(currentUser.getPassword.equals(password)){
+        if(currentUser.getPassword().equals(password)){
         currentUser.login();
       } else {
         System.out.println("Invalid password.");
@@ -182,7 +194,7 @@ public class UI extends UIConstants{
         System.out.println("Sorry, invalid username.");
       }
     }
-    private void getUserCommand(int numCommands){
+    private int getUserCommand(int numCommands){
       System.out.print("Please select an action: ");
 
       String input = scanner.nextLine();
