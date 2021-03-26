@@ -16,23 +16,26 @@ public class CaseLoader extends CaseConstants{
 			
 			for(int i=0; i < casesJSON.size(); i++) {
 				JSONObject caseJSON = (JSONObject)casesJSON.get(i);
-                UUID id = (UUID)caseJSON.get(CASE_ID);
+                UUID id = UUID.fromString((String)caseJSON.get(CASE_ID));
 				String crime = (String)caseJSON.get(CASE_CRIME);
 				Civilian victim = (Civilian)caseJSON.get(CASE_VICTIM);
                 Criminal offender = (Criminal)caseJSON.get(CASE_OFFENDER);
-                String outcome = (String)caseJSON.get(CASE_OUTCOME);
+				String suspectDescription = (String)caseJSON.get(CASE_SUSPECT_DESCRIPTION);
+				String caseDescription = (String)caseJSON.get(CASE_CASE_DESCRIPTION);
                 JSONArray witnesses = (JSONArray)caseJSON.get(CASE_WITNESSES);
                 JSONArray personsOfInterest = (JSONArray)caseJSON.get(CASE_PERSONS_OF_INTEREST);
 				String stringDay = (String)caseJSON.get(CASE_DAY_OF_CRIME);
                 Date dayOfCrime = Date.splitDate(stringDay);
-				String stringDaySentence = (String)caseJSON.get(CASE_DAY_OF_SENTENCE);
-                Date dayOfSentence = Date.splitDate(stringDaySentence);
+				String time = (String)caseJSON.get(CASE_TIME);
 				String stringAddress = (String)caseJSON.get(CASE_LOCATION);
                 Address location = Address.splitAddress(stringAddress);
                 JSONArray officers = (JSONArray)caseJSON.get(CASE_OFFICERS);
                 Detective detective = (Detective)caseJSON.get(CASE_DETECTIVE);
+				String victimStatement = (String)caseJSON.get(CASE_VICTIM_STATEMENT);
+				String witnessStatement = (String)caseJSON.get(CASE_WITNESS_STATEMENT);
+				JSONArray evidence = (JSONArray)caseJSON.get(CASE_EVIDENCE);
                 
-				cases.add(new Case(crime, victim, offender, outcome, returnWitnesses(witnesses), returnPersonsOfInterest(personsOfInterest), dayOfCrime, dayOfSentence, location, returnOfficers(officers), detective));
+				cases.add(new Case(crime, victim, offender, suspectDescription, caseDescription, returnWitnesses(witnesses), returnPersonsOfInterest(personsOfInterest), dayOfCrime, time, location, returnOfficers(officers), detective, victimStatement, witnessStatement, returnEvidence(evidence)));
 			}
 			
 			return cases;
@@ -72,5 +75,12 @@ public class CaseLoader extends CaseConstants{
 			caseOfficers.add(officer);
 		}
 		return caseOfficers;
+	}
+
+	public static ArrayList<String> returnEvidence(JSONArray evidence){
+		ArrayList<String> caseEvidence = new ArrayList<String>();
+		for(int i=0; i<evidence.size(); i++){
+			
+		}
 	}
 }
