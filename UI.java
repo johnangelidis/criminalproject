@@ -18,6 +18,7 @@ import java.util.Scanner;
 public class UI extends UIConstants{
     private Scanner scanner;
     private Database database;
+    private Person searchPerson;
     //private static ArrayList<PoliceOfficer> loadOfficers;
     UI(){
       scanner = new Scanner(System.in);
@@ -67,8 +68,13 @@ public class UI extends UIConstants{
         }
       }
     }
-    private void searchCriminals(){
-
+    private void searchPeople(){
+      System.out.println("Enter First Name");
+      String firstName = scanner.nextLine();
+      System.out.println("Enter Last Name");
+      String lastName = scanner.nextLine();
+      System.out.println("Searching Library");
+      database.searchPerson(firstName, lastName);
     }
     private void searchCases(){
 

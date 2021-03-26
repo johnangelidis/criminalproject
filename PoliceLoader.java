@@ -34,5 +34,12 @@ public class PoliceLoader extends PoliceConstants {
             }
             return null;
         }
+        public static void main(String[] args){
+            ArrayList<PoliceOfficer> officers = PoliceLoader.loadOfficers();
+            for(PoliceOfficer p : officers){
+                System.out.println(p);
+            }
+        }
     }
+
     
