@@ -15,6 +15,8 @@
 */
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.text.ParseException;
+
 public class UI extends UIConstants{
     private Scanner scanner;
     private Database database;
@@ -58,8 +60,14 @@ public class UI extends UIConstants{
                     System.out.println("You either are not logged in or are not an admin");
                     break;
                   }
+<<<<<<< HEAD
+          */
+          case(2):
+                
+=======
           case(3):
 
+>>>>>>> dc07292b3887b43a48fc32ec757b720ab885c1c6
                   break;
                   //search for criminal/suspect
           
@@ -93,8 +101,13 @@ public class UI extends UIConstants{
       String hairLength = getString("Criminal Hair length");
       String facialHair = getString("Criminal Facial hair");
       Tattoo tattoo = promptForTattoo();
+<<<<<<< HEAD
+      String status = getString("Status");
+      // Gang gang = promptForGang();
+=======
       String status = getString("Criminal Status");
       Gang gang = promptForGang();
+>>>>>>> 5634634fd21318a7806e8b5d54dda8c795a2d50c
 
       Criminal c = new Criminal(firstName, lastName, dateOfBirth, race, weight, height, eyeColor, hairColor, hairLength, facialHair, tattoo, status, gang);
       database.addCriminal(c);
@@ -152,6 +165,19 @@ public class UI extends UIConstants{
       Date ret = new Date(monthOfCrime,dayOfCrime,yearOfCrime);
       return ret;
     }
+
+    private PoliceOfficer makePoliceOfficer() {
+      String firstName = getString("first name");
+      String lastName = getString("last name");
+      System.out.print("Enter date of birth: ");
+      Date dob = makeDate("birth");
+      int badgeNumber = getInt("badge number");
+      String policeDepartment = getString("police department");
+      PoliceOfficer newPoliceOfficer = new PoliceOfficer(firstName, lastName, dob, 
+                                                          badgeNumber, policeDepartment);
+      return newPoliceOfficer;
+    }
+
     private Civilian promptForCivilian(){
       System.out.println("Would you like to add a new or existing"+
       "Civilian?\n Enter 1 for new or 2 for existing");
@@ -192,7 +218,12 @@ public class UI extends UIConstants{
       Case c = new Case(crime, victim, offender, suspectDescription, caseDescription, witness, personOfInterest, dayOfCrime, time, location, officer, detective, victimStatement, witnessStatement, evidence);
       database.addCase(c);
     }
+<<<<<<< HEAD
+    */
+
+=======
     
+>>>>>>> 5634634fd21318a7806e8b5d54dda8c795a2d50c
     private void createUser(){
       String username = getString("Username");
       String password = getString("Password");
