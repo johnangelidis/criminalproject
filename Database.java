@@ -58,9 +58,8 @@ public class Database {
         return null;
     }
 
-    public void addCivilian(String firstName, String lastName, Date dateOfBirth, Address anAddress, 
-                            int aPhone, boolean bisVictim, boolean bisWitness, boolean bisPersonOfInterest){
-        civilians.add(new Civilian(firstName, lastName, dateOfBirth, anAddress, aPhone));
+    public void addCivilian(Civilian c){
+        civilians.add(c);
         CivilianWriter.saveCivilians();
     }
     
@@ -82,8 +81,8 @@ public class Database {
         return null;
     }
 
-    public void addOfficer(String firstName, String lastName, Date dateOfBirth, int badgeNum, String policeDept){
-        officers.add(new PoliceOfficer(firstName, lastName, dateOfBirth, badgeNum, policeDept));
+    public void addOfficer(PoliceOfficer p){
+        officers.add(p);
         PoliceWriter.saveOfficers();
     }
 
@@ -127,18 +126,9 @@ public class Database {
     public void loadCases(){
         cases = CaseLoader.loadCases();
     }
-    public void addCase(String crime, Civilian victim, Criminal offender, 
-                        String suspectDescription, String caseDescription, 
-                        ArrayList<Civilian> witnesses, ArrayList<Civilian> personsOfInterest, 
-                        Date dayOfCrime, String time, Address location, 
-                        ArrayList<PoliceOfficer> officersInvolved, Detective detective, 
-                        String victimStatement, String witnessStatement, ArrayList<String> evidence, String outcome,
-                        String dayOfSentence) {
+    public void addCase(Case c) {
 
-        cases.add(new Case(crime, victim, offender, suspectDescription, caseDescription, 
-                            witnesses, personsOfInterest, dayOfCrime, time, location, 
-                            officersInvolved, detective, victimStatement, witnessStatement, evidence, outcome, dayOfSentence));
-
+        cases.add(c);
         CaseWriter.saveCases();
     }
 
@@ -155,8 +145,8 @@ public class Database {
         gangs = GangLoader.loadGangs();
     }
 
-    public void addGang(String name){
-        gangs.add(new Gang(name));
+    public void addGang(Gang g){
+        gangs.add(g);
         GangWriter.saveGangs();
     }
 

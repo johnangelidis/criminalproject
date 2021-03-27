@@ -58,12 +58,11 @@ public class UI extends UIConstants{
                     System.out.println("You either are not logged in or are not an admin");
                     break;
                   }
-          */
-          case(2):
+          case(3):
 
                   break;
                   //search for criminal/suspect
-          /*
+          
           case(4):
                   database.searchCases(getInput("Crime:"),getInput(""));
                   break;
@@ -117,8 +116,8 @@ public class UI extends UIConstants{
       Detective d = new Detective(firstName, lastName, dateOfBirth);
       database.addDetective(d);
       return d;
+      
     }
-
     private Detective promptForDetective(){
       System.out.println("Would you like to add a new or existing"+
       "Detective?\n Enter 1 for new or 2 for existing");
@@ -174,18 +173,22 @@ public class UI extends UIConstants{
     
     private void addCase(){
       //get basics then prompt(new or existing)
-      ArrayList<Civilian> witnesses = new ArrayList<Civilian>();
-      ArrayList<Civilian> personsOfInterest = new ArrayList<Civilian>();
+      int count = 0;
       String crime = getString("Crime");
       Civilian victim = promptForCivilian();
       Criminal offender = makeCriminal();
       String suspectDescription = getString("Suspect Description");
       String caseDescription = getString("Case Description");
-
+      Civilian witness = promptForCivilian();
+      Civilian personOfInterest = promptForCivilian();
       Date dayofCrime = makeDate("Date");
       String time = getString("Time");
       Address location = makeAddress();
-      ArrayList
+      PoliceOfficer officer = promptForPoliceOfficer();
+      Detective detective = promptForDetective();
+      String victimStatement = getString("Victim Statement");
+      String witnessStatement = getString("Witness Statement");
+      String evidence = getString("Evidence");
     }
     
     private void createUser(){
