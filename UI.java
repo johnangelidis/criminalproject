@@ -173,7 +173,6 @@ public class UI extends UIConstants{
     
     private void addCase(){
       //get basics then prompt(new or existing)
-      int count = 0;
       String crime = getString("Crime");
       Civilian victim = promptForCivilian();
       Criminal offender = makeCriminal();
@@ -181,7 +180,7 @@ public class UI extends UIConstants{
       String caseDescription = getString("Case Description");
       Civilian witness = promptForCivilian();
       Civilian personOfInterest = promptForCivilian();
-      Date dayofCrime = makeDate("Date");
+      Date dayOfCrime = makeDate("Date");
       String time = getString("Time");
       Address location = makeAddress();
       PoliceOfficer officer = promptForPoliceOfficer();
@@ -189,6 +188,9 @@ public class UI extends UIConstants{
       String victimStatement = getString("Victim Statement");
       String witnessStatement = getString("Witness Statement");
       String evidence = getString("Evidence");
+
+      Case c = new Case(crime, victim, offender, suspectDescription, caseDescription, witness, personOfInterest, dayOfCrime, time, location, officer, detective, victimStatement, witnessStatement, evidence);
+      database.addCase(c);
     }
     
     private void createUser(){
