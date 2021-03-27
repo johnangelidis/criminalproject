@@ -228,6 +228,18 @@ public class UI extends UIConstants{
       database.deleteCivilian(civilianID);
     }
 
+    private void deletePoliceOfficer(UUID officerID){
+      database.deleteOfficer(officerID);
+    }
+
+    private void deleteDetective(UUID detectiveID){
+      database.deleteDetective(detectiveID);
+    }
+
+    private void deleteGang(UUID gangID){
+      database.deleteGang(gangID);
+    }
+
     private int getInt(String input) {
       System.out.print(input + ": ");
       int in = scanner.nextInt();

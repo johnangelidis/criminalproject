@@ -113,7 +113,21 @@ public class Database {
         PoliceWriter.saveOfficers();
     }
 
-    public void deleteOfficer(PoliceOfficer p){
+    public PoliceOfficer getOfficerById(UUID officerID) {
+        int officerIndex = 0;
+        try {
+            for (int i = 0; i < officers.size(); i++) {
+                if(officers.get(i).getId() == officerID)
+                    officerIndex = i;
+            }
+        } catch (Exception e) {
+            System.out.println("INVALID OFFICER ID");
+        }
+        return officers.get(officerIndex);
+    }
+
+    public void deleteOfficer(UUID officerID){
+        PoliceOfficer p = getOfficerById(officerID);
         officers.remove(p);
         PoliceWriter.saveOfficers();
 
@@ -128,7 +142,21 @@ public class Database {
         DetectiveWriter.saveDetectives();
     }
 
-    public void deleteDetective(Detective d){
+    public Detective getDetectiveById(UUID detectiveID) {
+        int detectiveIndex = 0;
+        try {
+            for (int i = 0; i < detectives.size(); i++) {
+                if(officers.get(i).getId() == detectiveID)
+                   detectiveIndex = i;
+            }
+        } catch (Exception e) {
+            System.out.println("INVALID DETECTIVE ID");
+        }
+        return detectives.get(detectiveIndex);
+    }
+
+    public void deleteDetective(UUID detectiveID){
+        Detective d = getDetectiveById(detectiveID);
         detectives.remove(d);
         DetectiveWriter.saveDetectives();
     }
@@ -178,7 +206,21 @@ public class Database {
         GangWriter.saveGangs();
     }
 
-    public void deleteGang(Gang g){
+    public Gang getGangById(UUID gangID) {
+        int gangIndex = 0;
+        try {
+            for (int i = 0; i < gangs.size(); i++) {
+                if(gangs.get(i).getId() == gangID)
+                   gangIndex = i;
+            }
+        } catch (Exception e) {
+            System.out.println("INVALID GANG ID");
+        }
+        return gangs.get(gangIndex);
+    }
+
+    public void deleteGang(UUID gangID){
+        Gang g = getGangById(gangID);
         gangs.remove(g);
         GangWriter.saveGangs();
     }
@@ -252,14 +294,7 @@ public class Database {
         return null;
     }
 
-    public static Gang getGangById(UUID id){
-        for(Gang g:gangs){
-            if(id.equals(g.getId())){
-                return g;
-            }
-        }
-        return null;
-    }
+    
     
     /**
      * Allows users to search entries based on associated cases via case ID
