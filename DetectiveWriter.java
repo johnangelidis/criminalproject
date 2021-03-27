@@ -26,6 +26,7 @@ public class DetectiveWriter extends DetectiveConstants {
 
     public static JSONObject getDetectiveJSON(Detective detective){
         JSONObject detectiveDetails = new JSONObject();
+        detectiveDetails.put(DETECTIVE_ID, detective.getId().toString());
         detectiveDetails.put(DETECTIVE_FIRST_NAME, detective.getFirstName());
         detectiveDetails.put(DETECTIVE_LAST_NAME, detective.getLastName());
         detectiveDetails.put(DETECTIVE_DOB, detective.getDOB());

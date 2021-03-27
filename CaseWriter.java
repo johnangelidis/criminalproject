@@ -30,7 +30,7 @@ public class CaseWriter extends CaseConstants {
 	
 	public static JSONObject getCaseJSON(Case c) {
 		JSONObject caseDetails = new JSONObject();
-        //caseDetails.put(CASE_ID), c.getId());
+        caseDetails.put(CASE_ID, c.getId().toString());
 		caseDetails.put(CASE_CRIME, c.getCrime());
 		caseDetails.put(CASE_VICTIM, c.getVictim());
         caseDetails.put(CASE_OFFENDER, c.getOffender());
