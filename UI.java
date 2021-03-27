@@ -58,11 +58,12 @@ public class UI extends UIConstants{
                     System.out.println("You either are not logged in or are not an admin");
                     break;
                   }
-          case(3):
+          */
+          case(2):
 
                   break;
                   //search for criminal/suspect
-          
+          /*
           case(4):
                   database.searchCases(getInput("Crime:"),getInput(""));
                   break;
@@ -116,8 +117,8 @@ public class UI extends UIConstants{
       Detective d = new Detective(firstName, lastName, dateOfBirth);
       database.addDetective(d);
       return d;
-      
     }
+
     private Detective promptForDetective(){
       System.out.println("Would you like to add a new or existing"+
       "Detective?\n Enter 1 for new or 2 for existing");
