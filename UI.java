@@ -220,6 +220,14 @@ public class UI extends UIConstants{
       database.deleteCase(caseID);
     }
 
+    private void deleteCriminal(UUID criminalID){
+      database.deleteCriminal(criminalID);
+    }
+
+    private void deleteCivilian(UUID civilianID){
+      database.deleteCivilian(civilianID);
+    }
+
     private int getInt(String input) {
       System.out.print(input + ": ");
       int in = scanner.nextInt();
