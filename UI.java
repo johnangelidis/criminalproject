@@ -45,11 +45,8 @@ public class UI extends UIConstants{
             break;
         }
         switch(userCommand){
-          case(0):
-                  createUser();
-                  break;
           case(1):
-                  login();
+                  createUser();
                   break;
           /*        
           case(2):
@@ -162,13 +159,16 @@ public class UI extends UIConstants{
       String password = getString("Password");
       database.addUser(username,password);
     }
+
     private int getInt(String input) {
 		System.out.print(input + ": ");
 		return scanner.nextInt();
     }
     private String getString(String input) {
       System.out.print(input + ": ");
-      return scanner.nextLine();
+      String in = scanner.next();
+      System.out.println(" ");
+      return in;
     }
 
     // made currentUser an instance variable so it can be used in other methods

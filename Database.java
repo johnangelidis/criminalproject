@@ -265,7 +265,7 @@ public class Database {
 
     public User searchUser(String username){
         for(User u:users){
-            if(u.getUsername().equals(username)){
+            if(username.equals(u.getUsername())){
                 return u;
             }
         }

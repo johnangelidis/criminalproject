@@ -30,7 +30,7 @@ public class UserWriter extends UserConstants {
 	
 	public static JSONObject getUserJSON(User user) {
 		JSONObject userDetails = new JSONObject();
-        userDetails.put(USER_ID, user.getId());
+        userDetails.put(USER_ID, user.getId().toString());
         userDetails.put(USER_USERNAME, user.getUsername());
         userDetails.put(USER_PASSWORD, user.getPassword());
         userDetails.put(USER_IS_ADMIN, user.isIsAdmin());

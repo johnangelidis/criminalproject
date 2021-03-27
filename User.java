@@ -15,6 +15,7 @@ public class User {
     }
 
     public User(String username, String password){
+        id = UUID.randomUUID();
         this.username = username;
         this.password = password;
         this.isAdmin = false;
