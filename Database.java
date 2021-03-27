@@ -234,7 +234,20 @@ public class Database {
         UserWriter.saveUsers();
     }
 
-    public void deleteUser(User u){
+    public User getUserById(UUID userID){
+        int userIndex = 0;
+        try {
+            for (int i = 0; i < users.size(); i++) {
+                if(users.get(i).getId() == userID)
+                   userIndex = i;
+            }
+        } catch (Exception e) {
+            System.out.println("INVALID USER ID");
+        }
+        return users.get(userIndex);
+    }
+    public void deleteUser(UUID userID){
+        User u = getUserById(userID);
         users.remove(u);
         UserWriter.saveUsers();
     }

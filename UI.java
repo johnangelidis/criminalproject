@@ -242,6 +242,10 @@ public class UI extends UIConstants{
       database.deleteGang(gangID);
     }
 
+    private void deleteUser(UUID userID){
+      database.deleteUser(userID);
+    }
+
     private int getInt(String input) {
       System.out.print(input + ": ");
       int in = scanner.nextInt();
