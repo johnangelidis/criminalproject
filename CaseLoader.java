@@ -34,11 +34,13 @@ public class CaseLoader extends CaseConstants{
 				String victimStatement = (String)caseJSON.get(CASE_VICTIM_STATEMENT);
 				String witnessStatement = (String)caseJSON.get(CASE_WITNESS_STATEMENT);
 				JSONArray evidence = (JSONArray)caseJSON.get(CASE_EVIDENCE);
-                
+				String outcome = (String)caseJSON.get(CASE_OUTCOME);
+				String dayOfSentence = (String)caseJSON.get(CASE_DAY_OF_SENTENCE);
+
 				cases.add(new Case(crime, victim, offender, suspectDescription, caseDescription, 
 									returnWitnesses(witnesses), returnPersonsOfInterest(personsOfInterest), 
 									dayOfCrime, time, location, returnOfficers(officers), detective, 
-									victimStatement, witnessStatement, returnEvidence(evidence)));
+									victimStatement, witnessStatement, returnEvidence(evidence), outcome, dayOfSentence));
 			}
 			
 			return cases;
