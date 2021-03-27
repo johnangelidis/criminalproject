@@ -17,4 +17,6 @@ public abstract class CaseConstants {
 	protected static final String CASE_VICTIM_STATEMENT = "victimStatement";
 	protected static final String CASE_WITNESS_STATEMENT = "witnessStatement";
 	protected static final String CASE_EVIDENCE = "evidence";  
+	protected static final String CASE_OUTCOME = "caseOutcome";
+	protected static final String CASE_DAY_OF_SENTENCE = "dayOfSentence";
 }
