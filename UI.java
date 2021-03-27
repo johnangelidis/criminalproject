@@ -100,6 +100,15 @@ public class UI extends UIConstants{
       database.addCriminal(c);
       return c;
     }
+
+    private Tattoo promptForTattoo(){
+      String color = getString("Tattoo color");
+      String design = getString("Tattoo design");
+      String location = getString("Tattoo location");
+      Tattoo t = new Tattoo(color, design, location);
+      return t;
+    }
+    
     private Detective makeDetective(){
       String firstName = getString("First name");
       String lastName = getString("Last name");
