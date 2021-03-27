@@ -15,6 +15,8 @@
 */
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.text.ParseException;
 
 public class UI extends UIConstants{
@@ -292,6 +294,12 @@ public class UI extends UIConstants{
       else
         System.out.println("Please enter a valid option");
     }
+    }
+    
+    private void exportCase(Case aCase) throws FileNotFoundException {
+      String caseOutput = aCase.toString();
+      PrintWriter out = new PrintWriter("case.txt");
+      out.println(caseOutput);
     }
     public static void main(String[] args) {
         UI UIInterface = new UI();
