@@ -75,4 +75,8 @@ public class User {
     public boolean getAdminStatus(){
       return this.isAdmin;
     }
+
+    public String toString(){
+        return username;
+    }
 }

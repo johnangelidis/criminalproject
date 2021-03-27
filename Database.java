@@ -64,8 +64,7 @@ public class Database {
 
     public void addCivilian(String firstName, String lastName, Date dateOfBirth, Address anAddress, 
                             int aPhone, boolean bisVictim, boolean bisWitness, boolean bisPersonOfInterest){
-        civilians.add(new Civilian(firstName, lastName, dateOfBirth, anAddress, aPhone, 
-                                    bisVictim, bisWitness, bisPersonOfInterest));
+        civilians.add(new Civilian(firstName, lastName, dateOfBirth, anAddress, aPhone));
         CivilianWriter.saveCivilians();
     }
     
@@ -102,8 +101,8 @@ public class Database {
         return detectives;
     }
 
-    public void addDetective(String firstName, String lastName, Date dateOfBirth){
-        detectives.add(new Detective(firstName, lastName, dateOfBirth));
+    public void addDetective(Detective d){
+        detectives.add(d);
         DetectiveWriter.saveDetectives();
     }
 

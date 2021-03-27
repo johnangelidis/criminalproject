@@ -19,7 +19,7 @@ public void run(){
     String password = scanner.next();
 
     if(database.findUser(username,password)){
-        System.out.println("Welcome " + username);
+        System.out.println("Welcome " + username + "!");
     }
     else{
         System.out.println("Sorry user not found");

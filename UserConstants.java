@@ -1,5 +1,5 @@
 public class UserConstants {
-    protected static final String USER_FILE_NAME = "users.json";
+    protected static final String USER_FILE_NAME = "user.json";
 	protected static final String USERS = "users";
 	protected static final String USER_ID = "id";
 	protected static final String USER_USERNAME = "username";

@@ -51,6 +51,7 @@ public class UI extends UIConstants{
           case(1):
                   login();
                   break;
+          /*        
           case(2):
                   if(currentUser.getLoggedInStatus() == true && currentUser.getAdminStatus() == true){
                     addACase();
@@ -63,18 +64,14 @@ public class UI extends UIConstants{
 
                   break;
                   //search for criminal/suspect
+          
           case(4):
                   database.searchCases(getInput("Crime:"),getInput(""));
                   break;
                   //search cases
+          */        
         }
       }
-    }
-    private void searchCriminals(){
-
-    }
-    private void searchCases(){
-
     }
     private Address makeAddress(){
       int number = getInt("Address number");
@@ -89,7 +86,9 @@ public class UI extends UIConstants{
       String firstName = getString("First name");
       String lastName = getString("Last name");
       Date dateOfBirth = makeDate("Date of Birth");
-      database.addDetective(firstName, lastName, dateOfBirth);
+      Detective d = new Detective(firstName, lastName, dateOfBirth);
+      database.addDetective(d);
+      return d;
       
     }
     private Detective promptForDetective(){
@@ -144,6 +143,7 @@ public class UI extends UIConstants{
       }
       return null;
     }
+    /*
     private void addACase(){
       //get basics then prompt(new or existing)
       String crime = getString("Crime");
@@ -156,6 +156,7 @@ public class UI extends UIConstants{
       //Address location = promptForAddress();
 
     }
+    */
     private void createUser(){
       String username = getString("Username");
       String password = getString("Password");
@@ -198,7 +199,7 @@ public class UI extends UIConstants{
     private void displayMainMenu(){
         System.out.println("\n********** Main Menu **********");
         for(int i=0; i<mainMenuOptions.length; i++){
-          System.out.println(i+1) + ", " + mainMenuOptions[i]);
+          System.out.println((i+1) + ", " + mainMenuOptions[i]);
         }
         System.out.println("\n");
 

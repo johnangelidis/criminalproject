@@ -21,8 +21,8 @@ public class UserLoader extends UserConstants{
                 UUID id = UUID.fromString((String)userJSON.get(USER_ID));
 				String username = (String)userJSON.get(USER_USERNAME);
                 String password = (String)userJSON.get(USER_PASSWORD);
-                boolean isAdmin = (boolean)userJSON.get(USER_IS_ADMIN);
-                boolean isLoggedIn = (boolean)userJSON.get(USER_IS_LOGGED_IN);
+                //boolean isAdmin = (boolean)userJSON.get(USER_IS_ADMIN);
+                //boolean isLoggedIn = (boolean)userJSON.get(USER_IS_LOGGED_IN);
                 
 				users.add(new User(username,password));
 			}
@@ -34,5 +34,12 @@ public class UserLoader extends UserConstants{
 		}
 		
 		return null;
+	}
+
+	public static void main(String[] args){
+		ArrayList<User> users = UserLoader.loadUsers();
+		for(User u:users){
+			System.out.println(u);
+		}
 	}
 }
