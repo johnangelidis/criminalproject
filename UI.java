@@ -101,13 +101,8 @@ public class UI extends UIConstants{
       String hairLength = getString("Criminal Hair length");
       String facialHair = getString("Criminal Facial hair");
       Tattoo tattoo = promptForTattoo();
-<<<<<<< HEAD
       String status = getString("Status");
-      // Gang gang = promptForGang();
-=======
-      String status = getString("Criminal Status");
       Gang gang = promptForGang();
->>>>>>> 5634634fd21318a7806e8b5d54dda8c795a2d50c
 
       Criminal c = new Criminal(firstName, lastName, dateOfBirth, race, weight, height, eyeColor, hairColor, hairLength, facialHair, tattoo, status, gang);
       database.addCriminal(c);
@@ -173,8 +168,8 @@ public class UI extends UIConstants{
       Date dob = makeDate("birth");
       int badgeNumber = getInt("badge number");
       String policeDepartment = getString("police department");
-      PoliceOfficer newPoliceOfficer = new PoliceOfficer(firstName, lastName, dob, 
-                                                          badgeNumber, policeDepartment);
+      PoliceOfficer newPoliceOfficer = new PoliceOfficer(firstName, lastName, dob, badgeNumber, policeDepartment);
+      database.addOfficer(newPoliceOfficer);
       return newPoliceOfficer;
     }
 
@@ -209,7 +204,7 @@ public class UI extends UIConstants{
       Date dayOfCrime = makeDate("Date");
       String time = getString("Time");
       Address location = makeAddress();
-      PoliceOfficer officer = promptForPoliceOfficer();
+      PoliceOfficer officer = makePoliceOfficer();
       Detective detective = promptForDetective();
       String victimStatement = getString("Victim Statement");
       String witnessStatement = getString("Witness Statement");
@@ -218,12 +213,8 @@ public class UI extends UIConstants{
       Case c = new Case(crime, victim, offender, suspectDescription, caseDescription, witness, personOfInterest, dayOfCrime, time, location, officer, detective, victimStatement, witnessStatement, evidence);
       database.addCase(c);
     }
-<<<<<<< HEAD
-    */
 
-=======
     
->>>>>>> 5634634fd21318a7806e8b5d54dda8c795a2d50c
     private void createUser(){
       String username = getString("Username");
       String password = getString("Password");
