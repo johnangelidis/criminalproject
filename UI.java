@@ -82,18 +82,18 @@ public class UI extends UIConstants{
     }
 
     private Criminal makeCriminal(){
-      String firstName = getString("First name");
-      String lastName = getString("Last name");
-      Date dateOfBirth = makeDate("Date of Birth");
-      String race = getString("Race");
-      double weight = getDouble("Weight");
-      double height = getDouble("Height");
-      String eyeColor = getString("Eye color");
-      String hairColor = getString("Hair color");
-      String hairLength = getString("Hair length");
-      String facialHair = getString("Facial hair");
+      String firstName = getString("Criminal first name");
+      String lastName = getString("Criminal Last name");
+      Date dateOfBirth = makeDate("Criminal Date of Birth");
+      String race = getString("Criminal Race");
+      double weight = getDouble("Criminal Weight");
+      double height = getDouble("Criminal Height");
+      String eyeColor = getString("Criminal Eye color");
+      String hairColor = getString("Criminal Hair color");
+      String hairLength = getString("Criminal Hair length");
+      String facialHair = getString("Criminal Facial hair");
       Tattoo tattoo = promptForTattoo();
-      String status = getString("Status");
+      String status = getString("Criminal Status");
       Gang gang = promptForGang();
 
       Criminal c = new Criminal(firstName, lastName, dateOfBirth, race, weight, height, eyeColor, hairColor, hairLength, facialHair, tattoo, status, gang);
@@ -108,7 +108,7 @@ public class UI extends UIConstants{
       Tattoo t = new Tattoo(color, design, location);
       return t;
     }
-    
+
     private Detective makeDetective(){
       String firstName = getString("First name");
       String lastName = getString("Last name");
@@ -170,20 +170,23 @@ public class UI extends UIConstants{
       }
       return null;
     }
-    /*
-    private void addACase(){
+    
+    private void addCase(){
       //get basics then prompt(new or existing)
+      ArrayList<Civilian> witnesses = new ArrayList<Civilian>();
+      ArrayList<Civilian> personsOfInterest = new ArrayList<Civilian>();
       String crime = getString("Crime");
-      String outcome = getString("Outcome");
-      Date dateOfCrime = makeDate("Crime");
-      Date dateOfSentence = makeDate("Sentence");
-      Detective caseDetective = promptForDetective();
-      //Civilian caseVictim = promptForVictim();
-      //Criminal offender = promptForOffender();
-      //Address location = promptForAddress();
+      Civilian victim = promptForCivilian();
+      Criminal offender = makeCriminal();
+      String suspectDescription = getString("Suspect Description");
+      String caseDescription = getString("Case Description");
 
+      Date dayofCrime = makeDate("Date");
+      String time = getString("Time");
+      Address location = makeAddress();
+      ArrayList
     }
-    */
+    
     private void createUser(){
       String username = getString("Username");
       String password = getString("Password");

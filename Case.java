@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.UUID;
 /**
  * Class that represents a criminal case
@@ -11,43 +10,37 @@ public class Case {
     private Criminal offender;
     private String suspectDescription;
     private String caseDescription;
-    private ArrayList<Civilian> witnesses;
-    private ArrayList<Civilian> personsOfInterest;
+    private Civilian witness;
+    private Civilian personOfInterest;
     private Date dayOfCrime;
     private String time;
     private Address location;
-    private ArrayList<PoliceOfficer> officersInvolved;
+    private PoliceOfficer officerInvolved;
     private Detective detective;
     private String victimStatement;
     private String witnessStatement;
-    private ArrayList<String> evidence;
-    private String outcome;
-    private String dayOfSentence;
-   
+    private String evidence;
 
     public Case(String crime, Civilian victim, Criminal offender, String suspectDescription, 
-                String caseDescription, ArrayList<Civilian> witnesses, ArrayList<Civilian> personsOfInterest, 
-                Date dayOfCrime, String time, Address location, ArrayList<PoliceOfficer> officersInvolved, 
-                Detective detective, String victimStatement, String witnessStatement, ArrayList<String> evidence,
-                String outcome, String dayOfSentence) { 
+                String caseDescription, Civilian witness, Civilian personOfInterest, 
+                Date dayOfCrime, String time, Address location, PoliceOfficer officerInvolved, 
+                Detective detective, String victimStatement, String witnessStatement, String evidence) { 
         this.id = UUID.randomUUID();
         this.crime = crime;
         this.victim = victim;
         this.offender = offender;
         this.suspectDescription = suspectDescription;
         this.caseDescription = caseDescription;
-        this.witnesses = new ArrayList<Civilian>();
-        this.personsOfInterest = new ArrayList<Civilian>();
+        this.witness = witness;
+        this.personOfInterest = personOfInterest;
         this.dayOfCrime = dayOfCrime;
         this.time = time;
         this.location = location;
-        this.officersInvolved = new ArrayList<PoliceOfficer>();
+        this.officerInvolved = officerInvolved;
         this.detective = detective;
         this.victimStatement = victimStatement;
         this.witnessStatement = witnessStatement;
-        this.evidence = new ArrayList<String>();
-        this.outcome = outcome;
-        this.dayOfSentence = dayOfSentence;
+        this.evidence = evidence;
     }
 
     public UUID getId() {
@@ -62,21 +55,20 @@ public class Case {
         this.crime = crime;
     }
 
-    public void addEvidence(ArrayList<String> input, String evidence) {
-        input.add(evidence);
-        this.evidence = input;
-    }
-
-    public ArrayList<String> getEvidence() {
-        return evidence;
-    }
-    
     public Civilian getVictim() {
         return this.victim;
     }
 
     public void setVictim(Civilian victim) {
         this.victim = victim;
+    }
+
+    public Criminal getOffender() {
+        return this.offender;
+    }
+
+    public void setOffender(Criminal offender) {
+        this.offender = offender;
     }
 
     public String getSuspectDescription() {
@@ -95,36 +87,28 @@ public class Case {
         this.caseDescription = caseDescription;
     }
 
-    public Criminal getOffender() {
-        return this.offender;
+    public Civilian getWitness() {
+        return this.witness;
     }
 
-    public void setOffender(Criminal offender) {
-        this.offender = offender;
+    public void setWitness(Civilian witness) {
+        this.witness = witness;
     }
 
-    public ArrayList<Civilian> getWitnesses() {
-        return this.witnesses;
+    public Civilian getPersonOfInterest() {
+        return this.personOfInterest;
     }
 
-    public void setWitnesses(ArrayList<Civilian> witnesses) {
-        this.witnesses = witnesses;
+    public void setPersonOfInterest(Civilian personOfInterest) {
+        this.personOfInterest = personOfInterest;
     }
 
-    public ArrayList<Civilian> getPersonsOfInterest() {
-        return this.personsOfInterest;
+    public Date getDayOfCrime() {
+        return this.dayOfCrime;
     }
 
-    public void setPersonsOfInterest(ArrayList<Civilian> personsOfInterest) {
-        this.personsOfInterest = personsOfInterest;
-    }
-
-    public String getDayOfCrime() {
-        return dayOfCrime.toString();
-    }
-
-    public void setDayOfCrime(String month, int day, int year) {
-        dayOfCrime = new Date(month,day,year);
+    public void setDayOfCrime(Date dayOfCrime) {
+        this.dayOfCrime = dayOfCrime;
     }
 
     public String getTime() {
@@ -143,12 +127,12 @@ public class Case {
         this.location = location;
     }
 
-    public ArrayList<PoliceOfficer> getOfficersInvolved() {
-        return this.officersInvolved;
+    public PoliceOfficer getOfficerInvolved() {
+        return this.officerInvolved;
     }
 
-    public void setOfficersInvolved(ArrayList<PoliceOfficer> officersInvolved) {
-        this.officersInvolved = officersInvolved;
+    public void setOfficerInvolved(PoliceOfficer officerInvolved) {
+        this.officerInvolved = officerInvolved;
     }
 
     public Detective getDetective() {
@@ -158,6 +142,7 @@ public class Case {
     public void setDetective(Detective detective) {
         this.detective = detective;
     }
+
     public String getVictimStatement() {
         return this.victimStatement;
     }
@@ -174,11 +159,14 @@ public class Case {
         this.witnessStatement = witnessStatement;
     }
 
-    public String getOutcome() {
-        return this.outcome;
+    public String getEvidence() {
+        return this.evidence;
     }
 
-    public String getDayOfSentence() {
-        return this.dayOfSentence;
+    public void setEvidence(String evidence) {
+        this.evidence = evidence;
     }
+   
+
+
 }
