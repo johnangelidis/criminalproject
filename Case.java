@@ -57,6 +57,15 @@ public class Case {
         this.crime = crime;
     }
 
+    public void addEvidence(ArrayList<String> input, String evidence) {
+        input.add(evidence);
+        this.evidence = input;
+    }
+
+    public ArrayList<String> getEvidence() {
+        return evidence;
+    }
+    
     public Civilian getVictim() {
         return this.victim;
     }

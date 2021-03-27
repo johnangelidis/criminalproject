@@ -110,11 +110,33 @@ public class Database {
         return cases;
     }
 
+    public Case getCase(UUID caseID) {
+        int caseIndex = 0;
+        try {
+            for (int i = 0; i < cases.size(); i++) {
+                if(cases.get(i).getId() == caseID)
+                    caseIndex = i;
+            }
+        } catch (Exception e) {
+            System.out.println("INVALID CASE ID");
+        }
+        return cases.get(caseIndex);
+    }
+
     public void loadCases(){
         cases = CaseLoader.loadCases();
     }
-    public void addCase(String crime, Civilian victim, Criminal offender, String suspectDescription, String caseDescription, ArrayList<Civilian> witnesses, ArrayList<Civilian> personsOfInterest, Date dayOfCrime, String time, Address location, ArrayList<PoliceOfficer> officersInvolved, Detective detective, String victimStatement, String witnessStatement, ArrayList<String> evidence){
-        cases.add(new Case(crime, victim, offender, suspectDescription, caseDescription, witnesses, personsOfInterest, dayOfCrime, time, location, officersInvolved, detective, victimStatement, witnessStatement, evidence));
+    public void addCase(String crime, Civilian victim, Criminal offender, 
+                        String suspectDescription, String caseDescription, 
+                        ArrayList<Civilian> witnesses, ArrayList<Civilian> personsOfInterest, 
+                        Date dayOfCrime, String time, Address location, 
+                        ArrayList<PoliceOfficer> officersInvolved, Detective detective, 
+                        String victimStatement, String witnessStatement, ArrayList<String> evidence) {
+
+        cases.add(new Case(crime, victim, offender, suspectDescription, caseDescription, 
+                            witnesses, personsOfInterest, dayOfCrime, time, location, 
+                            officersInvolved, detective, victimStatement, witnessStatement, evidence));
+
         CaseWriter.saveCases();
     }
 
@@ -194,6 +216,7 @@ public class Database {
         }
         return null;
     }
+
     /**
      * Allows user to search entries based on associated gangs
      * @param name name of the gang
@@ -217,7 +240,7 @@ public class Database {
         }
         return null;
     }
-
+    
     /**
      * Allows users to search entries based on associated cases via case ID
      * @param crime A string description of the crime
