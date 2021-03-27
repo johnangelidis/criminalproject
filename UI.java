@@ -242,10 +242,6 @@ public class UI extends UIConstants{
       database.deleteGang(gangID);
     }
 
-    private void deleteUser(UUID userID){
-      database.deleteUser(userID);
-    }
-
     private int getInt(String input) {
       System.out.print(input + ": ");
       int in = scanner.nextInt();
@@ -329,6 +325,12 @@ public class UI extends UIConstants{
       String caseOutput = aCase.toString();
       PrintWriter out = new PrintWriter("case.txt");
       out.println(caseOutput);
+    }
+
+    private void exportPerson(Person aPerson) throws FileNotFoundException {
+      String personOutput = aPerson.toString();
+      PrintWriter out = new PrintWriter("person.txt");
+      out.println(personOutput); 
     }
     public static void main(String[] args) {
         UI UIInterface = new UI();
