@@ -17,7 +17,6 @@ public class PoliceWriter extends PoliceConstants {
         for(int i=0; i< officers.size();i++){
             jsonOfficers.add(getPoliceOfficerJSON(officers.get(i)));
         }
-    }
 
     //Writing the JSON File
     try (FileWriter file = new FileWriter(OFFICERS_FILE_NAME)) {
@@ -28,6 +27,7 @@ public class PoliceWriter extends PoliceConstants {
     }catch (IOException e) {
         e.printStackTrace();
     }
+}
 
     public static JSONObject getPoliceOfficerJSON(PoliceOfficer officer) {
         JSONObject officerDetails = new JSONObject();

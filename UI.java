@@ -18,6 +18,7 @@ import java.util.Scanner;
 public class UI extends UIConstants{
     private Scanner scanner;
     private Database database;
+    private User currentUser;
     //private static ArrayList<PoliceOfficer> loadOfficers;
     UI(){
       scanner = new Scanner(System.in);
@@ -26,20 +27,22 @@ public class UI extends UIConstants{
     public void run() {
       System.out.println(WELCOME_MESSAGE);
       //Loop until user quits
-      while(true) {
+      boolean hasQuit = false;
+      login();  // new call to login, as user should login before using the system
+      while(!hasQuit) {  // made boolean value for better control over while loop
         displayMainMenu();
         int userCommand = getUserCommand(mainMenuOptions.length);
-        if(userCommand == -1) {
+        if(userCommand == -1)  {
           System.out.println("Invalid command");
           continue;
         }
-        if(userCommand == mainMenuOptions.length -1){
-          if(currentUser.getLoggedInStatus == true){
+        if(userCommand == mainMenuOptions.length - 1){
+          if(currentUser.getLoggedInStatus() == true) {
             System.out.println("Logging out.");
-            currentUser.logout();
+            hasQuit = true;
             break;
-          } else
-           break;
+        } else
+            break;
         }
         switch(userCommand){
           case(0):
@@ -49,7 +52,7 @@ public class UI extends UIConstants{
                   login();
                   break;
           case(2):
-                  if(currentUser.getLoggedInStatus == true && currentUser.getAdminStatus == true){
+                  if(currentUser.getLoggedInStatus() == true && currentUser.getAdminStatus() == true){
                     addACase();
                     break;
                   } else {
@@ -74,11 +77,11 @@ public class UI extends UIConstants{
 
     }
     private Address makeAddress(){
-      int number = getInt("Number");
-      String street = getString("Street");
-      String city = getString("City");
-      String state = getString("State");
-      int zip = getInt("Zipcode");
+      int number = getInt("Address number");
+      String street = getString("Address street");
+      String city = getString("Address city");
+      String state = getString("Address state");
+      int zip = getInt("Address zipcode");
       Address ret = new Address(number, street, city, state, zip);
       return ret;
     }
@@ -112,10 +115,9 @@ public class UI extends UIConstants{
       String lastName = getString("LastName");
       int phone = getInt("Phone Number");
       Date dob = makeDate("Birthday");
-
-      /*
-      private Address address;
-      */
+      Address addy = makeAddress();
+      Civilian ret = new Civilian(firstName, lastName, dob, addy, phone);
+      return ret;
     }
     private Date makeDate(String instance){
       String monthOfCrime = getString("Month of "+instance);
@@ -171,11 +173,13 @@ public class UI extends UIConstants{
       System.out.print(input + ": ");
       return scanner.nextLine();
     }
-    private void login(){
+
+    // made currentUser an instance variable so it can be used in other methods
+    private void login() { 
       String username = getString("Username");
       String password = getString("Password");
       if(database.searchUser(username) != null){
-        User currentUser = database.searchUser(username);
+        currentUser = database.searchUser(username);
         if(currentUser.getPassword().equals(password)){
         currentUser.login();
       } else {
@@ -188,12 +192,11 @@ public class UI extends UIConstants{
     }
     private int getUserCommand(int numCommands){
       System.out.print("Please select an action: ");
-
-      String input = scanner.nextLine();
-      int command = Integer.parseInt(input) - 1;
-
+      // String input = scanner.nextLine();
+      // int command = Integer.parseInt(input) - 1;
+      int command = scanner.nextInt();  
+      // this ^ method is more efficient, will keep unless there are side effects
       if(command >= 0 && command <= numCommands -1) return command;
-
       return -1;
     }
     private void displayMainMenu(){

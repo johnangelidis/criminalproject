@@ -21,9 +21,15 @@ public class Case {
     private String victimStatement;
     private String witnessStatement;
     private ArrayList<String> evidence;
+    private String outcome;
+    private String dayOfSentence;
    
 
-    public Case(String crime, Civilian victim, Criminal offender, String suspectDescription, String caseDescription, ArrayList<Civilian> witnesses, ArrayList<Civilian> personsOfInterest, Date dayOfCrime, String time, Address location, ArrayList<PoliceOfficer> officersInvolved, Detective detective, String victimStatement, String witnessStatement, ArrayList<String> evidence){
+    public Case(String crime, Civilian victim, Criminal offender, String suspectDescription, 
+                String caseDescription, ArrayList<Civilian> witnesses, ArrayList<Civilian> personsOfInterest, 
+                Date dayOfCrime, String time, Address location, ArrayList<PoliceOfficer> officersInvolved, 
+                Detective detective, String victimStatement, String witnessStatement, ArrayList<String> evidence,
+                String outcome, String dayOfSentence) { 
         this.id = UUID.randomUUID();
         this.crime = crime;
         this.victim = victim;
@@ -40,6 +46,8 @@ public class Case {
         this.victimStatement = victimStatement;
         this.witnessStatement = witnessStatement;
         this.evidence = new ArrayList<String>();
+        this.outcome = outcome;
+        this.dayOfSentence = dayOfSentence;
     }
 
     public UUID getId() {
@@ -54,6 +62,15 @@ public class Case {
         this.crime = crime;
     }
 
+    public void addEvidence(ArrayList<String> input, String evidence) {
+        input.add(evidence);
+        this.evidence = input;
+    }
+
+    public ArrayList<String> getEvidence() {
+        return evidence;
+    }
+    
     public Civilian getVictim() {
         return this.victim;
     }
@@ -155,5 +172,13 @@ public class Case {
 
     public void setWitnessStatement(String witnessStatement) {
         this.witnessStatement = witnessStatement;
+    }
+
+    public String getOutcome() {
+        return this.outcome;
+    }
+
+    public String getDayOfSentence() {
+        return this.dayOfSentence;
     }
 }

@@ -34,8 +34,13 @@ public class CaseLoader extends CaseConstants{
 				String victimStatement = (String)caseJSON.get(CASE_VICTIM_STATEMENT);
 				String witnessStatement = (String)caseJSON.get(CASE_WITNESS_STATEMENT);
 				JSONArray evidence = (JSONArray)caseJSON.get(CASE_EVIDENCE);
-                
-				cases.add(new Case(crime, victim, offender, suspectDescription, caseDescription, returnWitnesses(witnesses), returnPersonsOfInterest(personsOfInterest), dayOfCrime, time, location, returnOfficers(officers), detective, victimStatement, witnessStatement, returnEvidence(evidence)));
+				String outcome = (String)caseJSON.get(CASE_OUTCOME);
+				String dayOfSentence = (String)caseJSON.get(CASE_DAY_OF_SENTENCE);
+
+				cases.add(new Case(crime, victim, offender, suspectDescription, caseDescription, 
+									returnWitnesses(witnesses), returnPersonsOfInterest(personsOfInterest), 
+									dayOfCrime, time, location, returnOfficers(officers), detective, 
+									victimStatement, witnessStatement, returnEvidence(evidence), outcome, dayOfSentence));
 			}
 			
 			return cases;
@@ -77,10 +82,17 @@ public class CaseLoader extends CaseConstants{
 		return caseOfficers;
 	}
 
-	public static ArrayList<String> returnEvidence(JSONArray evidence){
+	public static ArrayList<String> returnEvidence(JSONArray evidence) {
 		ArrayList<String> caseEvidence = new ArrayList<String>();
 		for(int i=0; i<evidence.size(); i++){
-			
+			UUID id = UUID.fromString((String)evidence.get(i));
+			Case evidenceCase = Database.getInstance().getCase(id);
+			ArrayList<String> evidenceArrayList = evidenceCase.getEvidence();
+			for (int j = 0; j < evidenceArrayList.size(); j++) {
+				caseEvidence.add(evidenceArrayList.get(j));
+			}
 		}
+		return caseEvidence;
 	}
+	
 }
