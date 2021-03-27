@@ -110,7 +110,7 @@ public class Database {
         return cases;
     }
 
-    public Case getCase(UUID caseID) {
+    public Case getCaseById(UUID caseID) {
         int caseIndex = 0;
         try {
             for (int i = 0; i < cases.size(); i++) {
@@ -132,7 +132,8 @@ public class Database {
         CaseWriter.saveCases();
     }
 
-    public void deleteCase(Case c){
+    public void deleteCase(UUID id){
+        Case c = getCaseById(id);
         cases.remove(c);
         CaseWriter.saveCases();
     }
