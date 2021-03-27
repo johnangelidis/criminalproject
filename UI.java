@@ -15,6 +15,8 @@
 */
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.text.ParseException;
+
 public class UI extends UIConstants{
     private Scanner scanner;
     private Database database;
@@ -60,7 +62,7 @@ public class UI extends UIConstants{
                   }
           */
           case(2):
-
+                
                   break;
                   //search for criminal/suspect
           /*
@@ -95,7 +97,7 @@ public class UI extends UIConstants{
       String facialHair = getString("Facial hair");
       Tattoo tattoo = promptForTattoo();
       String status = getString("Status");
-      Gang gang = promptForGang();
+      // Gang gang = promptForGang();
 
       Criminal c = new Criminal(firstName, lastName, dateOfBirth, race, weight, height, eyeColor, hairColor, hairLength, facialHair, tattoo, status, gang);
       database.addCriminal(c);
@@ -153,6 +155,19 @@ public class UI extends UIConstants{
       Date ret = new Date(monthOfCrime,dayOfCrime,yearOfCrime);
       return ret;
     }
+
+    private PoliceOfficer makePoliceOfficer() {
+      String firstName = getString("first name");
+      String lastName = getString("last name");
+      System.out.print("Enter date of birth: ");
+      Date dob = makeDate("birth");
+      int badgeNumber = getInt("badge number");
+      String policeDepartment = getString("police department");
+      PoliceOfficer newPoliceOfficer = new PoliceOfficer(firstName, lastName, dob, 
+                                                          badgeNumber, policeDepartment);
+      return newPoliceOfficer;
+    }
+
     private Civilian promptForCivilian(){
       System.out.println("Would you like to add a new or existing"+
       "Civilian?\n Enter 1 for new or 2 for existing");
@@ -185,6 +200,7 @@ public class UI extends UIConstants{
 
     }
     */
+
     private void createUser(){
       String username = getString("Username");
       String password = getString("Password");
