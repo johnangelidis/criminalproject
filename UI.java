@@ -60,17 +60,12 @@ public class UI extends UIConstants{
                     System.out.println("You either are not logged in or are not an admin");
                     break;
                   }
-<<<<<<< HEAD
           */
           case(2):
                 
-=======
-          case(3):
-
->>>>>>> dc07292b3887b43a48fc32ec757b720ab885c1c6
                   break;
                   //search for criminal/suspect
-          
+          /*
           case(4):
                   database.searchCases(getInput("Crime:"),getInput(""));
                   break;
@@ -101,8 +96,8 @@ public class UI extends UIConstants{
       String hairLength = getString("Criminal Hair length");
       String facialHair = getString("Criminal Facial hair");
       Tattoo tattoo = promptForTattoo();
-      String status = getString("Status");
-      Gang gang = promptForGang();
+      String status = getString("Criminal Status");
+      // Gang gang = promptForGang();
 
       Criminal c = new Criminal(firstName, lastName, dateOfBirth, race, weight, height, eyeColor, hairColor, hairLength, facialHair, tattoo, status, gang);
       database.addCriminal(c);
@@ -124,8 +119,8 @@ public class UI extends UIConstants{
       Detective d = new Detective(firstName, lastName, dateOfBirth);
       database.addDetective(d);
       return d;
-      
     }
+
     private Detective promptForDetective(){
       System.out.println("Would you like to add a new or existing"+
       "Detective?\n Enter 1 for new or 2 for existing");
@@ -168,9 +163,14 @@ public class UI extends UIConstants{
       Date dob = makeDate("birth");
       int badgeNumber = getInt("badge number");
       String policeDepartment = getString("police department");
-      PoliceOfficer newPoliceOfficer = new PoliceOfficer(firstName, lastName, dob, badgeNumber, policeDepartment);
-      database.addOfficer(newPoliceOfficer);
+      PoliceOfficer newPoliceOfficer = new PoliceOfficer(firstName, lastName, dob, 
+                                                          badgeNumber, policeDepartment);
       return newPoliceOfficer;
+    }
+
+    private Gang makeGang() {
+      String name = getString("gang name: ");
+      Gang newGang = new Gang(name);
     }
 
     private Civilian promptForCivilian(){
@@ -194,32 +194,20 @@ public class UI extends UIConstants{
     
     private void addCase(){
       //get basics then prompt(new or existing)
+      ArrayList<Civilian> witnesses = new ArrayList<Civilian>();
+      ArrayList<Civilian> personsOfInterest = new ArrayList<Civilian>();
       String crime = getString("Crime");
       Civilian victim = promptForCivilian();
       Criminal offender = makeCriminal();
       String suspectDescription = getString("Suspect Description");
       String caseDescription = getString("Case Description");
-      Civilian witness = promptForCivilian();
-      Civilian personOfInterest = promptForCivilian();
-      Date dayOfCrime = makeDate("Date");
+
+      Date dayofCrime = makeDate("Date");
       String time = getString("Time");
       Address location = makeAddress();
-      PoliceOfficer officer = makePoliceOfficer();
-      Detective detective = promptForDetective();
-      String victimStatement = getString("Victim Statement");
-      String witnessStatement = getString("Witness Statement");
-      String evidence = getString("Evidence");
-
-      Case c = new Case(crime, victim, offender, suspectDescription, caseDescription, witness, personOfInterest, dayOfCrime, time, location, officer, detective, victimStatement, witnessStatement, evidence);
-      database.addCase(c);
+      ArrayList
     }
-
-    
-    private void createUser(){
-      String username = getString("Username");
-      String password = getString("Password");
       database.addUser(username,password);
-    }
 
     private int getInt(String input) {
       System.out.print(input + ": ");
