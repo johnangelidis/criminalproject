@@ -35,8 +35,12 @@ public class Database {
         return criminals;
     }
 
-    public void addCriminal(String firstName, String lastName, Date dateOfBirth, String race, double weight, double height, String eyeColor, String hairColor, String hairLength, String facialHair, Tattoo tattoo, String status, Gang gang){
-        criminals.add(new Criminal(firstName, lastName, dateOfBirth, race, weight, height, eyeColor, hairColor, hairLength, facialHair, tattoo, status, gang));
+    public void addCriminal(String firstName, String lastName, Date dateOfBirth, String race, 
+                            double weight, double height, String eyeColor, String hairColor, 
+                            String hairLength, String facialHair, Tattoo tattoo, String status, Gang gang){
+        criminals.add(new Criminal(firstName, lastName, dateOfBirth, race, weight, height, 
+                                    eyeColor, hairColor, hairLength, facialHair, tattoo, status, 
+                                    gang));
         CriminalWriter.saveCriminals();
     }
 
@@ -58,8 +62,10 @@ public class Database {
         return null;
     }
 
-    public void addCivilian(String firstName, String lastName, Date dateOfBirth, Address anAddress, int aPhone, boolean bisVictim, boolean bisWitness, boolean bisPersonOfInterest){
-        civilians.add(new Civilian(firstName, lastName, dateOfBirth, anAddress, aPhone, bisVictim, bisWitness, bisPersonOfInterest));
+    public void addCivilian(String firstName, String lastName, Date dateOfBirth, Address anAddress, 
+                            int aPhone, boolean bisVictim, boolean bisWitness, boolean bisPersonOfInterest){
+        civilians.add(new Civilian(firstName, lastName, dateOfBirth, anAddress, aPhone, 
+                                    bisVictim, bisWitness, bisPersonOfInterest));
         CivilianWriter.saveCivilians();
     }
     
@@ -131,11 +137,12 @@ public class Database {
                         ArrayList<Civilian> witnesses, ArrayList<Civilian> personsOfInterest, 
                         Date dayOfCrime, String time, Address location, 
                         ArrayList<PoliceOfficer> officersInvolved, Detective detective, 
-                        String victimStatement, String witnessStatement, ArrayList<String> evidence) {
+                        String victimStatement, String witnessStatement, ArrayList<String> evidence, String outcome,
+                        String dayOfSentence) {
 
         cases.add(new Case(crime, victim, offender, suspectDescription, caseDescription, 
                             witnesses, personsOfInterest, dayOfCrime, time, location, 
-                            officersInvolved, detective, victimStatement, witnessStatement, evidence));
+                            officersInvolved, detective, victimStatement, witnessStatement, evidence, outcome, dayOfSentence));
 
         CaseWriter.saveCases();
     }
@@ -208,7 +215,7 @@ public class Database {
         }
         return null;
     }
-    public PoliceOfficer searchDetectives(String firstName, String lastName){
+    public Detective searchDetectives(String firstName, String lastName){
         for (Detective d : detectives) {
             if (d.getFirstName().equals(firstName) && d.getLastName().equals(lastName)) {
                 return d;
