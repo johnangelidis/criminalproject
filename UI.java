@@ -252,6 +252,12 @@ public class UI extends UIConstants{
       }
     }
 
+    private void createUser(){
+      String username = getString("Username");
+      String password = getString("Password");
+      database.addUser(username, password);
+    }
+
     private int getUserCommand(int numCommands){
       System.out.print("Please select an action: ");
       // String input = scanner.nextLine();
