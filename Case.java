@@ -167,6 +167,16 @@ public class Case {
         this.evidence = evidence;
     }
    
-
+    public String toString() {
+        return "Case ID: " + this.id + "\nCrime committed: " + this.crime
+                + "\nVictims: " + this.victim + "\nOffenders: " + this.offender
+                + "\nSuspect Description: " + this.suspectDescription + "\nCase Description: "
+                + this.caseDescription + "\nWitness(es): " + this.witness + "\nPerson(s) of Interest "
+                + this.personOfInterest + "\nDay of Crime: " + this.dayOfCrime + "\nTime of Crime: "
+                + this.time + "\nLocation of Crime: " + this.location + "\nOfficer(s) involved: "
+                + this.officerInvolved + "\nDetectives involved: " + this.detective + "\nVictim Statement(s): "
+                + this.victimStatement + "\nWitness Statement(s): " + this.witnessStatement + "\nEvidence: "
+                + this.evidence;
+    }
 
 }
