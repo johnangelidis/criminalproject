@@ -27,8 +27,9 @@ public class UI extends UIConstants{
     public void run() {
       System.out.println(WELCOME_MESSAGE);
       //Loop until user quits
+
       boolean hasQuit = false;
-      login();  // new call to login, as user should login before using the system
+      displayLoginScreen();
       while(!hasQuit) {  // made boolean value for better control over while loop
         displayMainMenu();
         int userCommand = getUserCommand(mainMenuOptions.length);
@@ -202,8 +203,25 @@ public class UI extends UIConstants{
           System.out.println((i+1) + ", " + mainMenuOptions[i]);
         }
         System.out.println("\n");
+    }
 
-
+    private void displayLoginScreen() {  // gives user option to either login or create an account
+      System.out.println("Enter 1 to login:\nEnter 2 to create an account: ");
+      Scanner keyboard = new Scanner(System.in);
+      int input = keyboard.nextInt();
+      boolean validOption = true;
+      while (validOption) {
+      if (input == 1) {
+        login();
+        validOption = false;
+      }
+      else if (input == 2) {
+        createUser();
+        validOption = false;
+      }
+      else
+        System.out.println("Please enter a valid option");
+    }
     }
     public static void main(String[] args) {
         UI UIInterface = new UI();
