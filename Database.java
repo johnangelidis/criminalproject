@@ -39,8 +39,21 @@ public class Database {
         criminals.add(c);
         CriminalWriter.saveCriminals();
     }
+    public Criminal getCriminalById(UUID criminalID) {
+        int criminalIndex = 0;
+        try {
+            for (int i = 0; i < criminals.size(); i++) {
+                if(criminals.get(i).getId() == criminalID)
+                    criminalIndex = i;
+            }
+        } catch (Exception e) {
+            System.out.println("INVALID CRIMINAL ID");
+        }
+        return criminals.get(criminalIndex);
+    }
 
-    public void deleteCriminal(Criminal c){
+    public void deleteCriminal(UUID criminalID){
+        Criminal c = getCriminalById(criminalID);
         criminals.remove(c);
         CriminalWriter.saveCriminals();
     }
@@ -63,7 +76,21 @@ public class Database {
         CivilianWriter.saveCivilians();
     }
     
-    public void deleteCivilian(Civilian c){
+    public Civilian getCivilianById(UUID civilianID) {
+        int civilianIndex = 0;
+        try {
+            for (int i = 0; i < civilians.size(); i++) {
+                if(civilians.get(i).getId() == civilianID)
+                    civilianIndex = i;
+            }
+        } catch (Exception e) {
+            System.out.println("INVALID CIVILIAN ID");
+        }
+        return civilians.get(civilianIndex);
+    }
+
+    public void deleteCivilian(UUID civilianID){
+        Civilian c = getCivilian(civilianID);
         civilians.remove(c);
         CivilianWriter.saveCivilians();
     }
@@ -110,7 +137,7 @@ public class Database {
         return cases;
     }
 
-    public Case getCase(UUID caseID) {
+    public Case getCaseById(UUID caseID) {
         int caseIndex = 0;
         try {
             for (int i = 0; i < cases.size(); i++) {
@@ -132,7 +159,8 @@ public class Database {
         CaseWriter.saveCases();
     }
 
-    public void deleteCase(Case c){
+    public void deleteCase(UUID id){
+        Case c = getCaseById(id);
         cases.remove(c);
         CaseWriter.saveCases();
     }

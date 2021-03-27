@@ -18,6 +18,7 @@ import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.text.ParseException;
+import java.util.UUID;
 
 public class UI extends UIConstants{
     private Scanner scanner;
@@ -215,6 +216,18 @@ public class UI extends UIConstants{
 
       Case c = new Case(crime, victim, offender, suspectDescription, caseDescription, witness, personOfInterest, dayOfCrime, time, location, officer, detective, victimStatement, witnessStatement, evidence);
       database.addCase(c);
+    }
+
+    private void deleteCase(UUID caseID){
+      database.deleteCase(caseID);
+    }
+
+    private void deleteCriminal(UUID criminalID){
+      database.deleteCriminal(criminalID);
+    }
+
+    private void deleteCivilian(UUID civilianID){
+      database.deleteCivilian(civilianID);
     }
 
     private int getInt(String input) {
