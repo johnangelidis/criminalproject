@@ -30,7 +30,7 @@ public class CivilianWriter extends CivilianConstants {
 	
 	public static JSONObject getCivilianJSON(Civilian c) {
 		JSONObject civilianDetails = new JSONObject();
-        //civilianDetails.put(CIVILIAN_ID), c.getId());
+        civilianDetails.put(CIVILIAN_ID, c.getId().toString());
 		civilianDetails.put(CIVILIAN_FIRST_NAME, c.getFirstName());
 		civilianDetails.put(CIVILIAN_LAST_NAME, c.getLastName());
         civilianDetails.put(CIVILIAN_DOB, c.getDOB());

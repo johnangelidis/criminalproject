@@ -31,6 +31,7 @@ public class PoliceWriter extends PoliceConstants {
 
     public static JSONObject getPoliceOfficerJSON(PoliceOfficer officer) {
         JSONObject officerDetails = new JSONObject();
+        officerDetails.put(OFFICERS_ID, officer.getId().toString());
         officerDetails.put(OFFICERS_FIRST_NAME, officer.getFirstName());
         officerDetails.put(OFFICERS_LAST_NAME, officer.getLastName());
         officerDetails.put(OFFICERS_DOB, officer.getDOB());

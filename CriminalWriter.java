@@ -30,7 +30,7 @@ public class CriminalWriter extends CriminalConstants {
 	
 	public static JSONObject getCriminalJSON(Criminal c) {
 		JSONObject criminalDetails = new JSONObject();
-        //criminalDetails.put(CRIMINAL_ID), c.getId());
+        criminalDetails.put(CRIMINAL_ID, c.getId().toString());
 		criminalDetails.put(CRIMINAL_FIRST_NAME, c.getFirstName());
 		criminalDetails.put(CRIMINAL_LAST_NAME, c.getLastName());
 		criminalDetails.put(CRIMINAL_DOB, c.getDOB());

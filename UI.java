@@ -141,7 +141,7 @@ public class UI extends UIConstants{
       }
       return null;
     }
-    /*
+    
     private void addACase(){
       //get basics then prompt(new or existing)
       String crime = getString("Crime");
@@ -154,7 +154,7 @@ public class UI extends UIConstants{
       //Address location = promptForAddress();
 
     }
-    */
+    
     private void createUser(){
       String username = getString("Username");
       String password = getString("Password");
