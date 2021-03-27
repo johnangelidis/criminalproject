@@ -103,7 +103,7 @@ public class UI extends UIConstants{
       } else if (choice == 2) {
         String firstName = getString("FirstName");
         String lastName = getString("LastName");
-        Detective oldDetective = database.searchPerson(firstName,lastName);
+        Detective oldDetective = database.searchDetectives(firstName,lastName);
         return oldDetective;
       } else {
         System.out.println("Invalid input");
@@ -159,15 +159,11 @@ public class UI extends UIConstants{
     private void createUser(){
       String username = getString("Username");
       String password = getString("Password");
-      if(database.addUser(username,password))
-        System.out.println("Account created successfully.");
-      } else {
-        System.out.println("Sorry, try a different username.");
-      }
+      database.addUser(username,password);
     }
     private int getInt(String input) {
 		System.out.print(input + ": ");
-		return scanner.nextLine();
+		return scanner.nextInt();
     }
     private String getString(String input) {
       System.out.print(input + ": ");

@@ -36,9 +36,6 @@ public class CivilianWriter extends CivilianConstants {
         civilianDetails.put(CIVILIAN_DOB, c.getDOB());
         civilianDetails.put(CIVILIAN_ADDRESS, c.getAddress());
 		civilianDetails.put(CIVILIAN_PHONE_NUMBER, c.getPhone());
-        civilianDetails.put(CIVILIAN_IS_VICTIM, c.getisVictim());
-        civilianDetails.put(CIVILIAN_IS_WITNESS, c.getisWitNess());
-        civilianDetails.put(CIVILIAN_IS_PERSON_OF_INTEREST, c.getisPersonOfInterest());
 		
         return civilianDetails;
 	}

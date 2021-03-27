@@ -7,7 +7,4 @@ public abstract class CivilianConstants {
 	protected static final String CIVILIAN_DOB = "dateOfBirth";
 	protected static final String CIVILIAN_ADDRESS = "address";
 	protected static final String CIVILIAN_PHONE_NUMBER = "phoneNumber";
-	protected static final String CIVILIAN_IS_VICTIM = "isVictim";
-	protected static final String CIVILIAN_IS_WITNESS = "isWitness";
-	protected static final String CIVILIAN_IS_PERSON_OF_INTEREST = "isPersonOfInterest";
 }

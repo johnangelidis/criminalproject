@@ -4,10 +4,7 @@
     "lastName": "Jones",
     "dateOfBirth": "May/12/1988",
     "address": "123/Jeff St/Jefftown/SC/29505",
-    "phone": 8431234567,
-    "isVictim": true,
-    "isWitness": false,
-    "isPersonOfInterest": false
+    "phone": 8431234567
 },
 {
     "id": "793cccaf-3b28-4b58-86da-8f18b1e5aeee",
@@ -15,10 +12,7 @@
     "lastName": "Smith",
     "dateOfBirth": "May/08/1979",
     "address": "909/Crime Ln/Cayce/SC/28543",
-    "phone":4321237658,
-    "isVictim": false,
-    "isWitness": true,
-    "isPersonOfInterest": true
+    "phone":4321237658
 },
 {
     "id": "14b6e278-0e8c-404c-8aa4-c854fae38897",
@@ -26,10 +20,7 @@
     "lastName": "Hughes",
     "dateOfBirth": "June/18/1990",
     "address": "124/Conch St/Bikini Bottom/AL/25534",
-    "phone":"1342939605",
-    "isVictim": false,
-    "isWitness": false,
-    "isPersonOfInterest": true
+    "phone":"1342939605"
 },
 {
     "id": "1ceaf163-4365-4df4-9848-c81043a7885f",
@@ -37,8 +28,5 @@
     "lastName": "Wilson",
     "dateOfBirth": "December/25/1982",
     "address": "1520/Devine Street/Columbia/SC/29208",
-    "phone":3405582396,
-    "isVictim": true,
-    "isWitness": false,
-    "isPersonOfInterest": true
+    "phone":3405582396
 }]
