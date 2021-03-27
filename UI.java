@@ -97,7 +97,7 @@ public class UI extends UIConstants{
       String facialHair = getString("Criminal Facial hair");
       Tattoo tattoo = promptForTattoo();
       String status = getString("Criminal Status");
-      // Gang gang = promptForGang();
+      Gang gang = makeGang();
 
       Criminal c = new Criminal(firstName, lastName, dateOfBirth, race, weight, height, eyeColor, hairColor, hairLength, facialHair, tattoo, status, gang);
       database.addCriminal(c);
@@ -170,6 +170,8 @@ public class UI extends UIConstants{
     private Gang makeGang() {
       String name = getString("gang name: ");
       Gang newGang = new Gang(name);
+      database.addGang(newGang);
+      return newGang;
     }
 
     private Civilian promptForCivilian(){
@@ -203,7 +205,7 @@ public class UI extends UIConstants{
       Date dayOfCrime = makeDate("Date");
       String time = getString("Time");
       Address location = makeAddress();
-      PoliceOfficer officer = promptForPoliceOfficer();
+      PoliceOfficer officer = makePoliceOfficer();
       Detective detective = promptForDetective();
       String victimStatement = getString("Victim Statement");
       String witnessStatement = getString("Witness Statement");
@@ -249,7 +251,7 @@ public class UI extends UIConstants{
         System.out.println("Sorry, invalid username.");
       }
     }
-    
+
     private int getUserCommand(int numCommands){
       System.out.print("Please select an action: ");
       // String input = scanner.nextLine();
