@@ -34,14 +34,15 @@ public class CaseWriter extends CaseConstants {
 		caseDetails.put(CASE_CRIME, c.getCrime());
 		caseDetails.put(CASE_VICTIM, c.getVictim());
         caseDetails.put(CASE_OFFENDER, c.getOffender());
-        caseDetails.put(CASE_OUTCOME, c.getOutcome());
-		caseDetails.put(CASE_WITNESSES, c.getWitnesses());
-        caseDetails.put(CASE_PERSONS_OF_INTEREST, c.getPersonsOfInterest());
+		caseDetails.put(CASE_WITNESS, c.getWitness());
+        caseDetails.put(CASE_PERSON_OF_INTEREST, c.getPersonOfInterest());
         caseDetails.put(CASE_DAY_OF_CRIME, c.getDayOfCrime());
-        caseDetails.put(CASE_DAY_OF_SENTENCE, c.getDayOfSentence());
         caseDetails.put(CASE_LOCATION, c.getLocation());
-        caseDetails.put(CASE_OFFICERS, c.getOfficersInvolved());
+        caseDetails.put(CASE_OFFICER, c.getOfficerInvolved());
         caseDetails.put(CASE_DETECTIVE, c.getDetective());
+        caseDetails.put(CASE_VICTIM_STATEMENT, c.getVictimStatement());
+        caseDetails.put(CASE_WITNESS_STATEMENT, c.getWitnessStatement());
+        caseDetails.put(CASE_EVIDENCE, c.getEvidence());
         
         return caseDetails;
 	}
