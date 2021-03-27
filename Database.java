@@ -35,12 +35,8 @@ public class Database {
         return criminals;
     }
 
-    public void addCriminal(String firstName, String lastName, Date dateOfBirth, String race, 
-                            double weight, double height, String eyeColor, String hairColor, 
-                            String hairLength, String facialHair, Tattoo tattoo, String status, Gang gang){
-        criminals.add(new Criminal(firstName, lastName, dateOfBirth, race, weight, height, 
-                                    eyeColor, hairColor, hairLength, facialHair, tattoo, status, 
-                                    gang));
+    public void addCriminal(Criminal c){
+        criminals.add(c);
         CriminalWriter.saveCriminals();
     }
 

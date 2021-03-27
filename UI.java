@@ -81,6 +81,35 @@ public class UI extends UIConstants{
       Address ret = new Address(number, street, city, state, zip);
       return ret;
     }
+
+    private Criminal makeCriminal(){
+      String firstName = getString("First name");
+      String lastName = getString("Last name");
+      Date dateOfBirth = makeDate("Date of Birth");
+      String race = getString("Race");
+      double weight = getDouble("Weight");
+      double height = getDouble("Height");
+      String eyeColor = getString("Eye color");
+      String hairColor = getString("Hair color");
+      String hairLength = getString("Hair length");
+      String facialHair = getString("Facial hair");
+      Tattoo tattoo = promptForTattoo();
+      String status = getString("Status");
+      Gang gang = promptForGang();
+
+      Criminal c = new Criminal(firstName, lastName, dateOfBirth, race, weight, height, eyeColor, hairColor, hairLength, facialHair, tattoo, status, gang);
+      database.addCriminal(c);
+      return c;
+    }
+
+    private Tattoo promptForTattoo(){
+      String color = getString("Tattoo color");
+      String design = getString("Tattoo design");
+      String location = getString("Tattoo location");
+      Tattoo t = new Tattoo(color, design, location);
+      return t;
+    }
+    
     private Detective makeDetective(){
       String firstName = getString("First name");
       String lastName = getString("Last name");
@@ -124,7 +153,7 @@ public class UI extends UIConstants{
       Date ret = new Date(monthOfCrime,dayOfCrime,yearOfCrime);
       return ret;
     }
-    private Civilian promptForVictim(){
+    private Civilian promptForCivilian(){
       System.out.println("Would you like to add a new or existing"+
       "Civilian?\n Enter 1 for new or 2 for existing");
       String input = scanner.nextLine();
@@ -142,7 +171,7 @@ public class UI extends UIConstants{
       }
       return null;
     }
-    
+    /*
     private void addACase(){
       //get basics then prompt(new or existing)
       String crime = getString("Crime");
@@ -155,7 +184,7 @@ public class UI extends UIConstants{
       //Address location = promptForAddress();
 
     }
-    
+    */
     private void createUser(){
       String username = getString("Username");
       String password = getString("Password");
@@ -163,12 +192,21 @@ public class UI extends UIConstants{
     }
 
     private int getInt(String input) {
-		System.out.print(input + ": ");
-		return scanner.nextInt();
+      System.out.print(input + ": ");
+      int in = scanner.nextInt();
+      System.out.println(" ");
+      return in;
     }
     private String getString(String input) {
       System.out.print(input + ": ");
       String in = scanner.next();
+      System.out.println(" ");
+      return in;
+    }
+
+    private double getDouble(String input){
+      System.out.print(input + ": " );
+      double in = scanner.nextDouble();
       System.out.println(" ");
       return in;
     }
