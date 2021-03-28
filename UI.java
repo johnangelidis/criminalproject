@@ -38,10 +38,11 @@ public class UI extends UIConstants{
       while(!hasQuit) {  // made boolean value for better control over while loop
         displayMainMenu();
         int userCommand = getUserCommand(mainMenuOptions.length);
-        if(userCommand == -1)  {
-          System.out.println("Invalid command");
+        /*if(userCommand == -1)  {
+          System.out.println("Logging out");
+          System.exit(0);
           continue;
-        }
+        }*/
         // if(userCommand == mainMenuOptions.length){
         //   if(currentUser.getLoggedInStatus() == true) {
         //     System.out.println("Logging out.");
@@ -111,14 +112,22 @@ public class UI extends UIConstants{
       return c;
     }
 
-    private Tattoo promptForTattoo(){
+    /*private Tattoo promptForTattoo(){
       String color = getString("Tattoo color");
       String design = getString("Tattoo design");
-      String location = getString("Tattoo location");
-      Tattoo t = new Tattoo(color, design, location);
+      Tattoo t = new Tattoo(color, design);
       return t;
+    }*/
+    private void searchTats(){
+      String tattoo = getString("Tattoo");
+      database.searchTattoos(tattoo);
     }
-
+    private void searchDescription(){
+      int age = getInt("Age");
+      String hairColor = getString("HairColor");
+      double height = getDouble("Height");
+      database.searchDescription(age, hairColor, height);
+    }
     private Detective makeDetective(){
       String firstName = getString("First name");
       String lastName = getString("Last name");

@@ -308,6 +308,13 @@ public class Database {
             }
         }
     }
+    public void searchDescription(int age, String hairColor, double height){
+        for (Criminal c : criminals) {
+            if((c.getAge()==(age)) && c.getHairColor().equals(hairColor) && (c.getHeight()==height)){
+                System.out.println(c);
+            }
+        }
+    }
     /**
      * Allows user to search entries based on associated gangs
      * @param name name of the gang
