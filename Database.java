@@ -206,7 +206,7 @@ public class Database {
         GangWriter.saveGangs();
     }
 
-    public Gang getGangById(UUID gangID) {
+    public static Gang getGangById(UUID gangID) {
         int gangIndex = 0;
         try {
             for (int i = 0; i < gangs.size(); i++) {
