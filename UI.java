@@ -173,39 +173,24 @@ public class UI extends UIConstants{
       database.addGang(newGang);
       return newGang;
     }
-
-    private Civilian promptForCivilian(){
-      System.out.println("Would you like to add a new or existing"+
-      "Civilian?\n Enter 1 for new or 2 for existing");
-      String input = scanner.nextLine();
-      int choice = Integer.parseInt(input);
-      if(choice == 1) {
-        Civilian newCivilian = makeCivilian();
-        return newCivilian;
-      } else if (choice == 2) {
-        String firstName = getString("FirstName");
-        String lastName = getString("LastName");
-        Civilian oldCivilian = database.searchCivilians(firstName,lastName);
-        return oldCivilian;
-      } else {
-        System.out.println("Invalid input");
-      }
-      return null;
-    }
     
     private void addCase(){
       //get basics then prompt(new or existing)
       String crime = getString("Crime");
-      Civilian victim = promptForCivilian();
+      Civilian victim = makeCivilian();
       Criminal offender = makeCriminal();
       String suspectDescription = getString("Suspect Description");
       String caseDescription = getString("Case Description");
-      Civilian witness = promptForCivilian();
-      Civilian personOfInterest = promptForCivilian();
+      System.out.println("Witness Information");
+      Civilian witness = makeCivilian();
+      System.out.println("Person of Interest Information");
+      Civilian personOfInterest = makeCivilian();
       Date dayOfCrime = makeDate("Date");
       String time = getString("Time");
       Address location = makeAddress();
+      System.out.println("Police Officer Information");
       PoliceOfficer officer = makePoliceOfficer();
+      System.out.println("Detective Information");
       Detective detective = promptForDetective();
       String victimStatement = getString("Victim Statement");
       String witnessStatement = getString("Witness Statement");
