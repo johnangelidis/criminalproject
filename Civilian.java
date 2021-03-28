@@ -37,7 +37,7 @@ public class Civilian extends Person{
 	 * Method to set Phone of Civilian
 	 * @param aPhone Phone number of new phone
 	 */
-	public void setPhone(int aPhone) {
+	public void setPhone(Long aPhone) {
 		this.phone = aPhone;
 	}
 	@Override

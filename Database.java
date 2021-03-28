@@ -36,6 +36,7 @@ public class Database {
     }
 
     public void addCriminal(Criminal c){
+        criminals = new ArrayList<Criminal>();
         criminals.add(c);
         CriminalWriter.saveCriminals();
     }
@@ -188,7 +189,7 @@ public class Database {
         cases = CaseLoader.loadCases();
     }
     public void addCase(Case c) {
-
+        cases = new ArrayList<Case>();
         cases.add(c);
         CaseWriter.saveCases();
     }
@@ -298,7 +299,7 @@ public class Database {
     }
     public void searchTattoos(String tattoo){
         for (Criminal c : criminals) {
-            if(c.getTattoo().equals(tattoo){
+            if(c.getTattoo().equals(tattoo)) {
                 System.out.println(c);
             }
         }

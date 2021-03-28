@@ -12,9 +12,9 @@ public class Criminal extends Person{
     private String tattoo;
     private String status;
     private Gang gang;
-    private int age;
+    private long age;
 
-    public Criminal(String firstName, String lastName, Date dateOfBirth, String race, double weight, double height, String eyeColor, String hairColor, String hairLength, String facialHair, String tattoo, String status, Gang gang, int age) {
+    public Criminal(String firstName, String lastName, Date dateOfBirth, String race, double weight, double height, String eyeColor, String hairColor, String hairLength, String facialHair, String tattoo, String status, Gang gang, long age) {
         super(firstName, lastName, dateOfBirth);
         this.race = race;
         this.weight = weight;
@@ -28,7 +28,7 @@ public class Criminal extends Person{
         this.gang = gang;
         this.age = age;
     }
-    public int getAge(){
+    public long getAge(){
         return this.age;
     }
     public void setAge(int age){
@@ -123,6 +123,6 @@ public class Criminal extends Person{
                 + "\nWeight: " + this.weight + "\nHeight " + this.height 
                 + "\nEye color: " + this.eyeColor + "\nHair color: " + this.hairColor
                 + "\nFacial hair: " + this.facialHair + "\nTattoo(s): " + this.tattoo
-                + "\nStatus: " + this.status + "\nAssociated gangs: " + this.gang;
+                + "\nStatus: " + this.status + "\nAssociated gangs: " + this.gang + "\nAge: " + age;
     }
 }
