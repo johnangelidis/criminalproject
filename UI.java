@@ -55,13 +55,8 @@ public class UI extends UIConstants{
                   createUser();
                   break;     
           case(2):  // add a case
-                  if(currentUser.getAdminStatus() == true){
                     addCase();
                     break;
-                  } else {
-                    System.out.println("You do not have admin priviledges");
-                    break;
-                  }
           case(3):  // search for criminal
                 database.searchCriminals(getString("first name"), getString("last name"));
                 break;
