@@ -234,6 +234,10 @@ public class UI extends UIConstants{
       database.deleteOfficer(officerID);
     }
 
+    private void deleteUser(UUID userID){
+      database.deleteUser(userID);
+    }
+
     private void deleteDetective(UUID detectiveID){
       database.deleteDetective(detectiveID);
     }
@@ -266,17 +270,24 @@ public class UI extends UIConstants{
     private void login() { 
       String username = getString("Username");
       String password = getString("Password");
-      if(database.searchUser(username) != null){
-        currentUser = database.searchUser(username);
-        if(currentUser.getPassword().equals(password)){
-        currentUser.login();
-      } else {
-        System.out.println("Invalid password.");
+      boolean loginSuccess = false;
+      while (!loginSuccess) {
+        if(database.searchUser(username) != null){
+          currentUser = database.searchUser(username);
+          if(currentUser.getPassword().equals(password)) {
+          currentUser.login();
+        } else {
+          System.out.println("Invalid password.");
+          displayLoginScreen();
+        }
+          System.out.println("Welcome " +currentUser.getUsername()+".");
+          loginSuccess = true;
+          return;
+        } else {
+          System.out.println("Sorry, invalid username.");
+          displayLoginScreen();
       }
-        System.out.println("Welcome " +currentUser.getUsername()+".");
-      } else {
-        System.out.println("Sorry, invalid username.");
-      }
+    }
     }
 
     private void createUser(){
@@ -330,7 +341,8 @@ public class UI extends UIConstants{
     private void exportPerson(Person aPerson) throws FileNotFoundException {
       String personOutput = aPerson.toString();
       PrintWriter out = new PrintWriter("person.txt");
-      out.println(personOutput); 
+      out.println(personOutput);
+      
     }
     public static void main(String[] args) {
         UI UIInterface = new UI();
