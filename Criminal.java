@@ -123,6 +123,6 @@ public class Criminal extends Person{
                 + "\nWeight: " + this.weight + "\nHeight " + this.height 
                 + "\nEye color: " + this.eyeColor + "\nHair color: " + this.hairColor
                 + "\nFacial hair: " + this.facialHair + "\nTattoo(s): " + this.tattoo
-                + "\nStatus: " + this.status + "\nAssociated gangs: " + this.gang;
+                + "\nStatus: " + this.status + "\nAssociated gangs: " + this.gang + "\nAge: " + age;
     }
 }
