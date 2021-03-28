@@ -166,6 +166,7 @@ public class Database {
     }
 
     public Case getCaseById(UUID caseID) {
+        CaseLoader.loadCases();
         int caseIndex = 0;
         
         try {

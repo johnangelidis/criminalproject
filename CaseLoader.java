@@ -53,4 +53,10 @@ public class CaseLoader extends CaseConstants{
 		return null;
 	}
 	
+	public static void main(String[] args){
+		ArrayList<Case> cases = loadCases();
+		for(Case c:cases){
+			System.out.println(c);
+		}
+	}
 }

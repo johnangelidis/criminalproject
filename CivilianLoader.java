@@ -24,7 +24,7 @@ public class CivilianLoader extends CivilianConstants{
                 Date dateOfBirth = Date.splitDate(stringDate);
 				String stringAddress = (String)civilianJSON.get(CIVILIAN_ADDRESS);
                 Address address = Address.splitAddress(stringAddress);
-                int number = (int)civilianJSON.get(CIVILIAN_PHONE_NUMBER);
+                long number = (long)civilianJSON.get(CIVILIAN_PHONE_NUMBER);
 				
 				civilians.add(new Civilian(firstName, lastName, dateOfBirth, address, number));
 			}
@@ -36,5 +36,11 @@ public class CivilianLoader extends CivilianConstants{
 		}
 		
 		return null;
+	}
+	public static void main(String[] args){
+		ArrayList<Civilian> civilians = loadCivilians();
+		for(Civilian c:civilians){
+			System.out.println(c);
+		}
 	}
 }
