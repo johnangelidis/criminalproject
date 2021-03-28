@@ -97,7 +97,7 @@ public class UI extends UIConstants{
       String hairColor = getString("Criminal Hair color");
       String hairLength = getString("Criminal Hair length");
       String facialHair = getString("Criminal Facial hair");
-      Tattoo tattoo = promptForTattoo();
+      String tattoo = getString("Tattoo");
       String status = getString("Criminal Status");
       Gang gang = makeGang();
 
