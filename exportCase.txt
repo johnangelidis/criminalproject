@@ -1,0 +1,28 @@
+Case ID: 664fc8e6-9099-4edf-a2b6-eb97a3145c31
+Crime committed: 3
+Victims: aade558b-0d3e-4af3-9166-9d73e6fe23cb
+Offenders: First name: 3
+Last name: 33
+Date of birth: "3/3/3"
+Race: 3
+Weight: 33.0
+Height 3.0
+Eye color: 3
+Hair color: 3
+Facial hair: 3
+Tattoo(s): 3
+Status: 3
+Associated gangs: a16cbed2-1a82-4c1b-a8d7-08c738966659
+Age: 3
+Suspect Description: null
+Case Description: null
+Witness(es): 38419aef-2b52-4267-9333-ef639e590348
+Person(s) of Interest ed954eb3-e0db-4b52-8923-1a7eac6c94fa
+Day of Crime: "3/3/3"
+Time of Crime: null
+Location of Crime: "3/3/3/3/3"
+Officer(s) involved: 48b2b108-e23a-4e3f-9618-5440e2d3669e
+Detectives involved: 61b6c0c4-ad1d-402e-87f3-8be18fa7d290
+Victim Statement(s): 3
+Witness Statement(s): 3
+Evidence: 33
