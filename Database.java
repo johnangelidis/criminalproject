@@ -269,29 +269,26 @@ public class Database {
         }
         
     }
-    public Civilian searchCivilians(String firstName, String lastName){
+    public void searchCivilians(String firstName, String lastName){
         for (Civilian c : civilians) {
             if (c.getFirstName().equals(firstName) && c.getLastName().equals(lastName)) {
-                return c;
+                System.out.println(c);
             }
         }
-        return null;
     }
-    public PoliceOfficer searchOfficers(String firstName, String lastName){
+    public void searchOfficers(String firstName, String lastName){
         for (PoliceOfficer p : officers) {
             if (p.getFirstName().equals(firstName) && p.getLastName().equals(lastName)) {
-                return p;
+                System.out.println(p);
             }
         }
-        return null;
     }
-    public Detective searchDetectives(String firstName, String lastName){
+    public void searchDetectives(String firstName, String lastName){
         for (Detective d : detectives) {
             if (d.getFirstName().equals(firstName) && d.getLastName().equals(lastName)) {
-                return d;
+                System.out.println(d);
             }
         }
-        return null;
     }
 
     /**
@@ -299,14 +296,13 @@ public class Database {
      * @param name name of the gang
      * @return instance of the Gang class
      */
-    public Gang searchGang(String name)
+    public void searchGang(String name)
     {
         for(Gang g:gangs){
             if(g.getName().equals(name)){
-                return g;
+                System.out.println(g);
             }
         }
-        return null;
     }
 
     
@@ -317,14 +313,13 @@ public class Database {
      * @param offender The offender who committed the crime
      * @return instance of the Case class
      */
-    public Case searchCase(String crime, Criminal offender)
+    public void searchCase(String crime, Criminal offender)
     {
         for(Case c:cases){
             if(c.getCrime().equals(crime) && c.getOffender().equals(offender)){
-                return c;
+                System.out.println(c);
             }
         }
-        return null;
     }
 
     public User searchUser(String username){
