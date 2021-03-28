@@ -104,14 +104,22 @@ public class UI extends UIConstants{
       return c;
     }
 
-    private Tattoo promptForTattoo(){
+    /*private Tattoo promptForTattoo(){
       String color = getString("Tattoo color");
       String design = getString("Tattoo design");
-      String location = getString("Tattoo location");
-      Tattoo t = new Tattoo(color, design, location);
+      Tattoo t = new Tattoo(color, design);
       return t;
+    }*/
+    private void searchTats(){
+      String tattoo = getString("Tattoo");
+      database.searchTattoos(tattoo);
     }
-
+    private void searchDescription(){
+      int age = getInt("Age");
+      String hairColor = getString("HairColor");
+      double height = getDouble("Height");
+      database.searchDescription(age, hairColor, height);
+    }
     private Detective makeDetective(){
       String firstName = getString("First name");
       String lastName = getString("Last name");
