@@ -51,29 +51,25 @@ public class UI extends UIConstants{
             break;
         }
         switch(userCommand){
-          case(1):
+          case(1):  // create account
                   createUser();
-                  break;
-          /*        
-          case(2):
-                  if(currentUser.getLoggedInStatus() == true && currentUser.getAdminStatus() == true){
-                    addACase();
+                  break;     
+          case(2):  // add a case
+                  if(currentUser.getAdminStatus() == true){
+                    addCase();
                     break;
                   } else {
-                    System.out.println("You either are not logged in or are not an admin");
+                    System.out.println("You do not have admin priviledges");
                     break;
                   }
-          */
-          case(2):
-                
+          case(3):  // search for criminal
+                System.out.println("not finished");
+                System.exit(0);
+                break;
+          case(4):  // search cases
+                  database.searchCaseById();
                   break;
-                  //search for criminal/suspect
-          /*
-          case(4):
-                  database.searchCases(getInput("Crime:"),getInput(""));
-                  break;
-                  //search cases
-          */        
+                  //search cases    
         }
       }
     }
