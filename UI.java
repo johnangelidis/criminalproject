@@ -39,7 +39,8 @@ public class UI extends UIConstants{
         displayMainMenu();
         int userCommand = getUserCommand(mainMenuOptions.length);
         if(userCommand == -1)  {
-          System.out.println("Invalid command");
+          System.out.println("Logging out");
+          System.exit(0);
           continue;
         }
         // if(userCommand == mainMenuOptions.length){
@@ -307,7 +308,7 @@ public class UI extends UIConstants{
       boolean validOption = true;
       while (validOption) {
       if (input == 1) {
-        logi1n();
+        login();
         validOption = false;
       }
       else if (input == 2) {
