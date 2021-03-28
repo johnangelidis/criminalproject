@@ -21,7 +21,7 @@ public class PoliceLoader extends PoliceConstants {
                 String lastName = (String)officerJSON.get(OFFICERS_LAST_NAME);
                 String stringDate = (String)officerJSON.get(OFFICERS_DOB);
                 Date dateOfBirth = Date.splitDate(stringDate);
-                int badgeNum = (Integer)officerJSON.get(OFFICERS_BADGENUM);
+                long badgeNum = (long)officerJSON.get(OFFICERS_BADGENUM);
                 String poliiceDept = (String)officerJSON.get(OFFICERS_DEPT);
                 
                 officers.add(new PoliceOfficer(firstName, lastName, dateOfBirth, badgeNum, poliiceDept));

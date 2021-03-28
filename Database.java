@@ -40,6 +40,7 @@ public class Database {
         CriminalWriter.saveCriminals();
     }
     public static Criminal getCriminalById(UUID criminalID) {
+        criminals = CriminalLoader.loadCriminals();
         int criminalIndex = 0;
         try {
             for (int i = 0; i < criminals.size(); i++) {
@@ -77,6 +78,7 @@ public class Database {
     }
     
     public static Civilian getCivilianById(UUID civilianID) {
+        civilians = CivilianLoader.loadCivilians();
         int civilianIndex = 0;
         try {
             for (int i = 0; i < civilians.size(); i++) {
@@ -114,6 +116,7 @@ public class Database {
     }
 
     public static PoliceOfficer getOfficerById(UUID officerID) {
+        officers = PoliceLoader.loadOfficers();
         int officerIndex = 0;
         try {
             for (int i = 0; i < officers.size(); i++) {
@@ -143,10 +146,11 @@ public class Database {
     }
 
     public static Detective getDetectiveById(UUID detectiveID) {
+        detectives = DetectiveLoader.loadDetectives();
         int detectiveIndex = 0;
         try {
             for (int i = 0; i < detectives.size(); i++) {
-                if(officers.get(i).getId() == detectiveID)
+                if(detectives.get(i).getId() == detectiveID)
                    detectiveIndex = i;
             }
         } catch (Exception e) {
@@ -166,7 +170,7 @@ public class Database {
     }
 
     public Case getCaseById(UUID caseID) {
-        CaseLoader.loadCases();
+        cases = CaseLoader.loadCases();
         int caseIndex = 0;
         
         try {
@@ -238,6 +242,7 @@ public class Database {
     }
 
     public User getUserById(UUID userID){
+        users = UserLoader.loadUsers();
         int userIndex = 0;
         try {
             for (int i = 0; i < users.size(); i++) {

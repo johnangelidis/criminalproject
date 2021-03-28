@@ -28,4 +28,11 @@ public class DetectiveLoader extends DetectiveConstants{
         }
         return null;
     }
+
+    public static void main(String[] args){
+        ArrayList<Detective> detectives = loadDetectives();
+        for(Detective d:detectives){
+            System.out.println(d);
+        }
+    }
 }

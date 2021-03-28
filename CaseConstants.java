@@ -7,7 +7,7 @@ public abstract class CaseConstants {
 	protected static final String CASE_OFFENDER = "offender";
 	protected static final String CASE_SUSPECT_DESCRIPTION = "suspectDescription";
 	protected static final String CASE_CASE_DESCRIPTION = "caseDescription";
-	protected static final String CASE_WITNESS = "witnesse";
+	protected static final String CASE_WITNESS = "witness";
 	protected static final String CASE_PERSON_OF_INTEREST = "personOfInterest";
 	protected static final String CASE_DAY_OF_CRIME = "dayOfCrime";
 	protected static final String CASE_TIME = "time";

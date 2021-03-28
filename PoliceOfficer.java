@@ -3,7 +3,7 @@
  * @author Jayden Allen
  */
 public class PoliceOfficer extends Person {
-    private int badgeNum;
+    private long badgeNum;
     private String policeDept;
 
 /**
@@ -12,20 +12,20 @@ public class PoliceOfficer extends Person {
  * @param badge number
  * @param police department
  */
-    public PoliceOfficer(String firstName, String lastName, Date dateOfBirth, int badgeNum, String policeDept){
+    public PoliceOfficer(String firstName, String lastName, Date dateOfBirth, long badgeNum, String policeDept){
         super(firstName, lastName, dateOfBirth);
         this.badgeNum = badgeNum;
         this.policeDept = policeDept;
     }
 
-    public int getbadgeNum() {
+    public long getbadgeNum() {
         return this.badgeNum;
     }
     public String getpoliceDept() {
         return this.policeDept;
     }
 
-    public void setbadgeNum(int badgeNum) {
+    public void setbadgeNum(long badgeNum) {
         this.badgeNum = badgeNum;
     }
     public void setpoliceDept(String policeDept){
