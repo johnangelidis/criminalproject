@@ -17,6 +17,7 @@ public class CaseLoader extends CaseConstants{
 			for(int i=0; i < casesJSON.size(); i++) {
 				JSONObject caseJSON = (JSONObject)casesJSON.get(i);
                 UUID id = UUID.fromString((String)caseJSON.get(CASE_ID));
+				System.out.println(id);
 				String crime = (String)caseJSON.get(CASE_CRIME);
 				UUID victimID = UUID.fromString((String)caseJSON.get(CASE_VICTIM));
 				Civilian victim = Database.getCivilianById(victimID);

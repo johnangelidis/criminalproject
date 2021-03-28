@@ -63,7 +63,8 @@ public class UI extends UIConstants{
           case(4):  // search cases
                   String enteredString = getString("Please enter case ID");
                   UUID enteredUUID = UUID.fromString(enteredString);
-                  database.getCaseById(enteredUUID);
+                  Case searchedCase = database.getCaseById(enteredUUID);
+                  System.out.println(searchedCase);
                   break;  
           case(5): //export
                   String input = getString("Please enter case ID");
