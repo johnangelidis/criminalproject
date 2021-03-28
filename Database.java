@@ -296,7 +296,13 @@ public class Database {
             }
         }
     }
-
+    public void searchTattoos(String tattoo){
+        for (Criminal c : criminals) {
+            if(c.getTattoo().equals(tattoo){
+                System.out.println(c);
+            }
+        }
+    }
     /**
      * Allows user to search entries based on associated gangs
      * @param name name of the gang
