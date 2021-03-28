@@ -106,8 +106,8 @@ public class Criminal extends Person{
         this.status = status;
     }
 
-    public Gang getGang() {
-        return this.gang;
+    public String getGang() {
+        return this.gang.getId().toString();
     }
 
     public void setGang(Gang gang) {

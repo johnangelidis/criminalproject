@@ -60,7 +60,7 @@ public class Gang {
 	}
 
 	public String toString(){
-		return this.name;
+		return this.id.toString();
 	}
 	
 }

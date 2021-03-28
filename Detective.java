@@ -17,6 +17,6 @@ public class Detective extends Person{
      */
     @Override
     public String toString() {
-        return firstName + " " + lastName + " is a detective";
+        return this.id.toString();
     }
 }

@@ -34,8 +34,6 @@ public class PoliceOfficer extends Person {
 
     @Override
     public String toString() {
-        return "Officer: "+firstName+" "+lastName+
-        "\n Department: "+policeDept+
-        "\n Badge Number: "+badgeNum;
+        return this.id.toString();
     }
 }

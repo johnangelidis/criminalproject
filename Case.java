@@ -55,16 +55,16 @@ public class Case {
         this.crime = crime;
     }
 
-    public Civilian getVictim() {
-        return this.victim;
+    public String getVictim() {
+        return this.victim.getId().toString();
     }
 
     public void setVictim(Civilian victim) {
         this.victim = victim;
     }
 
-    public Criminal getOffender() {
-        return this.offender;
+    public String getOffender() {
+        return this.offender.getId().toString();
     }
 
     public void setOffender(Criminal offender) {
@@ -87,16 +87,16 @@ public class Case {
         this.caseDescription = caseDescription;
     }
 
-    public Civilian getWitness() {
-        return this.witness;
+    public String getWitness() {
+        return this.witness.getId().toString();
     }
 
     public void setWitness(Civilian witness) {
         this.witness = witness;
     }
 
-    public Civilian getPersonOfInterest() {
-        return this.personOfInterest;
+    public String getPersonOfInterest() {
+        return this.personOfInterest.getId().toString();
     }
 
     public void setPersonOfInterest(Civilian personOfInterest) {
@@ -127,16 +127,16 @@ public class Case {
         this.location = location;
     }
 
-    public PoliceOfficer getOfficerInvolved() {
-        return this.officerInvolved;
+    public String getOfficerInvolved() {
+        return this.officerInvolved.getId().toString();
     }
 
     public void setOfficerInvolved(PoliceOfficer officerInvolved) {
         this.officerInvolved = officerInvolved;
     }
 
-    public Detective getDetective() {
-        return this.detective;
+    public String getDetective() {
+        return this.detective.getId().toString();
     }
 
     public void setDetective(Detective detective) {
