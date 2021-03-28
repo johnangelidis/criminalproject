@@ -42,6 +42,6 @@ public class Civilian extends Person{
 	}
 	@Override
 	public String toString() {
-		return firstName + " " + lastName + " is a civilian.";
+		return this.id.toString();
 	}
 }
