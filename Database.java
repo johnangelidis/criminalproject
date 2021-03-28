@@ -39,7 +39,7 @@ public class Database {
         criminals.add(c);
         CriminalWriter.saveCriminals();
     }
-    public Criminal getCriminalById(UUID criminalID) {
+    public static Criminal getCriminalById(UUID criminalID) {
         int criminalIndex = 0;
         try {
             for (int i = 0; i < criminals.size(); i++) {
@@ -76,7 +76,7 @@ public class Database {
         CivilianWriter.saveCivilians();
     }
     
-    public Civilian getCivilianById(UUID civilianID) {
+    public static Civilian getCivilianById(UUID civilianID) {
         int civilianIndex = 0;
         try {
             for (int i = 0; i < civilians.size(); i++) {
@@ -113,7 +113,7 @@ public class Database {
         PoliceWriter.saveOfficers();
     }
 
-    public PoliceOfficer getOfficerById(UUID officerID) {
+    public static PoliceOfficer getOfficerById(UUID officerID) {
         int officerIndex = 0;
         try {
             for (int i = 0; i < officers.size(); i++) {
@@ -142,7 +142,7 @@ public class Database {
         DetectiveWriter.saveDetectives();
     }
 
-    public Detective getDetectiveById(UUID detectiveID) {
+    public static Detective getDetectiveById(UUID detectiveID) {
         int detectiveIndex = 0;
         try {
             for (int i = 0; i < detectives.size(); i++) {
