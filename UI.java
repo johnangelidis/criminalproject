@@ -58,20 +58,23 @@ public class UI extends UIConstants{
           case(2):  // add a case
                     addCase();
                     break;
-          case(3):  // search for criminal
-                database.searchCriminals(getString("first name"), getString("last name"));
+          case(3):  // search for criminal by description
+                searchDescription();
                 break;
-          case(4):  // search cases
+          case(4):
+                searchTats();
+                break;
+          case(5):  // search cases
                   String enteredString = getString("Please enter case ID");
                   UUID enteredUUID = UUID.fromString(enteredString);
                   database.getCaseById(enteredUUID);
                   break;  
-          case(5): //export
+          case(6): //export
                   String input = getString("Please enter case ID");
                   UUID id = UUID.fromString(input);
                   Case c = database.getCaseById(id);
                   database.exportCase(c);
-          case(6):
+          case(7):
                   System.out.println("Logging out");
                   System.exit(0);
           default:
