@@ -46,6 +46,7 @@ public class CriminalWriter extends CriminalConstants {
 		criminalDetails.put(CRIMINAL_STATUS, c.getStatus());
 		criminalDetails.put(CRIMINAL_GANG, c.getGang());
         criminalDetails.put(CRIMINAL_AGE, c.getAge());
+		criminalDetails.put(CRIMINAL_CONVICTION, c.getConviction());
         return criminalDetails;
 	}
 }

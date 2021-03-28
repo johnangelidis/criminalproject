@@ -14,9 +14,9 @@ public class Criminal extends Person{
     private String status;
     private Gang gang;
     private long age;
-    
+    private String conviction;
 
-    public Criminal(String firstName, String lastName, Date dateOfBirth, String gender, String race, double weight, double height, String eyeColor, String hairColor, String hairLength, String facialHair, String tattoo, String status, Gang gang, long age) {
+    public Criminal(String firstName, String lastName, Date dateOfBirth, String gender, String race, double weight, double height, String eyeColor, String hairColor, String hairLength, String facialHair, String tattoo, String status, Gang gang, long age, String conviction) {
         super(firstName, lastName, dateOfBirth);
         this.gender = gender;
         this.race = race;
@@ -30,7 +30,17 @@ public class Criminal extends Person{
         this.status = status;
         this.gang = gang;
         this.age = age;
+        this.conviction = conviction;
     }
+    
+    public String getConviction() {
+        return this.conviction;
+    }
+
+    public void setConviction(String conviction) {
+        this.conviction = conviction;
+    }
+    
     public String getGender(){
         return this.gender;
     }
