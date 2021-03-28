@@ -15,5 +15,42 @@
         "age": 3,
         "height": 3.0,
         "status": "3"
+    },
+    {
+        "lastName": "22",
+        "facialHair": "2",
+        "gang": "73ec80a4-3e03-495a-b271-cd22d2abb080",
+        "race": "2",
+        "weight": 33.0,
+        "dateOfBirth": "2/2/2",
+        "gender": "female",
+        "hairLength": "2",
+        "firstName": "2",
+        "tattoo": "dove",
+        "eyeColor": "2",
+        "id": "946e921d-c9a9-4498-aad9-a0ffa2177942",
+        "hairColor": "2",
+        "age": 44,
+        "height": 3.0,
+        "status": "2"
+    },
+    {
+        "lastName": "11",
+        "facialHair": "1",
+        "gang": "73ec80a4-3e03-495a-b271-cd22d2abb080",
+        "race": "1",
+        "weight": 33.0,
+        "dateOfBirth": "1/1/1",
+        "gender": "male",
+        "hairLength": "1",
+        "firstName": "1",
+        "tattoo": "dove",
+        "eyeColor": "1",
+        "id": "78809934-95a6-4c52-92d6-b901f4c9c7c0",
+        "hairColor": "1",
+        "age": 21,
+        "height": 3.0,
+        "status": "1"
     }
+    
 ]
