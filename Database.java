@@ -2,6 +2,9 @@ import java.util.ArrayList;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.util.UUID;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 /**
  * Class representation of Database that allows user to search and export entries
  */
@@ -357,13 +360,13 @@ public class Database {
      * Allows user to export a Person entry
      * @param p Person that we want to write to file
      */
-    public void exportPerson(Person p){
+    public void exportCriminal(Criminal c){
         try{
-            FileOutputStream output = new FileOutputStream("c:\\Users\\J\\Desktop");
-            ObjectOutputStream objectOut = new ObjectOutputStream(output);
-            objectOut.writeObject(p);
-            System.out.println("Person successfully written to file!");
-            objectOut.close();
+            File file1 = new File("exportCriminal.txt");
+            FileWriter fw = new FileWriter(file1, true);
+            PrintWriter pw = new PrintWriter(fw);
+            pw.println(c.toString());
+            pw.close();
         }catch(Exception e){
             e.printStackTrace();
         }
@@ -376,11 +379,11 @@ public class Database {
     public void exportGang(Gang g)
     {
         try{
-            FileOutputStream output = new FileOutputStream("c:\\Users\\J\\Desktop");
-            ObjectOutputStream objectOut = new ObjectOutputStream(output);
-            objectOut.writeObject(g);
-            System.out.println("Gang successfully written to file!");
-            objectOut.close();
+            File file1 = new File("exportGang.txt");
+            FileWriter fw = new FileWriter(file1, true);
+            PrintWriter pw = new PrintWriter(fw);
+            pw.println(g.toString());
+            pw.close();
         }catch(Exception e){
             e.printStackTrace();
         }
@@ -393,11 +396,11 @@ public class Database {
     public void exportCase(Case c)
     {
         try{
-            FileOutputStream output = new FileOutputStream("c:\\Users\\J\\Desktop");
-            ObjectOutputStream objectOut = new ObjectOutputStream(output);
-            objectOut.writeObject(c);
-            System.out.println("Case successfully written to file!");
-            objectOut.close();
+            File file1 = new File("exportCase.txt");
+            FileWriter fw = new FileWriter(file1, true);
+            PrintWriter pw = new PrintWriter(fw);
+            pw.println(c.toString());
+            pw.close();
         }catch(Exception e){
             e.printStackTrace();
         }
