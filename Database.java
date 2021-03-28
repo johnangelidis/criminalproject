@@ -174,6 +174,7 @@ public class Database {
     }
 
     public Case getCaseById(UUID caseID) {
+        cases = new ArrayList<Case>();
         cases = CaseLoader.loadCases();
         int caseIndex = 0;
         
