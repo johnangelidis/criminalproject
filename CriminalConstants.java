@@ -15,5 +15,5 @@ public class CriminalConstants {
 	protected static final String CRIMINAL_TATTOO = "tattoo";
 	protected static final String CRIMINAL_STATUS = "status";
 	protected static final String CRIMINAL_GANG = "gang"; 
-
+	protected static final String CRIMINAL_AGE = "age";
 }

@@ -33,7 +33,8 @@ public class CriminalLoader extends CriminalConstants{
                 String status = (String)criminalJSON.get(CRIMINAL_STATUS);
                 UUID gangId = UUID.fromString((String)criminalJSON.get(CRIMINAL_GANG));
 				Gang gang = Database.getGangById(gangId);
-				criminals.add(new Criminal(firstName, lastName, dateOfBirth, race, weight, height, eyeColor, hairColor, hairLength, facialHair, tattoo,  status, gang));
+				int age = (String)criminalJSON.get(CRIMINAL_AGE);
+				criminals.add(new Criminal(firstName, lastName, dateOfBirth, race, weight, height, eyeColor, hairColor, hairLength, facialHair, tattoo,  status, gang, age));
 			}
 			
 			return criminals;
