@@ -144,7 +144,7 @@ public class UI extends UIConstants{
     private Civilian makeCivilian(){
       String firstName = getString("FirstName");
       String lastName = getString("LastName");
-      int phone = getInt("Phone Number");
+      long phone = getLong("Phone Number");
       Date dob = makeDate("Birthday");
       Address addy = makeAddress();
       Civilian ret = new Civilian(firstName, lastName, dob, addy, phone);
@@ -254,6 +254,13 @@ public class UI extends UIConstants{
     private String getString(String input) {
       System.out.print(input + ": ");
       String in = scanner.next();
+      System.out.println(" ");
+      return in;
+    }
+
+    private long getLong(String input) {
+      System.out.print(input + ": ");
+      long in = scanner.nextLong();
       System.out.println(" ");
       return in;
     }

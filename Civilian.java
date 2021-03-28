@@ -5,9 +5,9 @@
  */
 public class Civilian extends Person{
 	private Address address;
-	private int phone;
+	private long phone;
 
-	public Civilian(String firstName, String lastName, Date dateOfBirth, Address anAddress, int aPhone) {
+	public Civilian(String firstName, String lastName, Date dateOfBirth, Address anAddress, long aPhone) {
 		super(firstName, lastName, dateOfBirth);
 		this.address = anAddress;
 		this.phone = aPhone;
@@ -23,7 +23,7 @@ public class Civilian extends Person{
 	 * Method to return phone of Civilian
 	 * @return their current phone number
 	 */
-	public int getPhone() {
+	public long getPhone() {
 		return this.phone;
 	}
 	/**
