@@ -168,6 +168,7 @@ public class Database {
     public Case getCaseById(UUID caseID) {
         CaseLoader.loadCases();
         int caseIndex = 0;
+        
         try {
             for (int i = 0; i < cases.size(); i++) {
                 if(cases.get(i).getId() == caseID)

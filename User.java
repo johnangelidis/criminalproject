@@ -6,7 +6,7 @@ public class User {
     private UUID id;
     private String username;
     private String password;
-    private boolean isAdmin;
+    // private boolean isAdmin;
     private boolean isLoggedIn;
 
     public User() {
@@ -18,7 +18,7 @@ public class User {
         id = UUID.randomUUID();
         this.username = username;
         this.password = password;
-        this.isAdmin = false;
+        // this.isAdmin = false;
     }
 
     public UUID getId() {
@@ -41,13 +41,13 @@ public class User {
         this.password = password;
     }
 
-    public boolean isIsAdmin() {
-        return this.isAdmin;
-    }
+    // public boolean isIsAdmin() {
+    //     return this.isAdmin;
+    // }
 
-    public void setIsAdmin(boolean isAdmin) {
-        this.isAdmin = isAdmin;
-    }
+    // public void setIsAdmin(boolean isAdmin) {
+    //     this.isAdmin = isAdmin;
+    // }
 
     /**
      * Logs the user into the database
@@ -73,9 +73,9 @@ public class User {
     /**
     * Returns admin status of user, true if they are admin false if not
     */
-    public boolean getAdminStatus(){
-      return this.isAdmin;
-    }
+    // public boolean getAdminStatus(){
+    //   return this.isAdmin;
+    // }
 
     public String toString(){
         return username;
