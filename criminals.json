@@ -1,5 +1,6 @@
 [
     {
+        "age":20,
         "lastName": "Roberts",
         "facialHair": "Mustache",
         "gang": "472448fd-05f4-4ae0-91a5-5590c220c97b",
@@ -16,6 +17,7 @@
         "status": "incarcerated"
     },
     {
+        "age":20,
         "lastName": "Green",
         "facialHair": null,
         "gang": "06a40675-3da1-4839-a800-96aca17ffd8c",
@@ -32,6 +34,7 @@
         "status": "on parole"
     },
     {
+        "age":20,
         "lastName": "das",
         "facialHair": "goatee",
         "gang": "10fbbd1f-b838-45eb-9fc3-6101708d4fd8",
@@ -48,6 +51,7 @@
         "status": "incarcerated"
     },
     {
+        "age":20,
         "lastName": "asd",
         "facialHair": "goatee",
         "gang":"a76824d8-afdc-4978-b2d9-cd1715bc4d2b",
