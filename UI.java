@@ -42,7 +42,7 @@ public class UI extends UIConstants{
           System.out.println("Invalid command");
           continue;
         }
-        if(userCommand == mainMenuOptions.length - 1){
+        if(userCommand == mainMenuOptions.length){
           if(currentUser.getLoggedInStatus() == true) {
             System.out.println("Logging out.");
             hasQuit = true;
@@ -67,9 +67,13 @@ public class UI extends UIConstants{
                 System.exit(0);
                 break;
           case(4):  // search cases
-                  database.searchCaseById();
-                  break;
-                  //search cases    
+                  String enteredString = getString("case ID:");
+                  UUID enteredUUID = UUID.fromString(enteredString);
+                  database.getCaseById(enteredUUID);
+                  break;  
+          default:
+                  System.out.println("invalid command");
+                  continue;
         }
       }
     }
@@ -304,7 +308,7 @@ public class UI extends UIConstants{
     private void displayMainMenu(){
         System.out.println("\n********** Main Menu **********");
         for(int i=0; i<mainMenuOptions.length; i++){
-          System.out.println((i+1) + ", " + mainMenuOptions[i]);
+          System.out.println((i+1) + ": " + mainMenuOptions[i]);
         }
         System.out.println("\n");
     }
