@@ -121,24 +121,6 @@ public class UI extends UIConstants{
       return d;
     }
 
-    private Detective promptForDetective(){
-      System.out.println("Would you like to add a new or existing"+
-      "Detective?\n Enter 1 for new or 2 for existing");
-      String input = scanner.nextLine();
-      int choice = Integer.parseInt(input);
-      if(choice == 1) {
-        Detective newDetective = makeDetective();
-        return newDetective;
-      } else if (choice == 2) {
-        String firstName = getString("FirstName");
-        String lastName = getString("LastName");
-        Detective oldDetective = database.searchDetectives(firstName,lastName);
-        return oldDetective;
-      } else {
-        System.out.println("Invalid input");
-      }
-      return null;
-    }
     private Civilian makeCivilian(){
       String firstName = getString("FirstName");
       String lastName = getString("LastName");
@@ -168,7 +150,7 @@ public class UI extends UIConstants{
     }
 
     private Gang makeGang() {
-      String name = getString("gang name: ");
+      String name = getString("gang name");
       Gang newGang = new Gang(name);
       database.addGang(newGang);
       return newGang;
@@ -177,7 +159,9 @@ public class UI extends UIConstants{
     private void addCase(){
       //get basics then prompt(new or existing)
       String crime = getString("Crime");
+      System.out.println("Victim Information");
       Civilian victim = makeCivilian();
+      System.out.println("Offender Information");
       Criminal offender = makeCriminal();
       String suspectDescription = getString("Suspect Description");
       String caseDescription = getString("Case Description");
@@ -191,7 +175,7 @@ public class UI extends UIConstants{
       System.out.println("Police Officer Information");
       PoliceOfficer officer = makePoliceOfficer();
       System.out.println("Detective Information");
-      Detective detective = promptForDetective();
+      Detective detective = makeDetective();
       String victimStatement = getString("Victim Statement");
       String witnessStatement = getString("Witness Statement");
       String evidence = getString("Evidence");

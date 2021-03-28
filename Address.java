@@ -59,7 +59,7 @@ public class Address {
     }
 
     public String toString(){
-        return number + " " + street + ", " + city + ", " + state + zip;   
+        return number + "/" + street + "/" + city + "/" + state + "/" + zip;   
     }
 
     public static Address splitAddress(String address){
