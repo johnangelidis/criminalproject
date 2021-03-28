@@ -38,11 +38,11 @@ public class UI extends UIConstants{
       while(!hasQuit) {  // made boolean value for better control over while loop
         displayMainMenu();
         int userCommand = getUserCommand(mainMenuOptions.length);
-        if(userCommand == -1)  {
+        /*if(userCommand == -1)  {
           System.out.println("Logging out");
           System.exit(0);
           continue;
-        }
+        }*/
         // if(userCommand == mainMenuOptions.length){
         //   if(currentUser.getLoggedInStatus() == true) {
         //     System.out.println("Logging out.");
