@@ -307,7 +307,7 @@ public class UI extends UIConstants{
       boolean validOption = true;
       while (validOption) {
       if (input == 1) {
-        login();
+        logi1n();
         validOption = false;
       }
       else if (input == 2) {
