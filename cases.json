@@ -1,6 +1,5 @@
 [
     {
-        "age":20,
         "personOfInterest": "5c550dba-fb44-4f2d-9537-1ba5c1500e5e",
         "witnessStatement": "The robber ran inside the store with his gun out and demanded that the cashier gave him all the money in the register",
         "evidence": "Gun",
@@ -16,7 +15,6 @@
         "id": "0758b884-02a3-4b6e-a93a-605edd37e250"
     },
     {
-        "age":20,
         "personOfInterest":"d9de1bd9-59ea-40ef-a81a-a4e57a47e4b0",
         "witnessStatement": "A man wearing black clothing was seen running into a house holding a knife. Came out half an hour later screaming.",
         "evidence": "Knife, Victim's blood on suspect's clothes",
@@ -32,7 +30,6 @@
         "id": "83823666-0795-4dc3-8da7-77a15a4c556d"
     },
     {
-        "age":20,
         "personOfInterest": "434fdf17-baf1-48d7-83ac-243940486137",
         "witnessStatement": "adsadsasd",
         "evidence": "dsadas",
