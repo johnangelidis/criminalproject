@@ -37,7 +37,7 @@ public class Date {
         String newDay = Integer.toString(day);
         String newYear = Integer.toString(year);
 
-        return month + "/" + newDay + "/" + newYear;
+        return "\"" + month + "/" + newDay + "/" + newYear + "\"";
         
     }
 

@@ -88,6 +88,7 @@ public class UI extends UIConstants{
       String firstName = getString("Criminal first name");
       String lastName = getString("Criminal Last name");
       Date dateOfBirth = makeDate("Criminal Date of Birth");
+      int age = getInt("Criminal's age");
       String race = getString("Criminal Race");
       double weight = getDouble("Criminal Weight");
       double height = getDouble("Criminal Height");
@@ -98,8 +99,7 @@ public class UI extends UIConstants{
       String tattoo = getString("Tattoo");
       String status = getString("Criminal Status");
       Gang gang = new Gang("Gang");
-
-      Criminal c = new Criminal(firstName, lastName, dateOfBirth, race, weight, height, eyeColor, hairColor, hairLength, facialHair, tattoo, status, gang);
+      Criminal c = new Criminal(firstName, lastName, dateOfBirth, race, weight, height, eyeColor, hairColor, hairLength, facialHair, tattoo, status, gang, age);
       database.addCriminal(c);
       return c;
     }
