@@ -32,7 +32,7 @@ public class UI extends UIConstants{
     public void run() {
       System.out.println(WELCOME_MESSAGE);
       //Loop until user quits
-
+      database.loadCases();
       boolean hasQuit = false;
       displayLoginScreen();
       while(!hasQuit) {  // made boolean value for better control over while loop
