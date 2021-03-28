@@ -9,11 +9,11 @@ public class Criminal extends Person{
     private String hairColor;
     private String hairLength;
     private String facialHair;
-    private Tattoo tattoo;
+    private String tattoo;
     private String status;
     private Gang gang;
 
-    public Criminal(String firstName, String lastName, Date dateOfBirth, String race, double weight, double height, String eyeColor, String hairColor, String hairLength, String facialHair, Tattoo tattoo, String status, Gang gang) {
+    public Criminal(String firstName, String lastName, Date dateOfBirth, String race, double weight, double height, String eyeColor, String hairColor, String hairLength, String facialHair, String tattoo, String status, Gang gang) {
         super(firstName, lastName, dateOfBirth);
         this.race = race;
         this.weight = weight;
@@ -83,11 +83,11 @@ public class Criminal extends Person{
         this.facialHair = facialHair;
     }
 
-    public Tattoo getTattoo() {
+    public String getTattoo() {
         return this.tattoo;
     }
 
-    public void setTattoo(Tattoo tattoo) {
+    public void setTattoo(String tattoo) {
         this.tattoo = tattoo;
     }
 

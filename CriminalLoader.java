@@ -28,8 +28,8 @@ public class CriminalLoader extends CriminalConstants{
                 String hairColor = (String)criminalJSON.get(CRIMINAL_HAIR_COLOR);
                 String hairLength = (String)criminalJSON.get(CRIMINAL_HAIR_LENGTH);
 				String facialHair = (String)criminalJSON.get(CRIMINAL_FACIAL_HAIR);
-				String stringTattoo = (String)criminalJSON.get(CRIMINAL_TATTOO);
-                Tattoo tattoo = Tattoo.splitTattoo(stringTattoo);
+				String tattoo = (String)criminalJSON.get(CRIMINAL_TATTOO);
+                //Tattoo tattoo = Tattoo.splitTattoo(stringTattoo);
                 String status = (String)criminalJSON.get(CRIMINAL_STATUS);
                 UUID gangId = UUID.fromString((String)criminalJSON.get(CRIMINAL_GANG));
 				Gang gang = Database.getGangById(gangId);
@@ -43,6 +43,13 @@ public class CriminalLoader extends CriminalConstants{
 		}
 		
 		return null;
+	}
+
+	public static void main(String[] args){
+		ArrayList<Criminal> criminals = loadCriminals();
+		for(Criminal c:criminals){
+			System.out.println(c);
+		}
 	}
 }
 

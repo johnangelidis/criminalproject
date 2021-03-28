@@ -58,13 +58,9 @@ public class Tattoo {
     }
 
     public static Tattoo splitTattoo(String tattoo){
-        String[] splitTattoo = tattoo.split("/");
+        String[] str = tattoo.split("/");
 
-        String color = splitTattoo[0];
-        String design = splitTattoo[1].toLowerCase();
-        String location = splitTattoo[2].toLowerCase();
-        
-        Tattoo newTattoo = new Tattoo(color, design, location);
+        Tattoo newTattoo = new Tattoo(str[0], str[1], str[2]);
         return newTattoo;
     }
 }

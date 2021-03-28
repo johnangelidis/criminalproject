@@ -207,6 +207,7 @@ public class Database {
     }
 
     public static Gang getGangById(UUID gangID) {
+        gangs = GangLoader.loadGangs();
         int gangIndex = 0;
         try {
             for (int i = 0; i < gangs.size(); i++) {
@@ -258,14 +259,14 @@ public class Database {
      * @param lastName Last name of person
      * @return instance of the Person class
      */
-    public Criminal searchCriminals(String firstName, String lastName)
+    public void searchCriminals(String firstName, String lastName)
     {
         for (Criminal c : criminals) {
             if (c.getFirstName().equals(firstName) && c.getLastName().equals(lastName)) {
-                return c;
+                System.out.println(c);
             }
         }
-        return null;
+        
     }
     public Civilian searchCivilians(String firstName, String lastName){
         for (Civilian c : civilians) {
