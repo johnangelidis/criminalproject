@@ -63,11 +63,10 @@ public class UI extends UIConstants{
                     break;
                   }
           case(3):  // search for criminal
-                System.out.println("not finished");
-                System.exit(0);
+                database.searchCriminals(getString("first name"), getString("last name"));
                 break;
           case(4):  // search cases
-                  String enteredString = getString("case ID:");
+                  String enteredString = getString("Please enter case ID");
                   UUID enteredUUID = UUID.fromString(enteredString);
                   database.getCaseById(enteredUUID);
                   break;  
