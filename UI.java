@@ -98,8 +98,9 @@ public class UI extends UIConstants{
       String tattoo = getString("Tattoo");
       String status = getString("Criminal Status");
       Gang gang = new Gang("Gang");
+      int age = getInt("Age");
 
-      Criminal c = new Criminal(firstName, lastName, dateOfBirth, race, weight, height, eyeColor, hairColor, hairLength, facialHair, tattoo, status, gang);
+      Criminal c = new Criminal(firstName, lastName, dateOfBirth, race, weight, height, eyeColor, hairColor, hairLength, facialHair, tattoo, status, gang,age);
       database.addCriminal(c);
       return c;
     }
