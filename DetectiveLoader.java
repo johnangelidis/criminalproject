@@ -26,7 +26,7 @@ public class DetectiveLoader extends DetectiveConstants{
         }catch (Exception e) {
             e.printStackTrace();
         }
-        return null;
+        return detectives;
     }
 
     public static void main(String[] args){
