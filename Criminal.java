@@ -2,6 +2,7 @@
  * Class representation of a Criminal
  */
 public class Criminal extends Person{
+    private String gender;
     private String race;
     private double weight;
     private double height;
@@ -13,9 +14,11 @@ public class Criminal extends Person{
     private String status;
     private Gang gang;
     private long age;
+    
 
-    public Criminal(String firstName, String lastName, Date dateOfBirth, String race, double weight, double height, String eyeColor, String hairColor, String hairLength, String facialHair, String tattoo, String status, Gang gang, long age) {
+    public Criminal(String firstName, String lastName, Date dateOfBirth, String gender, String race, double weight, double height, String eyeColor, String hairColor, String hairLength, String facialHair, String tattoo, String status, Gang gang, long age) {
         super(firstName, lastName, dateOfBirth);
+        this.gender = gender;
         this.race = race;
         this.weight = weight;
         this.height = height;
@@ -27,6 +30,13 @@ public class Criminal extends Person{
         this.status = status;
         this.gang = gang;
         this.age = age;
+    }
+    public String getGender(){
+        return this.gender;
+    }
+
+    public void setGender(String gender){
+        this.gender = gender;
     }
     public long getAge(){
         return this.age;

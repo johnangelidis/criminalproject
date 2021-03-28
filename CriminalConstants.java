@@ -5,6 +5,7 @@ public class CriminalConstants {
 	protected static final String CRIMINAL_FIRST_NAME = "firstName";
 	protected static final String CRIMINAL_LAST_NAME = "lastName";
 	protected static final String CRIMINAL_DOB = "dateOfBirth";
+	protected static final String CRIMINAL_GENDER= "gender";
 	protected static final String CRIMINAL_RACE = "race";
 	protected static final String CRIMINAL_WEIGHT = "weight";
 	protected static final String CRIMINAL_HEIGHT = "height";

@@ -1,1 +1,19 @@
-[{"lastName":"33","facialHair":"3","gang":"73ec80a4-3e03-495a-b271-cd22d2abb080","race":"3","weight":33.0,"dateOfBirth":"3/3/3","hairLength":"3","firstName":"3","tattoo":"3","eyeColor":"3","id":"7787e677-1d45-4458-8168-d55a91ba6090","hairColor":"3","age":3,"height":3.0,"status":"3"}]
+[
+    {
+        "lastName": "33",
+        "facialHair": "3",
+        "gang": "73ec80a4-3e03-495a-b271-cd22d2abb080",
+        "race": "3",
+        "weight": 33.0,
+        "dateOfBirth": "3/3/3",
+        "hairLength": "3",
+        "firstName": "3",
+        "tattoo": "3",
+        "eyeColor": "3",
+        "id": "7787e677-1d45-4458-8168-d55a91ba6090",
+        "hairColor": "3",
+        "age": 3,
+        "height": 3.0,
+        "status": "3"
+    }
+]

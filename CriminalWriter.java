@@ -34,6 +34,7 @@ public class CriminalWriter extends CriminalConstants {
 		criminalDetails.put(CRIMINAL_FIRST_NAME, c.getFirstName());
 		criminalDetails.put(CRIMINAL_LAST_NAME, c.getLastName());
 		criminalDetails.put(CRIMINAL_DOB, c.getDOB());
+		criminalDetails.put(CRIMINAL_GENDER, c.getGender());
 		criminalDetails.put(CRIMINAL_RACE, c.getRace());
         criminalDetails.put(CRIMINAL_WEIGHT, c.getWeight());
         criminalDetails.put(CRIMINAL_HEIGHT, c.getHeight());

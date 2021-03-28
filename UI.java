@@ -75,9 +75,7 @@ public class UI extends UIConstants{
                   UUID id = UUID.fromString(input);
                   Case c = database.getCaseById(id);
                   database.exportCase(c);
-          case(7):
-                  System.out.println("Logging out");
-                  System.exit(0);
+                  break;
           default:
                   System.out.println("invalid command");
                   continue;
@@ -98,6 +96,7 @@ public class UI extends UIConstants{
       String firstName = getString("Criminal first name");
       String lastName = getString("Criminal Last name");
       Date dateOfBirth = makeDate("Criminal Date of Birth");
+      String gender = getString("Gender");
       long age = getLong("Criminal's age");
       String race = getString("Criminal Race");
       double weight = getDouble("Criminal Weight");
@@ -110,7 +109,7 @@ public class UI extends UIConstants{
       String status = getString("Criminal Status");
       Gang gang = new Gang("Gang");
 
-      Criminal c = new Criminal(firstName, lastName, dateOfBirth, race, weight, height, eyeColor, hairColor, hairLength, facialHair, tattoo, status, gang,age);
+      Criminal c = new Criminal(firstName, lastName, dateOfBirth, gender, race, weight, height, eyeColor, hairColor, hairLength, facialHair, tattoo, status, gang,age);
       database.addCriminal(c);
       return c;
     }

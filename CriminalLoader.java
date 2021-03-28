@@ -21,6 +21,7 @@ public class CriminalLoader extends CriminalConstants{
                 String lastName = (String)criminalJSON.get(CRIMINAL_LAST_NAME);
 				String stringDate = (String)criminalJSON.get(CRIMINAL_DOB);
 				Date dateOfBirth = Date.splitDate(stringDate);
+				String gender = (String)criminalJSON.get(CRIMINAL_GENDER);
 				String race = (String)criminalJSON.get(CRIMINAL_RACE);
                 double weight = (double)criminalJSON.get(CRIMINAL_WEIGHT);
                 double height = (double)criminalJSON.get(CRIMINAL_HEIGHT);
@@ -34,7 +35,7 @@ public class CriminalLoader extends CriminalConstants{
                 UUID gangId = UUID.fromString((String)criminalJSON.get(CRIMINAL_GANG));
 				Gang gang = Database.getGangById(gangId);
 				long age = (long)criminalJSON.get(CRIMINAL_AGE);
-				criminals.add(new Criminal(firstName, lastName, dateOfBirth, race, weight, height, eyeColor, hairColor, hairLength, facialHair, tattoo,  status, gang, age));
+				criminals.add(new Criminal(firstName, lastName, dateOfBirth, gender, race, weight, height, eyeColor, hairColor, hairLength, facialHair, tattoo,  status, gang, age));
 			}
 			
 			return criminals;
