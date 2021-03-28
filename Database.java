@@ -36,6 +36,7 @@ public class Database {
     }
 
     public void addCriminal(Criminal c){
+        criminals = new ArrayList<Criminal>();
         criminals.add(c);
         CriminalWriter.saveCriminals();
     }
