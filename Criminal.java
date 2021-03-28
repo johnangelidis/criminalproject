@@ -113,6 +113,11 @@ public class Criminal extends Person{
      * @return String representation of criminal's first and last name
      */
     public String toString() {
-        return firstName + " " + lastName + " is a criminal.";
+        return "First name: " + this.firstName + "\nLast name: " + this.lastName
+                + "\nDate of birth: " + this.dateOfBirth + "\nRace: " + this.race
+                + "\nWeight: " + this.weight + "\nHeight " + this.height 
+                + "\nEye color: " + this.eyeColor + "\nHair color: " + this.hairColor
+                + "\nFacial hair: " + this.facialHair + "\nTattoo(s): " + this.tattoo
+                + "\nStatus: " + this.status + "\nAssociated gangs: " + this.gang;
     }
 }
