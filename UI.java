@@ -42,14 +42,14 @@ public class UI extends UIConstants{
           System.out.println("Invalid command");
           continue;
         }
-        if(userCommand == mainMenuOptions.length){
-          if(currentUser.getLoggedInStatus() == true) {
-            System.out.println("Logging out.");
-            hasQuit = true;
-            break;
-        } else
-            break;
-        }
+        // if(userCommand == mainMenuOptions.length){
+        //   if(currentUser.getLoggedInStatus() == true) {
+        //     System.out.println("Logging out.");
+        //     hasQuit = true;
+        //     break;
+        // } else
+        //     break;
+        // }
         switch(userCommand){
           case(1):  // create account
                   createUser();
@@ -70,6 +70,9 @@ public class UI extends UIConstants{
                   UUID enteredUUID = UUID.fromString(enteredString);
                   database.getCaseById(enteredUUID);
                   break;  
+          case(5):
+                  System.out.println("Logging out");
+                  System.exit(0);
           default:
                   System.out.println("invalid command");
                   continue;

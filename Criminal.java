@@ -107,8 +107,6 @@ public class Criminal extends Person{
         this.gang = gang;
     }
 
-
-
     /**
      * @return String representation of criminal's first and last name
      */
