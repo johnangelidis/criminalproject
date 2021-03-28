@@ -65,7 +65,12 @@ public class UI extends UIConstants{
                   UUID enteredUUID = UUID.fromString(enteredString);
                   database.getCaseById(enteredUUID);
                   break;  
-          case(5):
+          case(5): //export
+                  String input = getString("Please enter case ID");
+                  UUID id = UUID.fromString(input);
+                  Case c = database.getCaseById(id);
+                  database.exportCase(c);
+          case(6):
                   System.out.println("Logging out");
                   System.exit(0);
           default:
@@ -314,18 +319,7 @@ public class UI extends UIConstants{
     }
     }
     
-    private void exportCase(Case aCase) throws FileNotFoundException {
-      String caseOutput = aCase.toString();
-      PrintWriter out = new PrintWriter("case.txt");
-      out.println(caseOutput);
-    }
-
-    private void exportPerson(Person aPerson) throws FileNotFoundException {
-      String personOutput = aPerson.toString();
-      PrintWriter out = new PrintWriter("person.txt");
-      out.println(personOutput);
-      
-    }
+   
     public static void main(String[] args) {
         UI UIInterface = new UI();
         UIInterface.run();
