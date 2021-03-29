@@ -1,5 +1,6 @@
 [
     {
+        "conviction":"Shoplifting",
         "lastName": "Trello",
         "facialHair": "beard",
         "gang": null,
@@ -17,6 +18,7 @@
         "status": "Not in prison"
     },
     {
+        "conviction":"Kidnapping",
         "lastName": "Ramirez",
         "facialHair": null,
         "gang": "73ec80a4-3e03-495a-b271-cd22d2abb080",
@@ -34,6 +36,7 @@
         "status": "Incarcerated"
     },
     {
+        "conviction":"First Degree Murder",
         "lastName": "Westmoreland",
         "facialHair": null,
         "gang": null,
@@ -48,9 +51,10 @@
         "hairColor": "black",
         "age": 30,
         "height": 6.2,
-        "status": "Not in prison"
+        "status": "Incarcerated"
     },
     {
+        "conviction":"Bar robbery and stolen liquor",
         "lastName": "Owens",
         "facialHair": "goatee",
         "gang": "73ec80a4-3e03-495a-b271-cd22d2abb080",
@@ -69,6 +73,7 @@
         "status": "Incarcerated"
     },
     {
+        "conviction":"Murdered her watermelon",
         "lastName": "Jones",
         "facialHair": null,
         "gang": null,
