@@ -302,6 +302,8 @@ public class Database {
         }
     }
     public void searchTattoos(String tattoo){
+        criminals = CriminalLoader.loadCriminals();
+        GangLoader.loadGangs();
         for (Criminal c : criminals) {
             if(c.getTattoo().equals(tattoo)) {
                 System.out.println(c);
@@ -309,6 +311,8 @@ public class Database {
         }
     }
     public void searchDescription(int age, String hairColor, double height){
+        criminals = CriminalLoader.loadCriminals();
+        GangLoader.loadGangs();
         for (Criminal c : criminals) {
             if((c.getAge()==(age)) && c.getHairColor().equals(hairColor) && (c.getHeight()==height)){
                 System.out.println(c);
