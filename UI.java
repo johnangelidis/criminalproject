@@ -110,7 +110,7 @@ public class UI extends UIConstants{
       Gang gang = new Gang("Gang");
       String conviction = getString("Conviction");
       Criminal c = new Criminal(firstName, lastName, dateOfBirth, gender, race, weight, height, eyeColor, hairColor, hairLength, facialHair, tattoo, status, gang,age, conviction);
-      database.addCriminal(c);
+1      database.addCriminal(c);
       return c;
     }
 
