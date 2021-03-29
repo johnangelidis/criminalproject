@@ -1,1 +1,20 @@
-[{"personOfInterest":"203179d5-f8dc-4d59-a3e1-24020c34b3aa","witnessStatement":"3","evidence":"33","victimStatement":"3","witness":"81b49cbc-d036-4fef-a1f2-6dc80c4540a6","detective":"a7c1f2c6-5d6e-4166-8f75-1b4fd188417a","dayOfCrime":"3/3/3","offender":"7787e677-1d45-4458-8168-d55a91ba6090","officerInvolved":"7b6fecfc-c997-4172-9416-40bc67f884a9","crime":"3","victim":"63c67d7f-1ef5-4854-800c-81f2779f614c","location":"3/3/3/3/3","id":"4cd0fca1-2a6c-4e92-ad82-2a008b098ba8"}]
+[
+    {
+        "time":"9:00PM",
+        "suspectDescription":"White man wearing black hoodie and jeans",
+        "caseDescription": "Physical assault between two men at a restaurant with a broken beer bottle",
+        "personOfInterest": "203179d5-f8dc-4d59-a3e1-24020c34b3aa",
+        "witnessStatement": "A drunk man attacked another man with a broken beer bottle.",
+        "evidence": "Victim's blood on suspect's clothes, broken beer bottle with blood on it",
+        "victimStatement": "A man physically assaulted me with a broken beer bottle after refusing to pay for food at the restaurant.",
+        "witness": "81b49cbc-d036-4fef-a1f2-6dc80c4540a6",
+        "detective": "a7c1f2c6-5d6e-4166-8f75-1b4fd188417a",
+        "dayOfCrime": "March/28/2021",
+        "offender": "7787e677-1d45-4458-8168-d55a91ba6090",
+        "officerInvolved": "7b6fecfc-c997-4172-9416-40bc67f884a9",
+        "crime": "Assault",
+        "victim": "63c67d7f-1ef5-4854-800c-81f2779f614c",
+        "location": "123/Main St/Columbia/SC/29201",
+        "id": "4cd0fca1-2a6c-4e92-ad82-2a008b098ba8"
+    }
+]
