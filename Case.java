@@ -59,12 +59,20 @@ public class Case {
         return this.victim.getId().toString();
     }
 
+    public Civilian returnVictim(){
+        return this.victim;
+    }
+
     public void setVictim(Civilian victim) {
         this.victim = victim;
     }
 
     public String getOffender() {
         return this.offender.getId().toString();
+    }
+
+    public Criminal getCriminal(){
+        return this.offender;
     }
 
     public void setOffender(Criminal offender) {
@@ -129,6 +137,10 @@ public class Case {
 
     public String getOfficerInvolved() {
         return this.officerInvolved.getId().toString();
+    }
+
+    public PoliceOfficer getOfficer(){
+        return this.officerInvolved;
     }
 
     public void setOfficerInvolved(PoliceOfficer officerInvolved) {
