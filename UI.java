@@ -194,9 +194,13 @@ public class UI extends UIConstants{
       PoliceOfficer officer = makePoliceOfficer();
       System.out.println("Detective Information");
       Detective detective = makeDetective();
-      String victimStatement = getString("Victim Statement");
-      String witnessStatement = getString("Witness Statement");
-      String evidence = getString("Evidence");
+      scanner.nextLine();
+      System.out.println("Victim Statement: ");
+      String victimStatement = scanner.nextLine();
+      System.out.println("Witness Statement: ");
+      String witnessStatement = scanner.nextLine();
+      System.out.println("Evidence: ");
+      String evidence = scanner.nextLine();
 
       Case c = new Case(crime, victim, offender, suspectDescription, caseDescription, witness, personOfInterest, dayOfCrime, time, location, officer, detective, victimStatement, witnessStatement, evidence);
       database.addCase(c);
