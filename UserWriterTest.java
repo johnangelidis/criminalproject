@@ -40,14 +40,14 @@ public class UserWriterTest {
     }
 
     @Test
-    void testWritingEmptyGang(){
+    void testWritingEmptyUser(){
         users.add(new User("", ""));
         assertEquals("", users.get(0).getUsername());
         assertEquals("", users.get(0).getPassword());
     }
 
     @Test
-    void testWritingNullGang(){
+    void testWritingNullUser(){
         users.add(new User(null, null));
         assertEquals(null, users.get(0).getUsername());
         assertEquals(null, users.get(0).getPassword());
