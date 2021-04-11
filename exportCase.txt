@@ -1,0 +1,28 @@
+Case ID: ca36a2a1-80cf-4c25-a7c7-58143b07b25f
+Crime committed: Assault
+Victims: 45c8f0dd-789d-4d57-957b-e93b584ff606
+Offenders: First name: Sean
+Last name: Trello
+Date of birth: "March/3/1991"
+Race: African American
+Weight: 200.0
+Height 6.2
+Eye color: black
+Hair color: black
+Facial hair: beard
+Tattoo(s): dragon
+Status: Not in prison
+Associated gangs: 202fa2b8-d3af-42ec-8673-6a2a7574ed7d
+Age: 30
+Suspect Description: White man wearing black hoodie and jeans
+Case Description: Physical assault between two men at a restaurant with a broken beer bottle
+Witness(es): 73a79b9e-b38e-4a99-960a-9e6528ec192d
+Person(s) of Interest 43f9863e-da59-4f56-9b95-a6df939c6efc
+Day of Crime: "March/28/2021"
+Time of Crime: 9:00PM
+Location of Crime: "123/Main St/Columbia/SC/29201"
+Officer(s) involved: a4f0b60f-ef18-4178-87fd-f4cc7d381704
+Detectives involved: f0b4af23-0629-42aa-a82b-658bb121929b
+Victim Statement(s): A man physically assaulted me with a broken beer bottle after refusing to pay for food at the restaurant.
+Witness Statement(s): A drunk man attacked another man with a broken beer bottle.
+Evidence: Victim's blood on suspect's clothes, broken beer bottle with blood on it

@@ -3,6 +3,7 @@
         "lib/**/*.jar",
         "c:\\Users\\J\\Desktop\\FOLDERS\\college stuff\\Junior Year\\Spring 2021\\CSCE247\\lib\\json-simple-1.1.1.jar",
         "json-simple-1.1.1.jar",
-        "bin/json-simple-1.1.1.jar"
+        "bin/json-simple-1.1.1.jar",
+        "c:\\Users\\J\\Desktop\\FOLDERS\\college stuff\\Junior Year\\Spring 2021\\CSCE247\\lib\\junit-platform-console-standalone-1.7.0.jar"
     ]
 }

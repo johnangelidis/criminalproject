@@ -63,6 +63,11 @@ public class Database {
         CriminalWriter.saveCriminals();
     }
 
+    public void removeCriminal(Criminal c){
+        criminals.remove(c);
+        CriminalWriter.saveCriminals();
+    }
+
     public ArrayList<Civilian> getCivilians(){
         return civilians;
     }
@@ -146,6 +151,11 @@ public class Database {
 
     public void addDetective(Detective d){
         detectives.add(d);
+        DetectiveWriter.saveDetectives();
+    }
+
+    public void removeDetective(Detective d){
+        detectives.remove(d);
         DetectiveWriter.saveDetectives();
     }
 
@@ -233,6 +243,11 @@ public class Database {
 
     public void deleteGang(UUID gangID){
         Gang g = getGangById(gangID);
+        gangs.remove(g);
+        GangWriter.saveGangs();
+    }
+
+    public void removeGang(Gang g){
         gangs.remove(g);
         GangWriter.saveGangs();
     }
@@ -360,12 +375,14 @@ public class Database {
     }
 
     public boolean findUser(String username, String password){
+        users = UserLoader.loadUsers();
+        boolean isFound = false;
         for(User u:users){
-            if(username.equals(u.getUsername()) && password.equals(u.getPassword())){
-                return true;
+            if(u.getUsername().equals(username) && u.getPassword().equals(password)){
+                isFound = true;
             }
         }
-        return false;
+        return isFound;
     }
 
     /**
@@ -418,5 +435,14 @@ public class Database {
         }
     }
 
+    public static void main(String[] args){
+        Database db = new Database();
+        Database.getInstance();
 
+        ArrayList<User> users = UserLoader.loadUsers();
+        for(User u:users){
+            System.out.println(u);
+        }
+        
+    }
 }

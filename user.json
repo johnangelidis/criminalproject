@@ -1,1 +1,26 @@
-[{"password":"password","id":"4a5360dd-b893-43fd-8863-3cc55255b0dc","isAdmin":true,"username":"johnj123"},{"password":"cobya","id":"d3543483-4a61-40a4-bab2-bcd5a08dac82","isAdmin":false,"username":"cobya"},{"password":"samplePass","id":"81607684-48f3-4340-ad6f-e436c4ba04f6","isAdmin":false,"username":"sampleUser"},{"password":"pass7","id":"b9cc94b2-3a3c-4624-a2d5-e7cb1afdcf6e","isAdmin":false,"username":"user7"}]
+[
+    {
+        "password": "password",
+        "id": "4a5360dd-b893-43fd-8863-3cc55255b0dc",
+        "isAdmin": true,
+        "username": "johnj123"
+    },
+    {
+        "password": "cobya",
+        "id": "d3543483-4a61-40a4-bab2-bcd5a08dac82",
+        "isAdmin": false,
+        "username": "cobya"
+    },
+    {
+        "password": "samplePass",
+        "id": "81607684-48f3-4340-ad6f-e436c4ba04f6",
+        "isAdmin": false,
+        "username": "sampleUser"
+    },
+    {
+        "password": "pass7",
+        "id": "b9cc94b2-3a3c-4624-a2d5-e7cb1afdcf6e",
+        "isAdmin": false,
+        "username": "user7"
+    }
+]
