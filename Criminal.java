@@ -32,7 +32,6 @@ public class Criminal extends Person{
         this.age = age;
         this.conviction = conviction;
     }
-    
     public String getConviction() {
         return this.conviction;
     }

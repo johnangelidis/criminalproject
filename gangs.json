@@ -1,1 +1,12 @@
-[{"members":[],"name":"MS-13","id":"72a16a73-86c1-4dfb-9114-80b8956815c6"},{"members":[],"name":"Bloods","id":"6aaa901b-e62a-44b9-8f94-fbb2cf30a71f"}]
+[
+    {
+        "members": [],
+        "name": "MS-13",
+        "id": "72a16a73-86c1-4dfb-9114-80b8956815c6"
+    },
+    {
+        "members": [],
+        "name": "Bloods",
+        "id": "6aaa901b-e62a-44b9-8f94-fbb2cf30a71f"
+    }
+]
